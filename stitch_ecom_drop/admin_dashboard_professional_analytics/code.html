@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atelier Admin | Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#1e1200",
+                        "secondary": "#735c00",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed": "#d8e3fb",
+                        "surface-tint": "#545f73",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffe088",
+                        "tertiary-fixed": "#fadfb8",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline-variant": "#c5c6cd",
+                        "background": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#574500",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#a38c6a",
+                        "surface-variant": "#e0e3e5",
+                        "on-background": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "primary": "#091426",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-container": "#35260c",
+                        "primary-fixed-dim": "#bcc7de",
+                        "on-surface": "#191c1e",
+                        "inverse-surface": "#2d3133",
+                        "outline": "#75777d",
+                        "on-secondary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#ddc39d",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed": "#271902",
+                        "secondary-container": "#fed65b",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#1e293b",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-low": "#f2f4f6",
+                        "surface": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#564427",
+                        "on-surface-variant": "#45474c",
+                        "inverse-primary": "#bcc7de",
+                        "on-secondary-container": "#745c00",
+                        "on-primary-container": "#8590a6",
+                        "on-primary-fixed": "#111c2d"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .chart-grid {
+            background-image: linear-gradient(to right, rgba(197, 198, 205, 0.1) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(197, 198, 205, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 border-r border-slate-800 bg-slate-900 dark:bg-slate-950 flex flex-col h-full overflow-y-auto shadow-2xl sticky top-0">
+<div class="p-8 flex items-center gap-3">
+<div class="w-10 h-10 bg-amber-400 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-900" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-white tracking-tighter">Atelier Admin</h1>
+<p class="font-inter tracking-tight font-semibold uppercase text-[11px] text-amber-400">Premium Editorial</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-amber-400 bg-slate-800/50 border-r-2 border-amber-400 font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter tracking-tight font-semibold uppercase text-[11px]">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-slate-400 hover:text-white hover:bg-slate-800/30" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-inter tracking-tight font-semibold uppercase text-[11px]">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-slate-400 hover:text-white hover:bg-slate-800/30" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-inter tracking-tight font-semibold uppercase text-[11px]">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-slate-400 hover:text-white hover:bg-slate-800/30" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-inter tracking-tight font-semibold uppercase text-[11px]">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-slate-400 hover:text-white hover:bg-slate-800/30" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-inter tracking-tight font-semibold uppercase text-[11px]">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-slate-400 hover:text-white hover:bg-slate-800/30" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter tracking-tight font-semibold uppercase text-[11px]">Settings</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="bg-slate-800/50 rounded-xl p-4 flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="close-up portrait of professional creative director in a minimalist studio setting with warm directional light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj27J6SQzLZ-7IccPbZcZerHgECCe6J9dvs7iLYcHDx999jIbAgDIjUJXVJEH8CMct9qeGXnDxlYKMZRnyAhoix13cOfUkB94VpUdMH6Rzlpu2IZNYfRBPi22gRcPnouKga8XyCINzDcZrlJ4L35xi7Eoao-o8R3Hej-fsMo0d9Cj-aMapiRHqo_vw2jHEce4X5H563_beA_c25xoxIYZkcoV4iqUN4LLY3jmVvUo3rqxuE2HN3DlB2VMr1cv1tssUiTm7ooRkcq8"/>
+<div class="overflow-hidden">
+<p class="text-white text-xs font-bold truncate">Julian Thorne</p>
+<p class="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Master Editor</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 min-w-0">
+<!-- TopNavBar -->
+<header class="w-full h-16 sticky top-0 z-40 bg-white/70 backdrop-blur-md flex justify-between items-center px-8 border-b border-surface-container">
+<div class="flex items-center gap-8 flex-1">
+<div class="relative w-full max-w-md group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-secondary placeholder:text-on-surface-variant transition-colors duration-150" placeholder="Search Atelier Intelligence..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 ml-8">
+<button class="w-10 h-10 flex items-center justify-center text-slate-500 hover:bg-slate-50 rounded-lg transition-colors duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-slate-500 hover:bg-slate-50 rounded-lg transition-colors duration-150">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<div class="h-6 w-px bg-surface-container mx-2"></div>
+<button class="flex items-center gap-2 hover:bg-slate-50 p-1 rounded-lg transition-colors duration-150">
+<img class="w-8 h-8 rounded-full border border-surface-container object-cover" data-alt="professional male profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBerhsMn6UO1QU6Xtx8qYjQe-lUq8Njl21uAopTHX7d3cg0NiMcd3eusS3KyjXyamZn_GYJGgCOGZqyFmJLr5MFBUnc07PYVOeYrLo9tqABzEBPlLX4IgEHYH8iho53n54mgCvSxsXfzIW7-89tDQ4g4D-Dog4qAsLRf_SczOydvcW1LlZBm6g4m6xkBQV8BILAR1Oqikh_PMYVkol5KxmWKMPR0Tiosuk-McBN7qL3AHggjWWtYzLrt06tkFT4nlfbSu61pzj27vM"/>
+</button>
+</div>
+</header>
+<div class="p-8 max-w-[1600px] mx-auto">
+<!-- Header Actions -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-3xl font-bold text-primary tracking-tight">Performance Overview</h2>
+<p class="text-on-surface-variant font-medium mt-1">Analyzing atelier operations for the current editorial cycle.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant text-sm font-semibold hover:bg-surface-container-low transition-all">
+                            Last 30 Days
+                        </button>
+<button class="px-5 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant text-sm font-semibold hover:bg-surface-container-low transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Export Data
+                        </button>
+</div>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<!-- Revenue -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 group hover:border-secondary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<p class="label-sm font-bold text-[11px] uppercase tracking-widest text-on-surface-variant">Revenue</p>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-secondary transition-colors">payments</span>
+</div>
+<div class="flex items-baseline gap-2">
+<h3 class="text-2xl font-bold text-primary tracking-tighter">₹8,42,500</h3>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="flex items-center text-emerald-500 font-bold text-xs">
+<span class="material-symbols-outlined text-sm">trending_up</span> 12.5%
+                            </span>
+<span class="text-[10px] text-on-surface-variant font-medium">vs last month</span>
+</div>
+</div>
+<!-- Orders -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 group hover:border-secondary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<p class="label-sm font-bold text-[11px] uppercase tracking-widest text-on-surface-variant">Orders</p>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-secondary transition-colors">shopping_bag</span>
+</div>
+<div class="flex items-baseline gap-2">
+<h3 class="text-2xl font-bold text-primary tracking-tighter">1,248</h3>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="flex items-center text-emerald-500 font-bold text-xs">
+<span class="material-symbols-outlined text-sm">trending_up</span> 8.2%
+                            </span>
+<span class="text-[10px] text-on-surface-variant font-medium">vs last month</span>
+</div>
+</div>
+<!-- AOV -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 group hover:border-secondary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<p class="label-sm font-bold text-[11px] uppercase tracking-widest text-on-surface-variant">Avg. Order Value</p>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-secondary transition-colors">analytics</span>
+</div>
+<div class="flex items-baseline gap-2">
+<h3 class="text-2xl font-bold text-primary tracking-tighter">₹675</h3>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="flex items-center text-rose-500 font-bold text-xs">
+<span class="material-symbols-outlined text-sm">trending_down</span> 2.4%
+                            </span>
+<span class="text-[10px] text-on-surface-variant font-medium">vs last month</span>
+</div>
+</div>
+<!-- Conversion -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 group hover:border-secondary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<p class="label-sm font-bold text-[11px] uppercase tracking-widest text-on-surface-variant">Conversion</p>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-secondary transition-colors">ads_click</span>
+</div>
+<div class="flex items-baseline gap-2">
+<h3 class="text-2xl font-bold text-primary tracking-tighter">4.2%</h3>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="flex items-center text-emerald-500 font-bold text-xs">
+<span class="material-symbols-outlined text-sm">trending_up</span> 0.6%
+                            </span>
+<span class="text-[10px] text-on-surface-variant font-medium">vs last month</span>
+</div>
+</div>
+</div>
+<!-- Main Analytics Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Chart Column -->
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+<div class="p-8 border-b border-surface-container-low flex justify-between items-center">
+<div>
+<h3 class="text-xl font-bold text-primary tracking-tight">Revenue Dynamics</h3>
+<p class="text-xs font-medium text-on-surface-variant uppercase tracking-widest mt-1">Growth Forecast: Stable</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-xs font-bold text-on-surface-variant">Current Cycle</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-surface-container-high"></div>
+<span class="text-xs font-bold text-on-surface-variant">Previous</span>
+</div>
+</div>
+</div>
+<div class="p-8 h-80 relative chart-grid">
+<!-- Mock Line Chart with SVG -->
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 800 300">
+<!-- Area Fill -->
+<path d="M0 300 L0 240 L100 200 L200 220 L300 150 L400 180 L500 100 L600 120 L700 60 L800 80 L800 300 Z" fill="url(#gradientFill)" opacity="0.1"></path>
+<defs>
+<lineargradient id="gradientFill" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#091426"></stop>
+<stop offset="100%" stop-color="white"></stop>
+</lineargradient>
+</defs>
+<!-- Line -->
+<path d="M0 240 L100 200 L200 220 L300 150 L400 180 L500 100 L600 120 L700 60 L800 80" fill="none" stroke="#091426" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+<!-- Dots -->
+<circle cx="500" cy="100" fill="#091426" r="6" stroke="white" stroke-width="3"></circle>
+</svg>
+<!-- Labels -->
+<div class="absolute bottom-4 left-8 right-8 flex justify-between text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+</div>
+<!-- Secondary Data Grid -->
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-on-surface-variant mb-4">Customer Sentiment</p>
+<div class="flex items-center gap-4">
+<div class="text-4xl font-black text-primary">94%</div>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[94%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-on-surface-variant mb-4">Inventory Health</p>
+<div class="flex items-center gap-4">
+<div class="text-4xl font-black text-primary">82%</div>
+<div class="flex-1 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[82%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Column: Top Sellers -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+<div class="p-8 border-b border-surface-container-low flex justify-between items-center">
+<h3 class="text-xl font-bold text-primary tracking-tight">Atelier Curations</h3>
+<button class="text-xs font-bold text-secondary hover:underline">View All</button>
+</div>
+<div class="p-6 space-y-8">
+<!-- Item 1 -->
+<div class="flex items-center gap-4 group">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="minimalist aesthetic leather boots on a grey stone pedestal with clean architectural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC8sgO3A4y6Cu7rJH4fZg7GqPpPchz2JdgptkTTOxvN_xpGsUqoK9tvGqFQxkG1og9SNnR9Y2Cj7naukLXnQ-znzxrp133uqV8VcS7h37b6k6AeldG3zt9BnaW9GrtX7gd5xsidzZNtTI8KibMQrIavj9UfvH8csL6nq4UQpHTFXg-ZLoYGOXfd-KvOVU_JqKmz6KyyjFt_v7enTsftBd4PtCpQ2TOtlMnHl6NzYwqIJBDRLKsqOrvwI5sS0dDMh1sKmLV1J3-4fQ"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-primary truncate">Raw Leather Boots</p>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase mt-0.5 tracking-wider">₹12,499</p>
+</div>
+<p class="text-xs font-black text-primary">142 Sales</p>
+</div>
+<div class="mt-3">
+<div class="h-1 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4 group">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="high-end minimalist wristwatch on white marble with soft natural shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5KX-czVUwp78kIrSwMJtO4ySx1usObayR95_P6yz6Kmdx05owTh-JbayDUVm0DM94EAy1f6xqPY0bMHLaRVXDAWrm7IjKyi8fwOR23_QqjaYj0o0oqbyVo23PQTjZHYPAuIocK4YtNE8AU7ydtQA6qSDPiwMu66h2FBwWQZrE2jC6m089QMXT7WKxUPZSTsgPt3c1MDAHJ5zjkOkvUJTf3TUOpMQkgXpFukLC4I5mKIOcpy1lkXqZ80gXVW68hsPh210CGV1RmSA"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-primary truncate">Standard Issue Watch</p>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase mt-0.5 tracking-wider">₹18,200</p>
+</div>
+<p class="text-xs font-black text-primary">98 Sales</p>
+</div>
+<div class="mt-3">
+<div class="h-1 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[62%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center gap-4 group">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="professional studio headphones on a dark oak desk with warm ambient glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8lHwIXtT4MTwuIIxw_HE5qDHvWGslUnTA0JLpCwGtYgxFfZWd0EOFeTTTCMA3KSXtRiKQ-Od1Rra5G1PaqH2VCn98zXrhMMGBEvBes_3LHZu-63mgM_65Hn67i49mFdJLxPnRvN65aGmV-LY-pK11tRED7JZu7TPhPK5DWwome1TF2k9XdvCB7duMEwNjDY5sLc3EdPYv9gXZE3SAstsCgBKVl88R5dT3sL5kgoVWip6u2tLSHLqZNmejx8-hbSv47rCXRMiss-o"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-primary truncate">Studio Monitor X1</p>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase mt-0.5 tracking-wider">₹24,500</p>
+</div>
+<p class="text-xs font-black text-primary">76 Sales</p>
+</div>
+<div class="mt-3">
+<div class="h-1 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[48%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center gap-4 group">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="vibrant red athletic sneaker in dynamic motion blur studio photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlWujm64OXwWSv5Wr0hgVHrlFwG6WVUWhHZ-SpDWvcgHNRUbBF31Oydxf8gyP1nJbsj8iCBF-879tQI254WdIzQKehXjlgifj14-3WZlVExMvtNOb6oEWw8oFVkGmi-OkUDzU601Gf9dSE_kwn5Gv2e6reaRkOs2m51uuuMND9aC1XoiihBq9KRntXjQ-9ZU9ILVZm5UM4xLs_iKN6s5WifMGOxsFP7tlC1kntzWH54SulPYEFCc4LxfmAaKuZgMD17nxVuclCGmw"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm font-bold text-primary truncate">Elite Trainer 2.0</p>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase mt-0.5 tracking-wider">₹8,900</p>
+</div>
+<p class="text-xs font-black text-primary">114 Sales</p>
+</div>
+<div class="mt-3">
+<div class="h-1 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[74%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-low/50">
+<button class="w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary-container transition-all text-sm uppercase tracking-widest">
+                                Run Weekly Report
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

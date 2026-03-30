@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout - SWADESH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#214f3f",
+              "surface-variant": "#e2e3e1",
+              "secondary": "#775a19",
+              "surface-dim": "#dadad8",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#a0d1bc",
+              "outline": "#717974",
+              "on-tertiary-fixed-variant": "#4900d6",
+              "on-surface-variant": "#414944",
+              "tertiary": "#21006e",
+              "secondary-fixed": "#ffdea5",
+              "on-error-container": "#93000a",
+              "on-surface": "#1a1c1b",
+              "surface": "#f9f9f7",
+              "primary": "#00261b",
+              "inverse-on-surface": "#f1f1ef",
+              "on-tertiary-container": "#a28eff",
+              "secondary-fixed-dim": "#e9c176",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e2e3e1",
+              "inverse-surface": "#2f3130",
+              "tertiary-fixed": "#e6deff",
+              "surface-container-low": "#f4f4f2",
+              "on-secondary-fixed": "#261900",
+              "surface-tint": "#396756",
+              "surface-container": "#eeeeec",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#785a1a",
+              "inverse-primary": "#a0d1bc",
+              "secondary-container": "#fed488",
+              "on-error": "#ffffff",
+              "background": "#f9f9f7",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#79a894",
+              "primary-fixed": "#bcedd7",
+              "on-background": "#1a1c1b",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#1c0061",
+              "tertiary-container": "#3700a7",
+              "surface-bright": "#f9f9f7",
+              "on-secondary-fixed-variant": "#5d4201",
+              "on-primary-fixed": "#002116",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container-high": "#e8e8e6",
+              "outline-variant": "#c0c8c3",
+              "primary-container": "#0b3d2e"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"],
+              "forms": ["Poppins"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="bg-[#F9F9F7] dark:bg-stone-900 sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 h-16">
+<button class="text-[#00261B] dark:text-emerald-50 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Noto_Serif'] font-bold tracking-tight text-2xl font-serif tracking-[0.2em] text-[#00261B] dark:text-emerald-50">SWADESH</h1>
+<button class="text-[#00261B] dark:text-emerald-50 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+<div class="bg-stone-200/20 dark:bg-stone-800/20 h-[1px] w-full"></div>
+</header>
+<main class="max-w-md mx-auto px-6 pt-8 space-y-10">
+<!-- Progress Bar -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-secondary font-medium text-xs uppercase tracking-widest mb-1">Step 1 of 3</p>
+<h2 class="font-headline text-2xl text-primary">Shipping Information</h2>
+</div>
+<div class="text-right">
+<span class="text-on-surface-variant text-sm font-medium">33% Complete</span>
+</div>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-1/3 rounded-full"></div>
+</div>
+</section>
+<!-- Order Summary (Collapsible Style) -->
+<section class="bg-surface-container-low rounded-xl p-5 space-y-4">
+<details class="group">
+<summary class="flex justify-between items-center list-none cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+<span class="font-semibold text-primary">Order Summary (2 items)</span>
+</div>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="pt-4 space-y-4 border-t border-outline-variant/20 mt-4">
+<div class="flex gap-4">
+<div class="w-16 h-20 bg-surface-container-highest rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up of a hand-woven emerald green silk dupatta with intricate gold zari border work" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpDJJIVdFYMFOG-1gh5ncgT1UwjiqmaqbY6TLyj44YksS3UkfnRPZjHSM5jbMKAqYSC3x1osk8iFvi8AGbxTKGcr4pQHjswvUk80MWISQh03J9yTo87wCrSAmf5HSMk6Sy5vTqnui0pVzDU3zT7SqeLA9KBnGkKVpnYSxce1Hps9NIBVQBcvz_TLLnR6xlKBTSe5BCQJD2pnQu9K0Hc6dhCpgmYQJ4GL-HMawLSl0xVeEFVfq9fA5KVnUhqZNtdsRVQgD-0N6CvO4"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline text-sm text-primary">Handloom Banarasi Saree</h4>
+<p class="text-xs text-on-surface-variant">Forest Green • Silk</p>
+<p class="text-sm font-semibold mt-1">₹14,999</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-16 h-20 bg-surface-container-highest rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Detailed texture of premium white cotton fabric with subtle geometric embroidery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQSDp867Ck2ZK4nMtfJdi43EB94y-CyXQziN6pLsqHxFQ6idYgq92zCVU_7BGbuiCi07DjwsakFxxD5D4ktg1fPO8iT2G1buZHiyCJDUkJx_fgRQgB6bD4D4oZ4QmybIGE8Hg137npO829TcxWNzDTyB5aQeEcgv-YaRxvGaNfpD1GzLP73b3yJu9ibVAlD6356Dp8MfgR3NDXmTMmBCqQV-RX62IWTsMLdz63X5L6u4oKB_zWYUVKvQo7biB55YmC_V287u3TGQw"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-headline text-sm text-primary">Chanderi Kurta Set</h4>
+<p class="text-xs text-on-surface-variant">Ivory White • Medium</p>
+<p class="text-sm font-semibold mt-1">₹8,450</p>
+</div>
+</div>
+<div class="space-y-2 pt-2 text-sm">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Subtotal</span>
+<span>₹23,449</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Shipping</span>
+<span class="text-emerald-700 font-medium">Free</span>
+</div>
+<div class="flex justify-between border-t border-outline-variant/20 pt-2 font-bold text-primary text-lg">
+<span>Total</span>
+<span>₹23,449</span>
+</div>
+</div>
+</div>
+</details>
+</section>
+<!-- Shipping Form -->
+<section class="space-y-6">
+<div class="grid grid-cols-1 gap-5 font-forms">
+<div class="relative">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold absolute -top-2 left-3 bg-surface px-1">Full Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-4 text-sm focus:ring-secondary/40 focus:border-secondary" type="text" value="Arjun Malhotra"/>
+</div>
+<div class="relative">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold absolute -top-2 left-3 bg-surface px-1">Mobile Number</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-4 text-sm focus:ring-secondary/40 focus:border-secondary" type="tel" value="+91 98765 43210"/>
+</div>
+<div class="relative">
+<label class="text-[10px] uppercase tracking-widest text-secondary font-bold absolute -top-2 left-3 bg-surface px-1">Delivery Address</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-4 text-sm focus:ring-secondary/40 focus:border-secondary" rows="3">Plot 42, Heritage Enclave, South Delhi, New Delhi - 110011</textarea>
+</div>
+</div>
+</section>
+<!-- Payment Methods -->
+<section class="space-y-5">
+<h3 class="font-headline text-xl text-primary">Payment Methods</h3>
+<div class="space-y-3">
+<!-- UPI -->
+<label class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant/40 rounded-xl cursor-pointer hover:border-secondary/40 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-semibold text-sm">UPI (PhonePe, GPay)</p>
+<p class="text-xs text-on-surface-variant">Instant 5% Cashback</p>
+</div>
+</div>
+<input checked="" class="text-primary focus:ring-primary h-5 w-5" name="payment" type="radio"/>
+</label>
+<!-- Card -->
+<label class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant/40 rounded-xl cursor-pointer hover:border-secondary/40 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="credit_card">credit_card</span>
+</div>
+<div>
+<p class="font-semibold text-sm">Credit / Debit Card</p>
+<p class="text-xs text-on-surface-variant">All major cards accepted</p>
+</div>
+</div>
+<input class="text-primary focus:ring-primary h-5 w-5" name="payment" type="radio"/>
+</label>
+<!-- COD -->
+<label class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline-variant/40 rounded-xl cursor-pointer hover:border-secondary/40 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="payments">payments</span>
+</div>
+<div>
+<p class="font-semibold text-sm">Cash on Delivery</p>
+<p class="text-xs text-on-surface-variant">Handling fee of ₹49 applies</p>
+</div>
+</div>
+<input class="text-primary focus:ring-primary h-5 w-5" name="payment" type="radio"/>
+</label>
+</div>
+<!-- Trust Badges -->
+<div class="flex justify-center items-center gap-6 pt-2">
+<div class="flex items-center gap-1 opacity-60">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified_user">verified_user</span>
+<span class="text-[10px] uppercase tracking-tighter font-bold">Secure SSL</span>
+</div>
+<div class="flex items-center gap-1 opacity-60">
+<span class="material-symbols-outlined text-[16px]" data-icon="workspace_premium">workspace_premium</span>
+<span class="text-[10px] uppercase tracking-tighter font-bold">Authentic Heritage</span>
+</div>
+<div class="flex items-center gap-1 opacity-60">
+<span class="material-symbols-outlined text-[16px]" data-icon="local_shipping">local_shipping</span>
+<span class="text-[10px] uppercase tracking-tighter font-bold">Insured Shipping</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md border-t border-outline-variant/10 px-6 pt-4 pb-8 z-50">
+<div class="flex justify-between items-center mb-4 px-2">
+<div>
+<p class="text-xs text-on-surface-variant">Total Payable</p>
+<p class="text-xl font-bold text-primary">₹23,449</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-emerald-700 font-bold uppercase tracking-widest bg-emerald-100 px-2 py-0.5 rounded">You Save ₹2,500</p>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-secondary to-[#8d6d20] text-white py-4 rounded-xl font-bold tracking-widest flex items-center justify-center gap-3 shadow-lg active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+            SECURE HERITAGE PAY
+        </button>
+</div>
+<!-- Bottom Nav (Hidden for Checkout as per Shell Visibility Rule) -->
+<!-- Suppressed to prioritize the checkout focus -->
+</body></html>

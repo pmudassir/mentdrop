@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ethnic Sets | PEHNAVA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#e9c176",
+              "surface-container-high": "#e8e8e6",
+              "secondary-container": "#fed488",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#e6deff",
+              "surface-bright": "#f9f9f7",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#785a1a",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "background": "#f9f9f7",
+              "surface-container-low": "#f4f4f2",
+              "on-primary-container": "#79a894",
+              "surface-container": "#eeeeec",
+              "inverse-primary": "#a0d1bc",
+              "primary": "#00261b",
+              "tertiary": "#21006e",
+              "on-primary": "#ffffff",
+              "primary-fixed": "#bcedd7",
+              "primary-container": "#0b3d2e",
+              "outline-variant": "#c0c8c3",
+              "surface-tint": "#396756",
+              "on-primary-fixed-variant": "#214f3f",
+              "on-secondary-fixed-variant": "#5d4201",
+              "error-container": "#ffdad6",
+              "surface-variant": "#e2e3e1",
+              "on-surface-variant": "#414944",
+              "on-secondary-fixed": "#261900",
+              "on-tertiary-container": "#a28eff",
+              "on-surface": "#1a1c1b",
+              "tertiary-container": "#3700a7",
+              "on-tertiary-fixed": "#1c0061",
+              "primary-fixed-dim": "#a0d1bc",
+              "inverse-on-surface": "#f1f1ef",
+              "outline": "#717974",
+              "secondary": "#775a19",
+              "on-error-container": "#93000a",
+              "surface-dim": "#dadad8",
+              "error": "#ba1a1a",
+              "surface": "#f9f9f7",
+              "on-primary-fixed": "#002116",
+              "inverse-surface": "#2f3130",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container-highest": "#e2e3e1",
+              "secondary-fixed": "#ffdea5",
+              "on-tertiary-fixed-variant": "#4900d6",
+              "on-background": "#1a1c1b"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#F9F9F7] dark:bg-stone-900 shadow-sm dark:shadow-none h-16 flex justify-between items-center px-6">
+<div class="flex items-center gap-4">
+<button class="text-[#00261B] dark:text-emerald-500 active:scale-95 duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="text-2xl font-serif text-[#00261B] dark:text-emerald-400 tracking-widest uppercase font-bold">PEHNAVA</div>
+<div class="flex items-center gap-4">
+<button class="text-[#00261B] dark:text-emerald-500 active:scale-95 duration-200">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Hero Section / Category Header -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<nav class="flex text-xs uppercase tracking-widest text-on-surface-variant mb-4 gap-2">
+<span>Home</span>
+<span>/</span>
+<span class="text-secondary font-semibold">Collections</span>
+</nav>
+<h1 class="font-headline text-4xl md:text-5xl text-primary font-bold mb-4">Ethnic Sets</h1>
+<p class="text-on-surface-variant max-w-xl leading-relaxed">
+                        Discover our curated collection of artisanal ethnic ensembles, blending traditional silhouettes with contemporary high-fashion sensibilities. Hand-crafted for the modern heritage seeker.
+                    </p>
+</div>
+<div class="flex items-center gap-4 border-b border-outline-variant/30 pb-2">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Sort By</span>
+<select class="bg-transparent border-none text-sm font-semibold focus:ring-0 cursor-pointer text-primary">
+<option>Newest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Popularity</option>
+</select>
+</div>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 space-y-8 flex-shrink-0">
+<!-- Size Filter -->
+<div class="space-y-4">
+<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Size</h3>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 text-xs border border-outline-variant/30 rounded hover:border-secondary transition-colors">XS</button>
+<button class="py-2 text-xs border border-secondary text-secondary font-bold rounded">S</button>
+<button class="py-2 text-xs border border-outline-variant/30 rounded hover:border-secondary transition-colors">M</button>
+<button class="py-2 text-xs border border-outline-variant/30 rounded hover:border-secondary transition-colors">L</button>
+<button class="py-2 text-xs border border-outline-variant/30 rounded hover:border-secondary transition-colors">XL</button>
+<button class="py-2 text-xs border border-outline-variant/30 rounded hover:border-secondary transition-colors">XXL</button>
+</div>
+</div>
+<!-- Color Filter -->
+<div class="space-y-4">
+<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Color Palette</h3>
+<div class="flex flex-wrap gap-3">
+<button class="w-8 h-8 rounded-full bg-[#E5D3B3] ring-2 ring-offset-2 ring-secondary" title="Ivory Gold"></button>
+<button class="w-8 h-8 rounded-full bg-[#2C3E50]" title="Midnight Blue"></button>
+<button class="w-8 h-8 rounded-full bg-[#8E44AD]" title="Royal Plum"></button>
+<button class="w-8 h-8 rounded-full bg-[#27AE60]" title="Emerald"></button>
+<button class="w-8 h-8 rounded-full bg-[#E67E22]" title="Saffron"></button>
+</div>
+</div>
+<!-- Price Range -->
+<div class="space-y-4">
+<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Price Range</h3>
+<div class="space-y-2">
+<input class="w-full h-1 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-secondary" max="500" min="50" type="range"/>
+<div class="flex justify-between text-xs font-medium text-on-surface-variant">
+<span>$50</span>
+<span>$500+</span>
+</div>
+</div>
+</div>
+<!-- Product Type -->
+<div class="space-y-4">
+<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Type</h3>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Kurta Sets</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Lehenga Ensembles</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Sharara Suits</span>
+</label>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-12">
+<!-- Product Card 1 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Elegant ivory silk ethnic set with delicate gold embroidery on a model standing in a sunlit palace courtyard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz2ZqAIvkr1As_HgXlb3nx-6NJ_ePCa6Cr5LE7zDFPhpsVr4j-y-nLTDDzmA_WZBveUOxNpbg6EcwqCey_ykCmc1-yQW9JkKV4288l9hIkTg4ZNfSTjmyN3ktl6mwT9USlbn5hXhCODMkyB0xSsPnRja6v3Oobz1uS6fqogSn_S18Y_vUNhZq2wiE1-wRxocD4F8q-_p3n_2AZp4qU0VqpUu6RbL9k4doL__VZQvNCYJC9cYy0pQI2D_SzOcpSBJARutZP0mtA3To"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<!-- Quick Add Size Selector -->
+<div class="absolute bottom-0 left-0 w-full translate-y-full group-hover:translate-y-0 transition-transform duration-300 p-4 bg-white/90 backdrop-blur-sm">
+<p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 text-center">Quick Add Size</p>
+<div class="flex justify-center gap-2">
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">XS</button>
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">S</button>
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">M</button>
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">L</button>
+</div>
+</div>
+</div>
+<div class="text-center space-y-1">
+<p class="text-[10px] font-bold tracking-[0.2em] text-secondary uppercase">The Heritage Collection</p>
+<h2 class="font-headline text-lg text-primary font-bold">Noor Mahal Silk Set</h2>
+<div class="flex justify-center items-center gap-1 text-secondary py-1">
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-[10px] text-on-surface-variant ml-1">(42)</span>
+</div>
+<p class="font-medium text-primary">$285.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Deep emerald green velvet lehenga with silver thread work photographed against a minimalist stone wall background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_6F-csOloEFsHa28DRJDAyErqRB5hVnTI_hot5GDRF4Fy2yXKRUvFnPsybcE6DASokMcLeu3CUefk20LkmtG-H-NfrWhuZe5TFOJVAqhES9M3zT9FNAjsGwqPoyCXPSybuCL6b_DzbEMFWDOA8VST5zUBrjNgYmkGXoPVwGT3i_cImK-zyVCHlH4BORE7RvM1L8IJ4zXD16uI876xw-UB59XkXu4UuBGge25lrwmyasq8hX31VBO5ep1mDJzmyk8kjhfD9UOHscU"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 w-full translate-y-full group-hover:translate-y-0 transition-transform duration-300 p-4 bg-white/90 backdrop-blur-sm">
+<p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 text-center">Quick Add Size</p>
+<div class="flex justify-center gap-2">
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">S</button>
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">M</button>
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">L</button>
+</div>
+</div>
+</div>
+<div class="text-center space-y-1">
+<p class="text-[10px] font-bold tracking-[0.2em] text-secondary uppercase">Atelier Exclusives</p>
+<h2 class="font-headline text-lg text-primary font-bold">Emerald Velvet Zari Ensemble</h2>
+<div class="flex justify-center items-center gap-1 text-secondary py-1">
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] text-on-surface-variant ml-1">(18)</span>
+</div>
+<p class="font-medium text-primary">$340.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container mb-4">
+<div class="absolute top-4 left-4 z-10 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">New Arrival</div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Muted saffron cotton kurta set with white block print textures and lightweight dupatta drape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFMd0TsBUBcjagk2QsSp_edpvQD9fAW1UfwKaQJrBj1cAS-hzxIlnYVDT6BE7QTZaMtuiTHm3T8yJ52XHKUixStIpBhrlYBOLH6GN__s3r3GlJn2cR1gB0EPCUMGJqWe4fsi1SESKoUxHH3YnbIHa0A1wvcth_ge2ViykZ_SwZ79p8WIEf2lM989BLWHoDZpDFREnZ8tcGCdxXFRP5K5ZtpnOfkV7ZJw3H0jCwyETbLQDsGzbjluwAOYkz_K1T_K5shSCK1wFXFdE"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 w-full translate-y-full group-hover:translate-y-0 transition-transform duration-300 p-4 bg-white/90 backdrop-blur-sm">
+<p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 text-center">Quick Add Size</p>
+<div class="flex justify-center gap-2">
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">M</button>
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">L</button>
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">XL</button>
+</div>
+</div>
+</div>
+<div class="text-center space-y-1">
+<p class="text-[10px] font-bold tracking-[0.2em] text-secondary uppercase">Signature Cottons</p>
+<h2 class="font-headline text-lg text-primary font-bold">Saffron Blossom Set</h2>
+<div class="flex justify-center items-center gap-1 text-secondary py-1">
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-[10px] text-on-surface-variant ml-1">(24)</span>
+</div>
+<p class="font-medium text-primary">$195.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Rich navy blue ethnic suit with intricate silver embroidery details and a sheer organza dupatta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6hcQaB9gjpqwYX27F3kFA7cMb5uZJ7w7Jw4tolHQuwjcd59prp4mJACkCIA55kLuJFeaLAtCILisbD5VNsnc4K4nSdtuSAFfvvORCDCQel5-YyyCjxXgA7SGIc9RJ2mXxwOfDCd_nVM0rdRiTXFzWGo-wZJE-87A76q7F50GaFKhxtmqN09Yaz0k9HGsH9Y5GRQuftgjefDnzq1kPWaBmh_s1m3hjafmDuVOIsIlZ5I7l_o4QKeg9nRWZSh2093aBYy3hpdlraFc"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-primary hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-0 left-0 w-full translate-y-full group-hover:translate-y-0 transition-transform duration-300 p-4 bg-white/90 backdrop-blur-sm">
+<p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 text-center">Quick Add Size</p>
+<div class="flex justify-center gap-2">
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">XS</button>
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">S</button>
+<button class="text-[10px] w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">M</button>
+</div>
+</div>
+</div>
+<div class="text-center space-y-1">
+<p class="text-[10px] font-bold tracking-[0.2em] text-secondary uppercase">Evening Luxe</p>
+<h2 class="font-headline text-lg text-primary font-bold">Midnight Chandni Suit</h2>
+<div class="flex justify-center items-center gap-1 text-secondary py-1">
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined filled-icon text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] text-on-surface-variant ml-1">(56)</span>
+</div>
+<p class="font-medium text-primary">$310.00</p>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-20 flex flex-col items-center gap-6">
+<p class="text-xs text-on-surface-variant font-medium">Showing 4 of 48 products</p>
+<div class="w-48 h-[2px] bg-surface-container overflow-hidden">
+<div class="w-1/12 h-full bg-secondary"></div>
+</div>
+<button class="px-10 py-4 border border-primary text-primary text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">
+                        Load More Designs
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-20 px-4 pb-safe bg-[#F9F9F7]/80 backdrop-blur-md border-t border-[#00261B]/10 z-50 shadow-[0_-4px_24px_rgba(0,0,0,0.04)] rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-[#00261B]/60 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#775A19] scale-110 transition-transform active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined filled-icon" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00261B]/60 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider">Account</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00261B]/60 active:scale-90 transition-all duration-200 relative" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[8px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider">Cart</span>
+</a>
+</nav>
+<!-- Desktop Sidebar Drawer (Hidden by default, used for mobile navigation or specialized filters) -->
+<div class="hidden fixed inset-0 z-[60]" id="drawer">
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-sm"></div>
+<div class="absolute left-0 top-0 h-full w-80 bg-[#F9F9F7] shadow-2xl flex flex-col py-8 rounded-r-3xl">
+<div class="px-8 mb-12">
+<h2 class="text-xl font-serif text-[#775A19] tracking-widest uppercase">THE ATELIER</h2>
+</div>
+<nav class="flex flex-col divide-y divide-[#00261B]/5">
+<a class="flex items-center gap-4 px-8 py-4 text-[#00261B] font-serif text-lg tracking-wide hover:bg-stone-100 transition-all" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+                    New Arrivals
+                </a>
+<a class="flex items-center gap-4 px-8 py-4 bg-[#0B3D2E] text-white rounded-lg mx-2 font-serif text-lg tracking-wide" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+                    Collections
+                </a>
+<a class="flex items-center gap-4 px-8 py-4 text-[#00261B] font-serif text-lg tracking-wide hover:bg-stone-100 transition-all" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+                    Heritage Sets
+                </a>
+<a class="flex items-center gap-4 px-8 py-4 text-[#00261B] font-serif text-lg tracking-wide hover:bg-stone-100 transition-all" href="#">
+<span class="material-symbols-outlined">celebration</span>
+                    Occasion Wear
+                </a>
+<a class="flex items-center gap-4 px-8 py-4 text-[#00261B] font-serif text-lg tracking-wide hover:bg-stone-100 transition-all text-error" href="#">
+<span class="material-symbols-outlined">sell</span>
+                    Sale
+                </a>
+</nav>
+</div>
+</div>
+</body></html>

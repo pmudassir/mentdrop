@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Swadesh Wears | Secure Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Noto+Sans+Devanagari:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e4e4cc",
+              "surface-container-high": "#eaead1",
+              "error": "#ba1a1a",
+              "tertiary": "#415ba4",
+              "background": "#fbfbe2",
+              "secondary": "#715b3e",
+              "on-primary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-tertiary-container": "#254188",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#755f42",
+              "tertiary-container": "#97b0ff",
+              "primary-fixed-dim": "#e9c349",
+              "primary-fixed": "#ffe088",
+              "outline": "#7f7663",
+              "on-background": "#1b1d0e",
+              "surface-container-low": "#f5f5dc",
+              "on-tertiary-fixed-variant": "#27438a",
+              "secondary-fixed": "#fcdeba",
+              "secondary-container": "#f9dbb7",
+              "inverse-surface": "#303221",
+              "surface-container": "#efefd7",
+              "surface": "#fbfbe2",
+              "on-error-container": "#93000a",
+              "tertiary-fixed": "#dbe1ff",
+              "on-secondary-fixed-variant": "#574329",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "on-primary-container": "#554300",
+              "primary-container": "#d4af37",
+              "on-secondary-fixed": "#281903",
+              "surface-tint": "#735c00",
+              "outline-variant": "#d0c5af",
+              "on-surface": "#1b1d0e",
+              "on-tertiary-fixed": "#00174b",
+              "surface-bright": "#fbfbe2",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#4d4635",
+              "inverse-primary": "#e9c349",
+              "on-primary-fixed-variant": "#574500",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#f2f2d9",
+              "on-primary-fixed": "#241a00",
+              "surface-variant": "#e4e4cc",
+              "primary": "#735c00",
+              "surface-dim": "#dbdcc3",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#dfc29f"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Be Vietnam Pro', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        background: rgba(251, 251, 226, 0.7);
+      }
+      .gold-glow:hover {
+        background: linear-gradient(135deg, #735C00 0%, #D4AF37 100%);
+        box-shadow: 0px 20px 40px rgba(115, 92, 0, 0.12);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full flex items-center justify-between px-6 h-16 bg-[#FBFBE2] dark:bg-stone-900/70 backdrop-blur-md z-50 border-b border-[#D0C5AF]/15 shadow-[0_20_40px_rgba(115,92,0,0.04)]">
+<button class="text-[#735C00] dark:text-[#D4AF37] hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-2xl font-bold tracking-[0.2em] text-[#735C00] dark:text-[#D4AF37] font-['Plus_Jakarta_Sans'] font-light uppercase">SWADESH</h1>
+<div class="w-6"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-grow pt-24 pb-12 px-5 max-w-2xl mx-auto w-full">
+<!-- Step Indicator -->
+<div class="flex items-center justify-between mb-10 px-2">
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Details</span>
+</div>
+<div class="h-[1px] flex-grow bg-outline-variant/30 mx-4 self-center -mt-6"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Shipping</span>
+</div>
+<div class="h-[1px] flex-grow bg-outline-variant/30 mx-4 self-center -mt-6"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-base">payments</span>
+</div>
+<span class="text-[10px] font-label uppercase tracking-widest text-primary font-bold">Payment</span>
+</div>
+</div>
+<!-- Summary Box -->
+<section class="mb-8 space-y-4">
+<div class="bg-surface-container-low rounded-lg p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h3 class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Shipping Address</h3>
+<p class="text-sm text-on-surface leading-relaxed">Arjun Varma<br/>Flat 402, Lotus Heights, Jubilee Hills<br/>Hyderabad, Telangana 500033</p>
+</div>
+<button class="text-primary text-xs font-semibold uppercase tracking-wider">Change</button>
+</div>
+<div class="h-[1px] bg-outline-variant/15 w-full"></div>
+<div class="flex justify-between items-center">
+<div class="space-y-1">
+<h3 class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Delivery Method</h3>
+<p class="text-sm text-on-surface">Standard Heritage (4-6 business days)</p>
+</div>
+<button class="text-primary text-xs font-semibold uppercase tracking-wider">Change</button>
+</div>
+</div>
+</section>
+<!-- Payment Methods -->
+<section class="mb-8 space-y-4">
+<h2 class="text-lg font-headline font-bold text-on-surface px-1">Payment Method</h2>
+<div class="space-y-3">
+<!-- Card Option -->
+<div class="bg-surface-container-lowest border border-primary/10 rounded-lg p-5 shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+</div>
+<span class="text-sm font-semibold text-on-surface">Credit / Debit Card</span>
+<div class="ml-auto flex gap-1">
+<span class="material-symbols-outlined text-on-surface-variant">credit_card</span>
+</div>
+</div>
+<div class="space-y-5">
+<div class="relative">
+<label class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant absolute -top-2 left-3 bg-surface-container-lowest px-1">Card Number</label>
+<input class="w-full bg-transparent border-b-2 border-surface-variant focus:border-primary focus:ring-0 text-on-surface pt-4 pb-2 text-sm placeholder:text-on-surface-variant/30" placeholder="XXXX XXXX XXXX XXXX" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="relative">
+<label class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant absolute -top-2 left-3 bg-surface-container-lowest px-1">Expiry Date</label>
+<input class="w-full bg-transparent border-b-2 border-surface-variant focus:border-primary focus:ring-0 text-on-surface pt-4 pb-2 text-sm placeholder:text-on-surface-variant/30" placeholder="MM / YY" type="text"/>
+</div>
+<div class="relative">
+<label class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant absolute -top-2 left-3 bg-surface-container-lowest px-1">CVV</label>
+<input class="w-full bg-transparent border-b-2 border-surface-variant focus:border-primary focus:ring-0 text-on-surface pt-4 pb-2 text-sm placeholder:text-on-surface-variant/30" placeholder="***" type="password"/>
+</div>
+</div>
+</div>
+</div>
+<!-- UPI Option -->
+<div class="bg-surface-container-low rounded-lg p-5 flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant"></div>
+<span class="text-sm font-medium text-on-surface">UPI / Popular Apps</span>
+<div class="ml-auto flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-lg">account_balance_wallet</span>
+</div>
+</div>
+<!-- Net Banking Option -->
+<div class="bg-surface-container-low rounded-lg p-5 flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant"></div>
+<span class="text-sm font-medium text-on-surface">Net Banking</span>
+<div class="ml-auto">
+<span class="material-symbols-outlined text-lg opacity-60">account_balance</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Billing Address -->
+<section class="mb-8">
+<div class="flex items-start gap-3 px-1">
+<div class="mt-1 w-5 h-5 rounded bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="text-sm font-medium text-on-surface">Billing address is same as shipping</p>
+<p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Jubilee Hills, Hyderabad, Telangana 500033</p>
+</div>
+</div>
+</section>
+<!-- Order Review -->
+<section class="mb-10 bg-surface-container rounded-lg p-6">
+<h2 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6">Order Review</h2>
+<div class="flex gap-4 mb-6">
+<div class="w-16 h-20 rounded-md overflow-hidden flex-shrink-0 bg-surface-variant">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="close-up of hand-woven gold silk fabric with intricate traditional Indian zari patterns and texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUXo3YDQbffIZW4JINsdli96WjfR9wp39IvSZxVn6cfkPpQjASm7wujZmD5kjWN5V7ksJM_lbvccHQ9DBh0ZHaK9ta1i9_mxD0yivIMm2qp818dfEFoEShynNs6ufQQe46QXFdI5a2vVuiX1hkuEVa8-sk_FWHyZ-BQofuR7VR7u1wWPwaP-Ked9cwflBLYa9YruzoMKIEqOyLMJxfaMyqdEDinTaXHLk5cXgtGqRpnz648xtlEJVfmTpVAqWMHc-gzviSuzEiIXw"/>
+</div>
+<div class="flex-grow space-y-1">
+<p class="text-sm font-bold text-on-surface">Hand-Woven Banarasi Silk Scarf</p>
+<p class="text-xs text-on-surface-variant italic">Midnight Indigo &amp; Zari</p>
+<p class="text-sm font-semibold text-primary mt-1">₹8,499.00</p>
+</div>
+</div>
+<div class="space-y-3 pt-4 border-t border-outline-variant/15">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="text-on-surface">₹8,499.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Shipping</span>
+<span class="text-on-surface">Free</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">GST (12%)</span>
+<span class="text-on-surface">₹1,019.88</span>
+</div>
+<div class="flex justify-between pt-4 border-t border-outline-variant/30">
+<span class="text-base font-bold text-on-surface">Total</span>
+<div class="text-right">
+<span class="text-lg font-bold text-primary">₹9,518.88</span>
+<p class="text-[10px] text-on-surface-variant tracking-wider uppercase">Inc. all taxes</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Button -->
+<div class="space-y-6">
+<button class="w-full bg-primary text-on-primary py-5 rounded-full font-bold uppercase tracking-[0.15em] text-sm flex items-center justify-center gap-3 gold-glow transition-all duration-300">
+<span class="material-symbols-outlined text-lg">lock</span>
+                Pay Now &amp; Secure My Heritage
+            </button>
+<!-- Trust Signals -->
+<div class="flex flex-col items-center gap-4">
+<div class="flex items-center gap-6 opacity-40 grayscale contrast-125">
+<img alt="Visa" class="h-4 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFW6PU1K-SrpjYCuEDOEz89QHK7iFp78BE2L4BbR_TBzbOnp55zm0wygcAv5eB6rb4qKOGIZ7yjB0apRCi-ojURFrJl5WxyfkHROqWO_rjlO9ZEMWyq7595ZHgJrPaGSfR-rLzWuLnoa0pjaxqSKCz7nkMPzTt6WXaOi_cRnotEeKpBbOdOsm99RaQWY8yONY16Tpj20Rfr1sQerQ3WXOGmm5fSHkSxSmVArlO7-tiOXXNWyDMioZ0N37uxMqz6j1ZPQr3VXXEuOo"/>
+<img alt="Mastercard" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB0KdShegAUoqMgUo3qgg4xVhWW92iDRR6Adgw3dDMS7e6e-aLheYK3I63Rw7q3WK8GqwjK449rhXdWSEHecXZBEzh3czvJ-72-4iseIXUI70o6bO96mhay8YfamJfJHtoRbPKQ5JAQt2aOo5OxPPXX1GOd0C3TfsG-P0DgsNddGtN9OCYFd9l2lBVwOdoBbE8leQQfHnK3e6qzEoVSqUHZ4Gi-juqxqACo_h56JedxUIMEsy4Zz8A9jxr9ynYP_9gDaQBqESrfNQ"/>
+<img alt="UPI" class="h-4 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoN80UVlsdn26VaDYloiZx4UZx1f8x83QOnjY6LExkiA1L-x3Av_UpeYfX5BM2_JmqbAQ-gNHqcFin_SfHO7HdtBDl7nskgvPA_NjsnRuowCh1HBR_BMz0SCrUq_iJym5-yrrjLGne5coTmqvn_iG6NbBWssmxi6mR3Q4RllNvXKxA51nzjQ1oBao3sxUvCq3T6Dk9cvDVVY6QmJsk_EXd-H0JTvXUXf0MjzU9h00DHLJUscuqrXebfsezQ5jh5CzBmu-l5WWSeOI"/>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant/60">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="text-[10px] font-medium tracking-wider uppercase">256-bit SSL Secure Checkout</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto py-8 px-6 flex flex-col items-center gap-4 text-center border-t border-[#D0C5AF]/15 bg-[#F5F5DC] dark:bg-stone-950">
+<p class="text-[#735C00] dark:text-[#D4AF37] font-['Plus_Jakarta_Sans'] text-xs tracking-wide">© 2024 Swadesh Wears. Secure Heritage Checkout.</p>
+<div class="flex gap-6">
+<a class="text-[#4D4635] dark:text-stone-500 font-['Plus_Jakarta_Sans'] text-xs tracking-wide hover:text-[#735C00] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#4D4635] dark:text-stone-500 font-['Plus_Jakarta_Sans'] text-xs tracking-wide hover:text-[#735C00] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#4D4635] dark:text-stone-500 font-['Plus_Jakarta_Sans'] text-xs tracking-wide hover:text-[#735C00] transition-colors" href="#">Shipping Info</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#214f3f",
+              "surface-variant": "#e2e3e1",
+              "secondary": "#775a19",
+              "surface-dim": "#dadad8",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#a0d1bc",
+              "outline": "#717974",
+              "on-tertiary-fixed-variant": "#4900d6",
+              "on-surface-variant": "#414944",
+              "tertiary": "#21006e",
+              "secondary-fixed": "#ffdea5",
+              "on-error-container": "#93000a",
+              "on-surface": "#1a1c1b",
+              "surface": "#f9f9f7",
+              "primary": "#00261b",
+              "inverse-on-surface": "#f1f1ef",
+              "on-tertiary-container": "#a28eff",
+              "secondary-fixed-dim": "#e9c176",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e2e3e1",
+              "inverse-surface": "#2f3130",
+              "tertiary-fixed": "#e6deff",
+              "surface-container-low": "#f4f4f2",
+              "on-secondary-fixed": "#261900",
+              "surface-tint": "#396756",
+              "surface-container": "#eeeeec",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#785a1a",
+              "inverse-primary": "#a0d1bc",
+              "secondary-container": "#fed488",
+              "on-error": "#ffffff",
+              "background": "#f9f9f7",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#79a894",
+              "primary-fixed": "#bcedd7",
+              "on-background": "#1a1c1b",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#1c0061",
+              "tertiary-container": "#3700a7",
+              "surface-bright": "#f9f9f7",
+              "on-secondary-fixed-variant": "#5d4201",
+              "on-primary-fixed": "#002116",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container-high": "#e8e8e6",
+              "outline-variant": "#c0c8c3",
+              "primary-container": "#0b3d2e"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .heritage-arch {
+            border-radius: 160px 160px 0 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary/30">
+<!-- TopAppBar -->
+<header class="bg-[#F9F9F7] dark:bg-stone-900 fixed top-0 z-50 w-full">
+<div class="flex justify-between items-center w-full px-6 h-16">
+<button class="text-[#00261B] dark:text-emerald-50 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-2xl font-serif tracking-[0.2em] text-[#00261B] dark:text-emerald-50 font-['Noto_Serif'] font-bold tracking-tight uppercase">SWADESH</h1>
+<button class="text-[#00261B] dark:text-emerald-50 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+<div class="bg-stone-200/20 dark:bg-stone-800/20 h-[1px] w-full"></div>
+</header>
+<main class="pt-16 pb-24">
+<!-- Hero Carousel Section -->
+<section class="relative h-[751px] w-full overflow-hidden">
+<img alt="Premium silk editorial" class="absolute inset-0 w-full h-full object-cover" data-alt="Stunning South Asian woman in a rich emerald green silk saree with gold embroidery standing in a sun-drenched heritage courtyard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH1XYLt1VSYXb6zcup81SY-Zsgsb_ERuIlZZzyNKD0GGWIL6wWu1B6UAfWrRXrdqoVmtDXhIha1y1-ZywKNrvpVY30tTWIyGyvbDKYMPv_9oGra9qymnoeV3Skx4-JGqXBmJI1AzHN2hQyhv9s6wg3Ijg_zx_08AThJgpRHxhqO0Qo7V-mYLaxehdeyrgVkvaBA4O2-CJ-Jc7j44yrWFd7LIBj4YLMFocJ283y0UFIosl6SsoWcY2Q7PalqJe0dn7BOjY-S2sfIrc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-12 left-0 w-full px-8 text-white text-center">
+<span class="font-label text-xs tracking-[0.3em] uppercase mb-4 block text-secondary-fixed">The 2024 Archive</span>
+<h2 class="font-headline text-4xl mb-6 leading-tight">The Silk Manuscript</h2>
+<div class="flex justify-center gap-4">
+<button class="bg-primary-container text-on-primary px-8 py-3 rounded-xl font-medium tracking-wide transition-transform active:scale-95 shadow-lg">
+                        Explore Collection
+                    </button>
+</div>
+</div>
+<!-- Trust Signal Overlay -->
+<div class="absolute top-8 right-0 bg-surface/10 backdrop-blur-md px-4 py-2 rounded-l-full flex items-center gap-2 border-y border-l border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-surface-container-lowest">Heritage Certified</span>
+</div>
+</section>
+<!-- Heritage Best Sellers (Horizontal Scroll) -->
+<section class="mt-20 px-6">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h3 class="font-headline text-2xl text-primary">Heritage Best Sellers</h3>
+<div class="h-0.5 w-12 bg-secondary mt-2"></div>
+</div>
+<button class="text-secondary font-medium text-sm flex items-center gap-1">
+                    View All <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="flex overflow-x-auto gap-6 hide-scrollbar pb-4 snap-x snap-mandatory">
+<!-- Product 1 -->
+<div class="min-w-[280px] snap-start">
+<div class="relative mb-4 group">
+<img alt="Luxury Kurta" class="w-full aspect-[3/4] object-cover rounded-xl" data-alt="Intricately detailed cream colored kurta with fine gold hand-embroidery on high-quality linen fabric, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5iEuHAS3RRqgp4pItu0WptlR8kP1wH_lcx77P2OPRs8XBIY1J0UH4GEt0R6MrjfYlbrSpIh9hjkAxMMqjJe3eBhPc2Bm2IKF8FpoFJsiDt2nYg777Tc95lxQI9zdblyu9E81U010k8ovNvjRtJXLDJlwF91g3zkR9I0MxYQyAyOXT9cRyE3CuBQtDSm0t7AlkOOs070YszkJLVlL-1n9Q6vXqdlgKcf8Njw7Ei_NJ7XiIQiKkOQU9t6EPCZLzDFwbKQf69Y00oEI"/>
+<button class="absolute bottom-4 right-4 bg-surface/90 backdrop-blur p-3 rounded-full text-primary shadow-xl">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary mb-1">Mughal Series</p>
+<h4 class="font-headline text-lg text-on-surface">The Ivory Jharokha</h4>
+<p class="text-primary font-semibold mt-1">₹ 14,500</p>
+</div>
+<!-- Product 2 -->
+<div class="min-w-[280px] snap-start">
+<div class="relative mb-4 group">
+<img alt="Regal Attire" class="w-full aspect-[3/4] object-cover rounded-xl" data-alt="Deep regal green velvet waist coat with vintage gold buttons and metallic thread work, professional fashion photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDZYIk5ltHRegUCfvdvqxxRxDY7GWsJfqK2PqFJavY03J-wZ0Lw-yPDbE5XK2636ifDv5T5pn6ansCLlMoD1vhnc0kH2aPJiZjhyU4J8cyoiKoi-Mi3nYtKo0bxvSxqO-TZ5NrKsPEUo67Hnje1X7NweZ8SLkyYwYDIai3wg0u4wWYwKyipKlsnD3rW7h67TaB08bNxWBDnHvH5zCSVOlj_mp7tk3z2RmFjsPanl_QzPiyiMj2Kl_KLSSwcEbC0FFFAH43lGuz_nM"/>
+<button class="absolute bottom-4 right-4 bg-surface/90 backdrop-blur p-3 rounded-full text-primary shadow-xl">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+<p class="font-label text-[10px] uppercase tracking-widest text-secondary mb-1">Regal Classics</p>
+<h4 class="font-headline text-lg text-on-surface">Forest Velvet Bandi</h4>
+<p class="text-primary font-semibold mt-1">₹ 12,800</p>
+</div>
+</div>
+</section>
+<!-- Craftsmanship Story Block -->
+<section class="mt-20 bg-surface-container-low py-16 px-8 relative overflow-hidden">
+<div class="absolute top-[-100px] left-[-100px] w-64 h-64 border border-secondary/10 rounded-full"></div>
+<div class="relative z-10 text-center">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline text-3xl text-primary mb-6">The Soul of the Loom</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8 max-w-xs mx-auto text-sm italic">
+                    "Every thread is a whisper of the past, woven with the precision of a master artisan's dream."
+                </p>
+<div class="heritage-arch overflow-hidden w-full aspect-[4/5] mx-auto mb-10 shadow-2xl">
+<img alt="Artisan working" class="w-full h-full object-cover" data-alt="Close up of elderly artisan hands skillfully weaving gold threads on a traditional wooden loom in a dusty sunlit workshop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqYzk76FapTXAOGKQ_oWUY1zs3YNSONAqFy9D-DpAKVuIFDTOUprZtdm8l-H8qngxVEVcbE05-aloHEjgLUbBHY3kFznt9tM1DknJzjEHmwWJYUHh1fFKVeS6NZ1hJcYVOu-rzEVH021SsFMGKMrSY4aVGguHvF3WY8OUJF3600vzqSoTXtM9DlFDXUxrixvS-PfFM1sSvScNp1r1mEyrR3cM52j69VZzREUfm2Sjcc6zFTPO2Qw8vP5SfbHYtQ9tJ_yzOB_0zPvc"/>
+</div>
+<button class="border-b-2 border-secondary text-primary font-bold tracking-[0.2em] uppercase text-[10px] pb-1">
+                    Our Craft Story
+                </button>
+</div>
+</section>
+<!-- New Arrivals (Asymmetric Grid) -->
+<section class="mt-20 px-6">
+<h3 class="font-headline text-2xl text-primary mb-10 text-center uppercase tracking-widest">New Arrivals</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-4">
+<div class="rounded-2xl overflow-hidden shadow-md">
+<img alt="Arrival 1" class="w-full h-auto" data-alt="Detail shot of a rose gold silk dupatta with intricate floral zari work, soft focus, high end fashion feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2tvKj_YYAwgfc85mGnzAacWiK7TQBhcGGYGdy2E_ZrKWvPkqKO2vvYKFjbKKsajOFstaG27MgqjOehACWHycv8YVRYQQZUcRSEpjCXbMWTQorSa_cMNHxLX3q9bIflUIooI1nSOXuR6uY4B_wfxaP8RAR4qzGNBFjXdaQYhCRmh5ItfJzp4YiTDrbVXjm5hJRui0EntTyQbY23KzU1QRLeECXyBRxwZKNEPCRqWfHhTKnLP51I5sO1M2MhN6EhMCNpeYEBOYAP60"/>
+</div>
+<div class="p-2">
+<h5 class="font-headline text-sm">Zari Flora Veil</h5>
+<p class="text-xs text-secondary">₹ 4,200</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 pt-12">
+<div class="rounded-2xl overflow-hidden shadow-md">
+<img alt="Arrival 2" class="w-full h-auto" data-alt="Modern interpretation of a traditional sherwani in muted gold tones, standing against a minimalist sandstone wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtjR7jUGHvdYizsZKJtV841TpHMWho_qlxKelFzWawfQC8JnHHgsswtWUu23_uNqerKTexHZ6KJNJersq7wR4y5c3O6yf9zStCDhEJLAK7ZwY5xg1rQ-F5bWRhyxj3rkQliumIvA9ObjNC7W3NG8gjzaqPB6Tl3j79r3wCF5F9mSjVNN3KosSg2lJp4T3holIh2mLCyPB_k0Vuj7ES7lJiwZlan555siqGWkOL6BfvxU35zC9wC4V8tHhIi0kEiSIs65yVTsHeyCM"/>
+</div>
+<div class="p-2">
+<h5 class="font-headline text-sm">Sunlit Sand Sherwani</h5>
+<p class="text-xs text-secondary">₹ 28,900</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Invitation -->
+<section class="mt-20 px-6 mb-12">
+<div class="bg-primary py-12 px-8 rounded-[2rem] text-center text-surface">
+<h4 class="font-headline text-2xl mb-4">Join the Inner Circle</h4>
+<p class="text-xs font-light text-surface-container-highest opacity-80 mb-8 leading-loose tracking-wide">
+                    Receive exclusive invitations to private viewings and seasonal lookbooks.
+                </p>
+<div class="relative">
+<input class="w-full bg-surface-container-highest/10 border-b border-surface-container-highest/30 focus:border-secondary transition-colors py-3 px-1 text-sm outline-none placeholder:text-surface-variant/50 placeholder:font-light" placeholder="Your Email Address" type="email"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-secondary">
+<span class="material-symbols-outlined" data-icon="east">east</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 rounded-t-3xl bg-[#F9F9F7]/90 dark:bg-stone-900/90 backdrop-blur-md shadow-[0_-4px_24px_rgba(26,28,27,0.06)] border-t border-stone-200/10">
+<div class="flex justify-around items-center px-4 pt-3 pb-6">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-[#775A19] dark:text-amber-400 font-bold scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home_rich" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest">Home</span>
+</a>
+<!-- Collections -->
+<a class="flex flex-col items-center justify-center text-[#00261B]/60 dark:text-stone-500 hover:text-[#775A19] dark:hover:text-amber-200 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest">Collections</span>
+</a>
+<!-- Account -->
+<a class="flex flex-col items-center justify-center text-[#00261B]/60 dark:text-stone-500 hover:text-[#775A19] dark:hover:text-amber-200 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person_2">person_2</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest">Account</span>
+</a>
+<!-- Cart -->
+<a class="flex flex-col items-center justify-center text-[#00261B]/60 dark:text-stone-500 hover:text-[#775A19] dark:hover:text-amber-200 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="local_mall">local_mall</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest">Cart</span>
+</a>
+</div>
+</nav>
+</body></html>

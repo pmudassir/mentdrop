@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atelier Professional | Analytics Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#1e1200",
+                        "secondary": "#735c00",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed": "#d8e3fb",
+                        "surface-tint": "#545f73",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffe088",
+                        "tertiary-fixed": "#fadfb8",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline-variant": "#c5c6cd",
+                        "background": "#020617", /* Dark Slate-950 */
+                        "on-secondary-fixed-variant": "#574500",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#a38c6a",
+                        "surface-variant": "#e0e3e5",
+                        "on-background": "#f8fafc",
+                        "surface-container": "#0f172a", /* Slate-900 */
+                        "primary": "#091426",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-container-highest": "#1e293b",
+                        "tertiary-container": "#35260c",
+                        "primary-fixed-dim": "#bcc7de",
+                        "on-surface": "#f1f5f9",
+                        "inverse-surface": "#2d3133",
+                        "outline": "#75777d",
+                        "on-secondary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#ddc39d",
+                        "surface-dim": "#020617",
+                        "on-tertiary-fixed": "#271902",
+                        "secondary-container": "#fed65b",
+                        "surface-container-lowest": "#020617",
+                        "primary-container": "#1e293b",
+                        "surface-container-high": "#0f172a",
+                        "surface-container-low": "#020617",
+                        "surface": "#020617",
+                        "on-tertiary-fixed-variant": "#564427",
+                        "on-surface-variant": "#94a3b8",
+                        "inverse-primary": "#bcc7de",
+                        "on-secondary-container": "#745c00",
+                        "on-primary-container": "#8590a6",
+                        "on-primary-fixed": "#111c2d"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glow-gold {
+            box-shadow: 0 0 15px -3px rgba(254, 214, 91, 0.3);
+        }
+        .glow-emerald {
+            box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.3);
+        }
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for slate-900 look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+    </style>
+</head>
+<body class="flex min-h-screen overflow-hidden">
+<!-- SideNavBar (JSON Derived) -->
+<aside class="flex flex-col h-full overflow-y-auto h-screen w-64 border-r border-slate-800 bg-slate-900 shadow-2xl shrink-0">
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-amber-400 rounded-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-900 font-bold" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-white tracking-tighter">Atelier Admin</h1>
+<p class="font-inter tracking-tight font-semibold uppercase text-[11px] text-amber-400">Premium Editorial</p>
+</div>
+</div>
+</div>
+<nav class="mt-4 flex-1 space-y-1 px-3">
+<!-- Active: Dashboard -->
+<a class="flex items-center px-4 py-3 gap-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-amber-400 bg-slate-800/50 border-r-2 border-amber-400 font-bold font-inter tracking-tight font-semibold uppercase text-[11px]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center px-4 py-3 gap-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-slate-400 hover:text-white hover:bg-slate-800/30 font-inter tracking-tight font-semibold uppercase text-[11px]" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+                Orders
+            </a>
+<a class="flex items-center px-4 py-3 gap-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-slate-400 hover:text-white hover:bg-slate-800/30 font-inter tracking-tight font-semibold uppercase text-[11px]" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                Products
+            </a>
+<a class="flex items-center px-4 py-3 gap-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-slate-400 hover:text-white hover:bg-slate-800/30 font-inter tracking-tight font-semibold uppercase text-[11px]" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Analytics
+            </a>
+<a class="flex items-center px-4 py-3 gap-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-slate-400 hover:text-white hover:bg-slate-800/30 font-inter tracking-tight font-semibold uppercase text-[11px]" href="#">
+<span class="material-symbols-outlined">group</span>
+                Customers
+            </a>
+<a class="flex items-center px-4 py-3 gap-3 transition-all duration-200 ease-in-out scale-95 active:scale-100 text-slate-400 hover:text-white hover:bg-slate-800/30 font-inter tracking-tight font-semibold uppercase text-[11px]" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="p-4 mt-auto">
+<div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
+<p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest mb-2">Storage Usage</p>
+<div class="h-1 w-full bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-amber-400 w-3/4"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-[10px] text-slate-400">75% Used</span>
+<span class="text-[10px] text-amber-400 font-bold">Upgrade</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden bg-slate-950">
+<!-- TopNavBar (JSON Derived) -->
+<header class="w-full h-16 sticky top-0 z-40 bg-slate-900/70 backdrop-blur-md flex justify-between items-center px-6 w-full border-b border-slate-800/50">
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">search</span>
+<input class="bg-slate-800/50 border-none rounded-lg pl-10 pr-4 py-1.5 text-sm text-slate-200 w-64 focus:ring-1 focus:ring-amber-400/50 transition-all" placeholder="Search analytics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-400 hover:text-white transition-colors duration-150 rounded-lg hover:bg-slate-800">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-white transition-colors duration-150 rounded-lg hover:bg-slate-800">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-800 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-white">Aditya Varma</p>
+<p class="text-[10px] text-slate-500">Curator</p>
+</div>
+<img alt="User Profile" class="w-8 h-8 rounded-full border border-slate-700" data-alt="Close-up portrait of a professional man in a dark suit against a minimalist studio background with soft dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIY_1rcV7j8j7kG3JttMP9g60AfoT8vg-lUUwfdHOIEcLuqwWTUihpYq1KmhbBpvMsY5dZJzUZ486ostK0SHWXTcmiNkzKX25BuwiNgasMkkFjpnWbSykRv7C2nzJtrfEfHBhYkE8W8ukrDVM5CXrK2CMMUkEamLyRayhq1TsTu-X0DgnJ2KvAvFetUeuUUp9ynFTXGo-AMNFtvSWb1GtoGBHdMKxkviMRrHaP9xl02lppnsMcwHPw2CZSnGQdU3Npwp2wFD3V_Eo"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto p-8 flex gap-8">
+<div class="flex-1 space-y-8">
+<!-- KPI Section -->
+<div class="grid grid-cols-4 gap-6">
+<!-- Revenue -->
+<div class="bg-slate-900 border border-slate-800 p-6 rounded-xl hover:border-amber-400/30 transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Gross Revenue</span>
+<span class="text-emerald-400 text-xs font-bold flex items-center">+12.4%</span>
+</div>
+<h3 class="text-2xl font-extrabold text-white tracking-tight">₹48,25,400</h3>
+<div class="mt-4 h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-amber-600 to-amber-400 w-2/3 shadow-[0_0_10px_rgba(251,191,36,0.3)]"></div>
+</div>
+</div>
+<!-- Orders -->
+<div class="bg-slate-900 border border-slate-800 p-6 rounded-xl hover:border-amber-400/30 transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Active Orders</span>
+<span class="text-emerald-400 text-xs font-bold flex items-center">+5.2%</span>
+</div>
+<h3 class="text-2xl font-extrabold text-white tracking-tight">1,284</h3>
+<div class="mt-4 flex gap-1">
+<div class="h-6 w-full bg-slate-800 rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-emerald-500/40 h-1/2"></div>
+</div>
+<div class="h-6 w-full bg-slate-800 rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-emerald-500/40 h-2/3"></div>
+</div>
+<div class="h-6 w-full bg-slate-800 rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-emerald-500/40 h-3/4"></div>
+</div>
+<div class="h-6 w-full bg-slate-800 rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-emerald-500/40 h-1/2"></div>
+</div>
+</div>
+</div>
+<!-- Inventory -->
+<div class="bg-slate-900 border border-slate-800 p-6 rounded-xl hover:border-amber-400/30 transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Asset Valuation</span>
+<span class="text-amber-400 text-xs font-bold flex items-center">Stable</span>
+</div>
+<h3 class="text-2xl font-extrabold text-white tracking-tight">₹1.2Cr</h3>
+<p class="text-[10px] text-slate-500 mt-4">98% Verified Catalog</p>
+</div>
+<!-- Customers -->
+<div class="bg-slate-900 border border-slate-800 p-6 rounded-xl hover:border-amber-400/30 transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Curated Clients</span>
+<span class="text-emerald-400 text-xs font-bold flex items-center">+8%</span>
+</div>
+<h3 class="text-2xl font-extrabold text-white tracking-tight">4,102</h3>
+<div class="flex -space-x-2 mt-4">
+<div class="w-6 h-6 rounded-full border border-slate-900 bg-slate-700"></div>
+<div class="w-6 h-6 rounded-full border border-slate-900 bg-slate-600"></div>
+<div class="w-6 h-6 rounded-full border border-slate-900 bg-slate-500"></div>
+<div class="w-6 h-6 rounded-full border border-slate-900 bg-amber-400 flex items-center justify-center text-[8px] text-slate-900 font-bold">+22</div>
+</div>
+</div>
+</div>
+<!-- Chart Section: Sales Trajectory -->
+<div class="bg-slate-900 border border-slate-800 rounded-xl p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl text-amber-400">trending_up</span>
+</div>
+<div class="flex justify-between items-end mb-8 relative z-10">
+<div>
+<p class="text-slate-500 font-bold uppercase text-xs tracking-widest mb-1">Performance Matrix</p>
+<h2 class="text-3xl font-black text-white tracking-tighter">Sales Trajectory</h2>
+</div>
+<div class="flex gap-2 bg-slate-950 p-1 rounded-lg border border-slate-800">
+<button class="px-3 py-1 text-[10px] font-bold text-amber-400 bg-slate-800 rounded-md">WEEKLY</button>
+<button class="px-3 py-1 text-[10px] font-bold text-slate-500 hover:text-white">MONTHLY</button>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 relative z-10">
+<!-- Simulated Area Chart Bars -->
+<div class="flex-1 bg-slate-800/40 rounded-t-lg relative group/bar h-[40%] hover:bg-slate-700/50 transition-all">
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-amber-600/20 to-amber-400/40 h-full border-t border-amber-400/50"></div>
+</div>
+<div class="flex-1 bg-slate-800/40 rounded-t-lg relative group/bar h-[55%] hover:bg-slate-700/50 transition-all">
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-amber-600/20 to-amber-400/40 h-full border-t border-amber-400/50"></div>
+</div>
+<div class="flex-1 bg-slate-800/40 rounded-t-lg relative group/bar h-[45%] hover:bg-slate-700/50 transition-all">
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-amber-600/20 to-amber-400/40 h-full border-t border-amber-400/50"></div>
+</div>
+<div class="flex-1 bg-slate-800/40 rounded-t-lg relative group/bar h-[75%] hover:bg-slate-700/50 transition-all">
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-amber-600/20 to-amber-400/40 h-full border-t border-amber-400/50 shadow-[0_0_20px_rgba(251,191,36,0.1)]"></div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity whitespace-nowrap bg-amber-400 text-slate-900 text-[10px] font-bold px-2 py-1 rounded">₹12.4L Peak</div>
+</div>
+<div class="flex-1 bg-slate-800/40 rounded-t-lg relative group/bar h-[60%] hover:bg-slate-700/50 transition-all">
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-amber-600/20 to-amber-400/40 h-full border-t border-amber-400/50"></div>
+</div>
+<div class="flex-1 bg-slate-800/40 rounded-t-lg relative group/bar h-[85%] hover:bg-slate-700/50 transition-all">
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-amber-600/20 to-amber-400/40 h-full border-t border-amber-400/50 shadow-[0_0_20px_rgba(251,191,36,0.1)]"></div>
+</div>
+<div class="flex-1 bg-slate-800/40 rounded-t-lg relative group/bar h-[95%] hover:bg-slate-700/50 transition-all">
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-amber-600/20 to-amber-400/40 h-full border-t border-amber-400/50 shadow-[0_0_20px_rgba(251,191,36,0.15)]"></div>
+</div>
+</div>
+</div>
+<!-- Recent Acquisitions Table -->
+<div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+<div class="px-8 py-6 flex justify-between items-center border-b border-slate-800">
+<h2 class="text-lg font-bold text-white tracking-tight">Recent Acquisitions</h2>
+<button class="text-amber-400 text-xs font-bold hover:underline">View Ledger</button>
+</div>
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-950/50">
+<th class="px-8 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Identifier</th>
+<th class="px-8 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Value</th>
+<th class="px-8 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Availability</th>
+<th class="px-8 py-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-800/50">
+<tr class="hover:bg-slate-800/30 transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-800 overflow-hidden shrink-0">
+<img alt="Art Piece" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Abstract vibrant oil painting with heavy texture and expressive brushstrokes in shades of blue and gold" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbOCSdPK2DvfLYpa2NjN9vEqYC3JezfzYmAxprFcw-yYHVpfwEdAR_RpWR2Es8AUsSZ43zQdBNezvCwHybBzT7cIsoh9Sc30PbmFE6qsTyYKvY4MGoKKMcjyXY92BTlMZNT6PB90BSJ3PnQ0k9woBl_sJuiP4kcgBlbvGsm1fxRvTc_dU77ql3w9BVbLyDjrLWmr9v96b0tQwACnQPUZpipUdcPP-Ky6JPYzqhkZJigV_p2xh8sNDbywaYlgVfv0xFuW-EQUqiIT0"/>
+</div>
+<div>
+<p class="text-sm font-bold text-white">Etheria Abstract #04</p>
+<p class="text-[10px] text-slate-500">ID: AT-992-K</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-sm font-mono text-amber-400 font-bold">₹1,45,000</td>
+<td class="px-8 py-4">
+<div class="w-32">
+<div class="flex justify-between mb-1">
+<span class="text-[10px] text-slate-500">Stock</span>
+<span class="text-[10px] text-white">12/50</span>
+</div>
+<div class="h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 w-[24%]"></div>
+</div>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="px-2 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold rounded border border-emerald-500/20 uppercase tracking-tight">Verified</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-800/30 transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-slate-800 overflow-hidden shrink-0">
+<img alt="Sculpture" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Minimalist geometric white marble sculpture on a dark reflective surface with harsh top lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQVOtDQDbk9uS8hmlnB4odxNlOoA7KRbyEdOI0GVsWS5dht6y9977OcZIgQSZVZ4ieLURv17HmyOFAZYbotkzrVoYL3-b1s1ekgKxV1jrGzXa9smh92woZokh5B8SU4mCgw6AMXFY98Pd9y1IaOoVveCGbqLtHT4bkvL9dOqmtzUOlbM5GfDbQ8_DoDjzEWgfzpAgFBTjPB4DLvtyAOsb2L3kO90PAW6aP41LvwwaUP1o7hmBC5-8j9kp06cE7aFtPXTPtycodc4g"/>
+</div>
+<div>
+<p class="text-sm font-bold text-white">Monolith Study 01</p>
+<p class="text-[10px] text-slate-500">ID: AT-104-M</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-sm font-mono text-amber-400 font-bold">₹8,90,200</td>
+<td class="px-8 py-4">
+<div class="w-32">
+<div class="flex justify-between mb-1">
+<span class="text-[10px] text-slate-500">Stock</span>
+<span class="text-[10px] text-white">1/3</span>
+</div>
+<div class="h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 w-[33%]"></div>
+</div>
+</div>
+</td>
+<td class="px-8 py-4">
+<span class="px-2 py-1 bg-amber-500/10 text-amber-400 text-[10px] font-bold rounded border border-amber-500/20 uppercase tracking-tight">Reserved</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Action Items Sidebar -->
+<aside class="w-80 space-y-6">
+<!-- Profile Summary Card -->
+<div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-amber-400 to-slate-800 mb-4">
+<img alt="User Large" class="w-full h-full rounded-full border-4 border-slate-900 object-cover" data-alt="Close-up portrait of a professional man in a dark suit against a minimalist studio background with soft dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz_Q1W8Sc6GmLwWpUkst-AyFrl9G-rlOhjXCSh-P1Rp1SlLVdc9r8L2PP-5QCNghLZSSFUZQDRRtPNA5a85EtL7dPQOoYdBZa-6PeO_UWghBR04Op_wpTPsZDVY9tUYQqo9dydilvIwaW05uVqZWW00-lu1rGvZChRlwAERv2Q6419Uj-KaB3vhKHCjfEH-bycFQLZSGdjPGAxR7-gQHXsol3DBq15QqiDIpRjSct29smcDoAU044tKKuaRu4XqcUwj8gDwDsk9nQ"/>
+</div>
+<h4 class="text-white font-black text-xl">Aditya Varma</h4>
+<p class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-4">Chief Curator</p>
+<div class="flex justify-center gap-4 w-full">
+<div class="text-center">
+<p class="text-white text-lg font-bold">24</p>
+<p class="text-[10px] text-slate-500 uppercase">Auctions</p>
+</div>
+<div class="h-8 w-[1px] bg-slate-800"></div>
+<div class="text-center">
+<p class="text-white text-lg font-bold">₹8.4Cr</p>
+<p class="text-[10px] text-slate-500 uppercase">Managed</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Items -->
+<div class="space-y-4">
+<h3 class="text-slate-500 font-bold uppercase text-[10px] tracking-widest px-1">Action Required</h3>
+<!-- Item 1 -->
+<div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex gap-4 group hover:border-amber-400/50 transition-all cursor-pointer">
+<div class="w-10 h-10 rounded bg-slate-800 flex items-center justify-center shrink-0 text-amber-400">
+<span class="material-symbols-outlined">gavel</span>
+</div>
+<div>
+<p class="text-xs font-bold text-white mb-1">Finalize Auction 104-B</p>
+<p class="text-[10px] text-slate-400 leading-relaxed">Closing in 2 hours. Review final bids and confirm payment structures.</p>
+<button class="mt-2 text-[10px] text-amber-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Execute Now <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex gap-4 group hover:border-emerald-400/50 transition-all cursor-pointer">
+<div class="w-10 h-10 rounded bg-slate-800 flex items-center justify-center shrink-0 text-emerald-400">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="text-xs font-bold text-white mb-1">KYC Verification Needed</p>
+<p class="text-[10px] text-slate-400 leading-relaxed">3 new high-value clients pending identity verification in Mumbai region.</p>
+<button class="mt-2 text-[10px] text-emerald-400 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                Review Docs <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex gap-4 group hover:border-slate-600 transition-all cursor-pointer opacity-70">
+<div class="w-10 h-10 rounded bg-slate-800 flex items-center justify-center shrink-0 text-slate-400">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div>
+<p class="text-xs font-bold text-white mb-1">Inventory Audit Plan</p>
+<p class="text-[10px] text-slate-400 leading-relaxed">Bi-annual audit scheduled for next Monday. Verify logistics manifest.</p>
+</div>
+</div>
+</div>
+<!-- Secondary CTA -->
+<button class="w-full bg-gradient-to-r from-secondary to-secondary/80 text-white font-black text-xs uppercase tracking-widest py-4 rounded-lg shadow-xl glow-gold hover:brightness-110 transition-all">
+                    Generate Quarterly Report
+                </button>
+</aside>
+</div>
+</main>
+<!-- Contextual FAB -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-amber-400 text-slate-900 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined font-bold" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

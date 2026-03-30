@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Success | SWADESH</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Noto+Sans+Devanagari:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#efefd7",
+              "surface-bright": "#fbfbe2",
+              "primary-fixed": "#ffe088",
+              "primary-container": "#d4af37",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1b1d0e",
+              "on-tertiary-fixed-variant": "#27438a",
+              "surface-dim": "#dbdcc3",
+              "on-tertiary-fixed": "#00174b",
+              "on-primary-fixed": "#241a00",
+              "secondary-fixed-dim": "#dfc29f",
+              "primary": "#735c00",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f2f2d9",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "on-tertiary-container": "#254188",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#755f42",
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e4e4cc",
+              "background": "#fbfbe2",
+              "tertiary-container": "#97b0ff",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#554300",
+              "tertiary-fixed": "#dbe1ff",
+              "on-primary-fixed-variant": "#574500",
+              "surface-container-highest": "#e4e4cc",
+              "tertiary": "#415ba4",
+              "on-secondary-fixed": "#281903",
+              "secondary-container": "#f9dbb7",
+              "on-surface-variant": "#4d4635",
+              "surface": "#fbfbe2",
+              "inverse-primary": "#e9c349",
+              "primary-fixed-dim": "#e9c349",
+              "secondary-fixed": "#fcdeba",
+              "surface-tint": "#735c00",
+              "surface-container-low": "#f5f5dc",
+              "outline": "#7f7663",
+              "surface-container-high": "#eaead1",
+              "outline-variant": "#d0c5af",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#574329",
+              "inverse-surface": "#303221",
+              "secondary": "#715b3e",
+              "on-background": "#1b1d0e"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"],
+              "hindi": ["Noto Sans Devanagari"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .gold-glow {
+        background: linear-gradient(135deg, #735C00 0%, #D4AF37 100%);
+      }
+      .glass-nav {
+        background: rgba(251, 251, 226, 0.7);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container/30">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#FBFBE2] dark:bg-[#1B1D0E]">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#735C00] dark:text-[#D4AF37]" data-icon="menu">menu</span>
+</div>
+<h1 class="text-2xl font-bold tracking-[0.2em] text-[#735C00] dark:text-[#D4AF37] font-['Plus_Jakarta_Sans'] uppercase">SWADESH</h1>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#735C00] dark:text-[#D4AF37]" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</header>
+<div class="bg-[#F5F5DC] dark:bg-[#2A2B15] h-[1px] w-full fixed top-16 z-50"></div>
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto overflow-x-hidden">
+<!-- Hero Section -->
+<section class="text-center mb-10 space-y-4">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-container/20 mb-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-hindi text-5xl font-bold text-primary tracking-tight">धन्यवाद</h2>
+<p class="text-on-surface-variant font-medium leading-relaxed px-4">Your order has been placed with heritage care.</p>
+</section>
+<!-- Order Info Card -->
+<div class="bg-surface-container-lowest rounded-lg p-6 mb-6 shadow-[0px_20px_40px_rgba(115,92,0,0.05)] text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 gold-glow"></div>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-widest font-semibold mb-1">Order Number</p>
+<h3 class="text-2xl font-headline font-extrabold text-on-surface mb-4">#SWD10294</h3>
+<div class="flex items-center justify-center gap-2 py-3 px-4 bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="local_shipping">local_shipping</span>
+<p class="text-sm font-semibold text-on-surface">Arriving Oct 24 - Oct 27</p>
+</div>
+</div>
+<!-- Ordered Items -->
+<section class="mb-8">
+<h4 class="text-sm font-headline font-bold uppercase tracking-widest text-on-surface-variant mb-4 px-1">Order Details</h4>
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="flex items-center gap-4 bg-surface-container-low rounded-lg p-3">
+<div class="w-20 h-24 rounded-md overflow-hidden flex-shrink-0 bg-surface-dim">
+<img alt="Royal Zari Sherwani" class="w-full h-full object-cover" data-alt="Close up of high-end cream sherwani with intricate gold zari embroidery and velvet buttons against a soft neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUqFoNlbv-9u6DIea1PGdL54r9gK9KKX4FOFlmNYj1yiVAPKEpz14lJIdeqDiq6F4kDfdaK7WUM7sCW6rTw-YRGSnphF-HgOvsoLAJb-4R9Ob6svAfVSbpiT9aMToy0eycvPOOq7s3n8_TS9h-VpmXGP0g8QrPnetkZG8x5JHLwmSgErSyPYiAYxdFb5ps7adyU0z7bZ3aCxhFeuqYsrRBI_1U_JiWMG_y0zg-gOANAthSTH8XkQ9ORKAYhMibVzZ6IzxpacK0tTg"/>
+</div>
+<div class="flex-grow">
+<h5 class="font-semibold text-on-surface leading-snug">Royal Zari Embroidered Sherwani</h5>
+<p class="text-xs text-on-surface-variant mt-1">Size: XL • Qty: 1</p>
+<p class="text-primary font-bold mt-2">₹42,500</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4 bg-surface-container-low rounded-lg p-3">
+<div class="w-20 h-24 rounded-md overflow-hidden flex-shrink-0 bg-surface-dim">
+<img alt="Banarasi Stole" class="w-full h-full object-cover" data-alt="Elegantly draped hand-loomed Banarasi silk stole with gold floral motifs in rich indigo blue and gold hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOS1xI7LqINq9LcTgAag4YQe92NjLleBDzJHPqjVs3d5Be-jQt0Bn-V0omVJKKou6PZTFEWK5mbaLeBAMAnhZyGIoAkXR1hErm5mPnjFd4RQI8zLJGxQnKfWrmWsk5AxG2YErb_PdVM5XrkPOaq2_v6PfNQVTQr6RqnpjLLGA6WCoBPiqwnYkVuArrWjVPXSsEjJqGU76QKdpy4o5nDBOUzdQiDtzjh8a_PPgKNfA4UMBw565cGbodVZuZ9vrvJfYP3V7lqOPXG2o"/>
+</div>
+<div class="flex-grow">
+<h5 class="font-semibold text-on-surface leading-snug">Hand-Loomed Banarasi Stole</h5>
+<p class="text-xs text-on-surface-variant mt-1">One Size • Qty: 1</p>
+<p class="text-primary font-bold mt-2">₹8,200</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Shipping & Summary -->
+<div class="grid grid-cols-1 gap-6 mb-10">
+<!-- Shipping Address -->
+<div class="bg-surface-container p-6 rounded-lg">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="location_on">location_on</span>
+<h4 class="text-sm font-headline font-bold uppercase tracking-widest text-on-surface">Shipping To</h4>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                    Arjun Malhotra<br/>
+                    14A, Silver Oak Residences, Golf Course Road<br/>
+                    Gurugram, Haryana - 122002<br/>
+                    +91 98765 43210
+                </p>
+</div>
+<!-- Summary -->
+<div class="px-2">
+<div class="space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="text-on-surface font-medium">₹50,700</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Shipping</span>
+<span class="text-secondary font-medium">Complimentary</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">GST (12%)</span>
+<span class="text-on-surface font-medium">₹6,084</span>
+</div>
+<div class="pt-3 mt-3 border-t border-outline-variant/15 flex justify-between items-center">
+<span class="font-headline font-extrabold text-on-surface uppercase tracking-wider">Total Paid</span>
+<span class="text-xl font-headline font-extrabold text-primary">₹56,784</span>
+</div>
+</div>
+</div>
+</div>
+<!-- The Swadesh Promise -->
+<section class="bg-primary/5 rounded-xl p-6 border border-primary/10 mb-10 text-center">
+<div class="inline-block bg-primary p-1 rounded-full mb-3">
+<span class="material-symbols-outlined text-white text-xs block" data-icon="check">check</span>
+</div>
+<h4 class="font-headline font-bold text-primary mb-2">The Swadesh Promise</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                Every piece is authenticated by our master weavers and undergoes a 12-point quality heritage check before dispatch.
+            </p>
+</section>
+<!-- CTAs -->
+<div class="space-y-4">
+<button class="w-full py-5 gold-glow text-white font-bold rounded-full shadow-[0px_20px_40px_rgba(115,92,0,0.15)] active:scale-95 transition-all duration-200">
+                Continue Shopping
+            </button>
+<button class="w-full py-5 bg-surface-container-high text-on-surface font-bold rounded-full active:scale-95 transition-all duration-200">
+                View Order Details
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full px-8 flex flex-col items-center text-center space-y-4 mb-24 py-12 bg-[#F5F5DC] dark:bg-[#1B1D0E]">
+<div class="bg-[#D0C5AF]/20 h-[1px] mb-8 w-full"></div>
+<p class="text-[#735C00] dark:text-[#D4AF37] font-semibold">SWADESH HERITAGE</p>
+<div class="flex flex-wrap justify-center gap-4">
+<span class="text-[#4D4635] text-xs font-['Plus_Jakarta_Sans']">Support</span>
+<span class="text-[#4D4635] text-xs font-['Plus_Jakarta_Sans']">Shipping Policy</span>
+<span class="text-[#4D4635] text-xs font-['Plus_Jakarta_Sans']">Returns</span>
+<span class="text-[#4D4635] text-xs font-['Plus_Jakarta_Sans']">Contact Us</span>
+</div>
+<p class="font-['Plus_Jakarta_Sans'] text-xs leading-relaxed text-[#4D4635]">© 2024 Swadesh Heritage. Crafted with Grace.</p>
+</footer>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#FBFBE2]/70 dark:bg-[#1B1D0E]/70 backdrop-blur-xl border-t border-[#D0C5AF]/15 rounded-t-[2rem] shadow-[0px_-10px_30px_rgba(115,92,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-[#4D4635] dark:text-[#A6A089]">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium tracking-tight">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4D4635] dark:text-[#A6A089]">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium tracking-tight">Collections</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#D4AF37] text-[#FBFBE2] rounded-full px-5 py-1">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium tracking-tight">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#4D4635] dark:text-[#A6A089]">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium tracking-tight">Profile</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atelier Admin - Order Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f3f3f4",
+              "surface-tint": "#006c50",
+              "secondary-fixed": "#e2e2e3",
+              "surface-container-high": "#e8e8e9",
+              "outline": "#6e7a73",
+              "primary-fixed-dim": "#75d9b3",
+              "inverse-surface": "#2f3132",
+              "secondary": "#5d5e60",
+              "on-background": "#1a1c1d",
+              "outline-variant": "#bdc9c2",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#454748",
+              "on-primary-fixed-variant": "#00513c",
+              "tertiary-fixed": "#ffe16d",
+              "surface-container-highest": "#e2e2e3",
+              "on-primary-container": "#d6ffeb",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#3e4944",
+              "surface": "#f9f9fa",
+              "inverse-primary": "#75d9b3",
+              "on-secondary-fixed": "#1a1c1d",
+              "tertiary": "#705d00",
+              "secondary-container": "#dfdfe0",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e2e2e3",
+              "on-secondary-container": "#616364",
+              "error": "#ba1a1a",
+              "tertiary-container": "#c9a900",
+              "background": "#f9f9fa",
+              "on-primary-fixed": "#002116",
+              "on-tertiary-fixed": "#221b00",
+              "surface-dim": "#dadadb",
+              "secondary-fixed-dim": "#c6c6c7",
+              "on-tertiary-fixed-variant": "#544600",
+              "primary-container": "#008060",
+              "surface-container": "#eeeeef",
+              "surface-bright": "#f9f9fa",
+              "on-surface": "#1a1c1d",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#92f6cf",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#4c3f00",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "primary": "#00654b",
+              "inverse-on-surface": "#f0f1f2",
+              "tertiary-fixed-dim": "#e9c400"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9fa; color: #1a1c1d; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); }
+        .data-sheet-shadow { box-shadow: 0px 4px 20px rgba(26, 28, 29, 0.06); }
+    </style>
+</head>
+<body class="antialiased">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-900 flex flex-col h-full p-4 gap-y-2 z-50">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-md flex items-center justify-center text-white font-bold tracking-tighter">A</div>
+<div>
+<h1 class="text-lg font-bold tracking-tighter text-slate-900 dark:text-slate-100">Atelier Admin</h1>
+<p class="text-[10px] uppercase tracking-[0.1em] text-on-surface-variant font-semibold">Premium Ethnic Wear</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 font-['Inter'] antialiased tracking-tight text-sm font-medium scale-95 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 bg-white dark:bg-slate-800 text-emerald-900 dark:text-emerald-400 shadow-sm rounded-md font-['Inter'] antialiased tracking-tight text-sm font-medium scale-95 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined">shopping_bag</span> Orders
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 font-['Inter'] antialiased tracking-tight text-sm font-medium scale-95 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined">inventory_2</span> Products
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 font-['Inter'] antialiased tracking-tight text-sm font-medium scale-95 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined">analytics</span> Analytics
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 font-['Inter'] antialiased tracking-tight text-sm font-medium scale-95 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined">group</span> Customers
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 font-['Inter'] antialiased tracking-tight text-sm font-medium scale-95 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined">description</span> Content
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 font-['Inter'] antialiased tracking-tight text-sm font-medium scale-95 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined">campaign</span> Marketing
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 font-['Inter'] antialiased tracking-tight text-sm font-medium scale-95 active:scale-100 transition-transform" href="#">
+<span class="material-symbols-outlined">sell</span> Discounts
+            </a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200/50">
+<div class="flex items-center gap-3 px-2">
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a professional male creative director in a minimalist studio setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZYOjPm7RAARh-ntLoeqaBH3XQFlwZsXBW0r9zZ1sVfzcdLBWIxK2F24hQtHd2yoFR7gBk1J3Bgh0QebFxrcI-iguPmH2BnOUhPFCRUYpxo4JCrZ3hKVyk0YVhnQ0MP6el6G518HIo1Qp8qK5vxWtbzZsnMyFOAVzNh0HWERt4ZpABLWH6zsOHd_Jcy3qoeWsdlukMznt09CWRN7P5SiX3j8Qoe-i3Owxzyc5i-_fQcPUsGhsSKypOHMCUv_Vqu5I-bXTZR-1MNRg"/>
+</div>
+<div class="flex-1">
+<p class="text-xs font-semibold text-slate-900">Vikram S.</p>
+<p class="text-[10px] text-slate-500">Store Manager</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-lg">logout</span>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 flex justify-between items-center px-8">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-1.5 bg-surface-container-low border-none rounded-md text-sm focus:ring-2 focus:ring-primary/20 transition-all outline-none placeholder:text-slate-400" placeholder="Search orders, customers, SKUs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-500">
+<button class="hover:text-emerald-700 transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<button class="hover:text-emerald-700 transition-colors"><span class="material-symbols-outlined">settings</span></button>
+<button class="hover:text-emerald-700 transition-colors"><span class="material-symbols-outlined">help</span></button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold tracking-wide text-emerald-900">Atelier Dashboard</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen bg-surface p-8">
+<!-- Header Section -->
+<div class="mb-10 flex justify-between items-end">
+<div>
+<nav class="flex items-center gap-2 text-xs text-on-surface-variant mb-2">
+<span>Admin</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="font-medium text-primary">Orders</span>
+</nav>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">Order Management</h2>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2 bg-surface-container-highest text-on-surface rounded-md text-sm font-semibold hover:bg-slate-200 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">file_download</span>
+                    Export CSV
+                </button>
+<button class="px-5 py-2 bg-gradient-to-r from-primary to-primary-container text-white rounded-md text-sm font-semibold shadow-sm hover:brightness-105 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add</span>
+                    Create Order
+                </button>
+</div>
+</div>
+<!-- RTO Alert Section (The Digital Atelier Highlight) -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-4">
+<h3 class="label-md uppercase tracking-[0.05em] text-on-surface-variant font-bold text-xs flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+                    Critical RTO Alerts
+                </h3>
+<button class="text-xs font-bold text-primary hover:underline underline-offset-4">Review All Alerts</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Alert Card 1 -->
+<div class="bg-surface-container-lowest rounded-md p-5 border-l-4 border-error data-sheet-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-error-container text-on-error-container px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">High Risk</div>
+<span class="text-xs text-on-surface-variant font-medium">#SW-9844</span>
+</div>
+<div class="mb-4">
+<h4 class="font-bold text-on-surface">Arjun Mehra</h4>
+<p class="text-xs text-on-secondary-fixed-variant">Multiple delivery failures in past 3 orders.</p>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/15">
+<span class="text-sm font-bold text-on-surface">₹18,200</span>
+<button class="text-xs font-semibold px-3 py-1.5 bg-surface-container-low hover:bg-surface-container-high rounded transition-colors">Resolve</button>
+</div>
+</div>
+<!-- Alert Card 2 -->
+<div class="bg-surface-container-lowest rounded-md p-5 border-l-4 border-error data-sheet-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-error-container text-on-error-container px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Address Incomplete</div>
+<span class="text-xs text-on-surface-variant font-medium">#SW-9831</span>
+</div>
+<div class="mb-4">
+<h4 class="font-bold text-on-surface">Priya Kapur</h4>
+<p class="text-xs text-on-secondary-fixed-variant">Pin code mismatch with provided locality.</p>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant/15">
+<span class="text-sm font-bold text-on-surface">₹32,500</span>
+<button class="text-xs font-semibold px-3 py-1.5 bg-surface-container-low hover:bg-surface-container-high rounded transition-colors">Edit Address</button>
+</div>
+</div>
+<!-- Summary Stat Card -->
+<div class="bg-on-primary-fixed text-white rounded-md p-5 data-sheet-shadow flex flex-col justify-between overflow-hidden relative">
+<div class="relative z-10">
+<p class="text-[10px] uppercase tracking-widest text-primary-fixed/60 font-bold mb-1">RTO Mitigation Rate</p>
+<h3 class="text-4xl font-extrabold tracking-tighter">84.2%</h3>
+</div>
+<div class="relative z-10 flex items-center gap-2 text-xs text-primary-fixed-dim">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+12% from last month</span>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-primary-container/20 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+<!-- Order List Section (The Data Sheet) -->
+<section class="bg-surface-container-lowest rounded-md data-sheet-shadow overflow-hidden">
+<!-- Tabs & Filters Header -->
+<div class="px-8 pt-8 pb-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-center gap-8 border-b border-outline-variant/20">
+<button class="pb-4 border-b-2 border-primary text-sm font-bold text-on-surface">All Orders</button>
+<button class="pb-4 border-b-2 border-transparent text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors">Unfulfilled</button>
+<button class="pb-4 border-b-2 border-transparent text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2">
+                            RTO Alerts
+                            <span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+</button>
+<button class="pb-4 border-b-2 border-transparent text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors">Shipped</button>
+<button class="pb-4 border-b-2 border-transparent text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors">Delivered</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative group">
+<select class="appearance-none bg-surface-container-low border-none pl-4 pr-10 py-2 rounded-md text-xs font-bold text-on-surface focus:ring-1 focus:ring-primary/20 outline-none cursor-pointer">
+<option>Status: Any</option>
+<option>Shipped</option>
+<option>Processing</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-sm pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+<div class="relative group">
+<select class="appearance-none bg-surface-container-low border-none pl-4 pr-10 py-2 rounded-md text-xs font-bold text-on-surface focus:ring-1 focus:ring-primary/20 outline-none cursor-pointer">
+<option>Date: Last 30 Days</option>
+<option>Today</option>
+<option>Custom Range</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-sm pointer-events-none text-on-surface-variant">calendar_month</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Table Body -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Order ID</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Date</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Customer Name</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Fulfillment Status</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant text-right">Total Amount</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="px-8 py-5 text-sm font-bold text-on-surface">#SW-9821</td>
+<td class="px-8 py-5 text-sm text-on-secondary-fixed-variant">Oct 24, 2023</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-primary">AS</div>
+<span class="text-sm font-medium text-on-surface">Ananya Sharma</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-[11px] font-bold uppercase tracking-tight">Shipped</span>
+</td>
+<td class="px-8 py-5 text-sm font-bold text-on-surface text-right">₹24,500</td>
+<td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:bg-surface-container-low rounded transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="px-8 py-5 text-sm font-bold text-on-surface">#SW-9819</td>
+<td class="px-8 py-5 text-sm text-on-secondary-fixed-variant">Oct 23, 2023</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-primary">RK</div>
+<span class="text-sm font-medium text-on-surface">Rohan Khanna</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-[11px] font-bold uppercase tracking-tight">Pending</span>
+</td>
+<td class="px-8 py-5 text-sm font-bold text-on-surface text-right">₹12,800</td>
+<td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:bg-surface-container-low rounded transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 - RTO Highlighted Row -->
+<tr class="bg-error-container/5 hover:bg-error-container/10 transition-colors group">
+<td class="px-8 py-5 text-sm font-bold text-on-surface">#SW-9818</td>
+<td class="px-8 py-5 text-sm text-on-secondary-fixed-variant">Oct 23, 2023</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-error-container flex items-center justify-center text-[10px] font-bold text-error">VV</div>
+<span class="text-sm font-medium text-on-surface">Varun Varma</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-error text-white rounded-full text-[11px] font-bold uppercase tracking-tight flex items-center w-fit gap-1">
+                                    RTO Alert
+                                </span>
+</td>
+<td class="px-8 py-5 text-sm font-bold text-on-surface text-right">₹48,000</td>
+<td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:bg-surface-container-low rounded transition-colors">
+<span class="material-symbols-outlined text-lg text-error">report</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="px-8 py-5 text-sm font-bold text-on-surface">#SW-9815</td>
+<td class="px-8 py-5 text-sm text-on-secondary-fixed-variant">Oct 22, 2023</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-primary">ID</div>
+<span class="text-sm font-medium text-on-surface">Isha Das</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-[11px] font-bold uppercase tracking-tight">Delivered</span>
+</td>
+<td class="px-8 py-5 text-sm font-bold text-on-surface text-right">₹19,200</td>
+<td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:bg-surface-container-low rounded transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="px-8 py-5 text-sm font-bold text-on-surface">#SW-9814</td>
+<td class="px-8 py-5 text-sm text-on-secondary-fixed-variant">Oct 22, 2023</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-primary">NJ</div>
+<span class="text-sm font-medium text-on-surface">Neha Jain</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-[11px] font-bold uppercase tracking-tight">Shipped</span>
+</td>
+<td class="px-8 py-5 text-sm font-bold text-on-surface text-right">₹9,500</td>
+<td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:bg-surface-container-low rounded transition-colors">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Area -->
+<div class="px-8 py-6 bg-surface-container-low/30 border-t border-outline-variant/10 flex items-center justify-between">
+<span class="text-xs text-on-surface-variant font-medium">Showing <span class="text-on-surface font-bold">1 - 5</span> of 248 orders</span>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded border border-outline-variant/20 flex items-center justify-center text-on-surface-variant hover:bg-white hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-white flex items-center justify-center text-xs font-bold">1</button>
+<button class="w-8 h-8 rounded border border-outline-variant/20 flex items-center justify-center text-on-surface-variant hover:bg-white hover:text-primary transition-all text-xs font-bold">2</button>
+<button class="w-8 h-8 rounded border border-outline-variant/20 flex items-center justify-center text-on-surface-variant hover:bg-white hover:text-primary transition-all text-xs font-bold">3</button>
+<button class="w-8 h-8 rounded border border-outline-variant/20 flex items-center justify-center text-on-surface-variant hover:bg-white hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+</body></html>

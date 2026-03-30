@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#e9c176",
+              "surface-container-high": "#e8e8e6",
+              "secondary-container": "#fed488",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#e6deff",
+              "surface-bright": "#f9f9f7",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#785a1a",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "background": "#f9f9f7",
+              "surface-container-low": "#f4f4f2",
+              "on-primary-container": "#79a894",
+              "surface-container": "#eeeeec",
+              "inverse-primary": "#a0d1bc",
+              "primary": "#00261b",
+              "tertiary": "#21006e",
+              "on-primary": "#ffffff",
+              "primary-fixed": "#bcedd7",
+              "primary-container": "#0b3d2e",
+              "outline-variant": "#c0c8c3",
+              "surface-tint": "#396756",
+              "on-primary-fixed-variant": "#214f3f",
+              "on-secondary-fixed-variant": "#5d4201",
+              "error-container": "#ffdad6",
+              "surface-variant": "#e2e3e1",
+              "on-surface-variant": "#414944",
+              "on-secondary-fixed": "#261900",
+              "on-tertiary-container": "#a28eff",
+              "on-surface": "#1a1c1b",
+              "tertiary-container": "#3700a7",
+              "on-tertiary-fixed": "#1c0061",
+              "primary-fixed-dim": "#a0d1bc",
+              "inverse-on-surface": "#f1f1ef",
+              "outline": "#717974",
+              "secondary": "#775a19",
+              "on-error-container": "#93000a",
+              "surface-dim": "#dadad8",
+              "error": "#ba1a1a",
+              "surface": "#f9f9f7",
+              "on-primary-fixed": "#002116",
+              "inverse-surface": "#2f3130",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container-highest": "#e2e3e1",
+              "secondary-fixed": "#ffdea5",
+              "on-tertiary-fixed-variant": "#4900d6",
+              "on-background": "#1a1c1b"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .heritage-arch {
+        border-radius: 100% 100% 0 0 / 50% 50% 0 0;
+      }
+      body {
+        background-color: #F9F9F7;
+        color: #1a1c1b;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#F9F9F7] dark:bg-stone-900 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<button class="active:scale-95 duration-200 text-[#00261B] dark:text-emerald-500">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-2xl font-serif text-[#00261B] dark:text-emerald-400 tracking-widest uppercase font-bold">PEHNAVA</h1>
+<button class="active:scale-95 duration-200 text-[#00261B] dark:text-emerald-500">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Hero Section & Filters -->
+<section class="mb-12">
+<div class="flex flex-col items-center text-center mb-10">
+<span class="text-secondary font-medium tracking-[0.2em] uppercase text-xs mb-3">The Artisan Series</span>
+<h2 class="font-headline text-4xl md:text-5xl text-primary mb-4">Silk Sarees</h2>
+<p class="max-w-xl text-on-surface-variant font-light leading-relaxed">Discover a curated collection of hand-woven pure silk sarees, where centuries-old craftsmanship meets contemporary elegance.</p>
+</div>
+<!-- Filter Chips -->
+<div class="flex items-center justify-start md:justify-center gap-3 overflow-x-auto pb-4 scrollbar-hide no-scrollbar">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white text-sm font-medium transition-all active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>All Filters</span>
+</button>
+<button class="px-5 py-2.5 rounded-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all whitespace-nowrap">
+<span>Pure Kanchipuram</span>
+</button>
+<button class="px-5 py-2.5 rounded-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all whitespace-nowrap">
+<span>Banarasi Brocade</span>
+</button>
+<button class="px-5 py-2.5 rounded-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all whitespace-nowrap">
+<span>Emerald Green</span>
+</button>
+<button class="px-5 py-2.5 rounded-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all whitespace-nowrap">
+<span>Royal Crimson</span>
+</button>
+<button class="px-5 py-2.5 rounded-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all whitespace-nowrap">
+<span>Midnight Gold</span>
+</button>
+</div>
+</section>
+<!-- Product Grid - Asymmetric Layout -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+<!-- Product Card 1 (Large Image) -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low mb-5 aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Stunning model in a deep emerald green silk saree with intricate gold embroidery and heavy borders in a heritage palace setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkAEF9wmgPNVbxbjmJW_SXdC-8dCfslL0wGJKeFXaK3O3zCbol_TQ8qiUxmNhSdlqi570--Qk3zSpNL-iuvFYCVcGLa8VmRhNyTS-M_kgG3qprqKI7F9auB3Q4ShrDlj_Fcd8E64pkgqUrY4LOfH1egUA7-qg_72VkD2D2gSOQd0gD1y7kouSuyhGangLN5WqXu3lJ96MOHTgepLY4AETJ_6628klmKikwaZ4Lfdbf_pO1Qdtm6YrUeETABaS41OvBYLmKZlc_4uY"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-white/80 backdrop-blur-md text-[10px] font-bold tracking-widest uppercase rounded-full">New Collection</span>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col items-start px-1">
+<h3 class="font-headline text-xl text-primary group-hover:text-secondary transition-colors">The Emerald Rajahsree</h3>
+<p class="text-on-surface-variant font-light text-sm mb-2">Hand-woven Banarasi Pure Silk</p>
+<div class="flex items-center gap-3">
+<span class="font-semibold text-primary">₹84,500</span>
+<span class="text-xs text-secondary font-medium tracking-wider uppercase underline underline-offset-4 decoration-secondary/30">Quick Shop</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer lg:mt-12">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low mb-5 aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a royal blue silk saree with gold zari work being displayed elegantly on a wooden mannequin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6s4Df_cf4r9v5b5PYW0v0uaoMxL2JGC6LSWmJwevYl6xxEH-s4TPgqiwNNUcJpnlxHh2EheGV-LMqrGhdpMQPgfZVuOVNCpjlC8JYkJgJy_kPO3bPZYj_V9AKdYHtx_QZUfZ_s640Gkf7nsAC9PAnrrYGO4-p6FxI89yGVWaFatFLPEYlZ97a3EYy9BYu4RMxmJflj_2qFS1qqgTpS7zP1GnuwR0d4yqTG0F9WfQOcacrq1kFcR2oiBH443ADN4BgFrPuIayGsbU"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col items-start px-1">
+<h3 class="font-headline text-xl text-primary group-hover:text-secondary transition-colors">Midnight Sapphire</h3>
+<p class="text-on-surface-variant font-light text-sm mb-2">Kanchipuram Silk with Silver Zari</p>
+<div class="flex items-center gap-3">
+<span class="font-semibold text-primary">₹62,000</span>
+<span class="text-xs text-secondary font-medium tracking-wider uppercase underline underline-offset-4 decoration-secondary/30">Quick Shop</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 (Editorial Style) -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low mb-5 aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Detailed view of gold silk fabric with ruby red borders draped artistically over a stone pedestal in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSaSn_LPTpjyydgNMmjVzUHOMn9PpQUlSFqHxuCBSdWADkBu2Anldm6j4P18CxNYIdZKyWU9KO-MRPYDyd9rtdjKj6lG1XlInwS3FqWyBydUNN-4QlVxf6cvbYRS7nK5P9pB2P8KbXu7mQuwyQH6tRWjyRqe8AqvKXiHUZkfxfqYOxEAq4NiQrMkkYEfVQ0jrz6FpBM0XGpzRfzXm7N5kUvuNNRHZnbW9dkxLgzoTpJCqhXJIylZzu5KdSBTKykkbBHKL2lOVZv14"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-secondary text-white text-[10px] font-bold tracking-widest uppercase rounded-full shadow-lg">Heirloom</span>
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col items-start px-1">
+<h3 class="font-headline text-xl text-primary group-hover:text-secondary transition-colors">Golden Ruby Legacy</h3>
+<p class="text-on-surface-variant font-light text-sm mb-2">Heritage Pattu with Temple Border</p>
+<div class="flex items-center gap-3">
+<span class="font-semibold text-primary">₹1,25,000</span>
+<span class="text-xs text-secondary font-medium tracking-wider uppercase underline underline-offset-4 decoration-secondary/30">Quick Shop</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low mb-5 aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Elegant blush pink silk saree with delicate floral vine embroidery in silver thread displayed in a boutique gallery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4AoinY4TEAjcvOam8NmHAOzr_D-OLq4rqB8X8ftzyv3GY7r9ykgcDFNsIxTTI7VSsGkisBrD3eLgG-tKikpUGzTul1W7VrJOfLE7vBOmty4fTxremJuH4hJyI0JsIX3LEOBhiYYs-PHC5H1lN-u9pJlUOfPEZI_gLNnoiuvNEvhUUpv4ptkMI8uWx8v6BHendQvfrSfPg3LmtBLRO3_lsKQUJ-o6fOw_GPjTvCjVZVmFztDebBiP3qYcCgBwivLx3y93HY8Pndxk"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col items-start px-1">
+<h3 class="font-headline text-xl text-primary group-hover:text-secondary transition-colors">Blush Peony Tussar</h3>
+<p class="text-on-surface-variant font-light text-sm mb-2">Wild Silk with Hand Embroidery</p>
+<div class="flex items-center gap-3">
+<span class="font-semibold text-primary">₹45,900</span>
+<span class="text-xs text-secondary font-medium tracking-wider uppercase underline underline-offset-4 decoration-secondary/30">Quick Shop</span>
+</div>
+</div>
+</div>
+<!-- Large Editorial Callout (Asymmetric) -->
+<div class="md:col-span-2 relative h-[500px] overflow-hidden rounded-2xl bg-primary-container flex items-center">
+<div class="absolute inset-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="Cinematic shot of silk weaver working on a traditional handloom with threads glowing in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU0vRGZd5zbEHpO_FkO0smU_1N1niwJFrXTZib7B59TWvQxIJiFrlBjtVAjpwIMsub1nOaGmWMlynsY3AuTRYQKp2qVDxvAoyjLE9zTgzsxUdvizoh7aMUMF941y4GWmjRUagpygU5ovyGRzUz2qvhDxYHOltzEzJzTjUggWWYJdVVnuBdL0NGitYPbWTk-5KxDyzGSJrd3hSyNtCCjJmY02cZpqd5o-Ihxf83vc3KUEbilxSZ6SXGQEnfgYVix272CpNeYbxKOdI"/>
+</div>
+<div class="relative z-10 px-12 md:px-20 text-white max-w-2xl">
+<span class="text-secondary font-medium tracking-[0.3em] uppercase text-xs mb-4 block">Craftsmanship</span>
+<h2 class="font-headline text-4xl md:text-5xl mb-6">The Soul of the Loom</h2>
+<p class="text-white/80 font-light text-lg mb-8 leading-relaxed">Every thread is hand-picked, every zari is real gold. Our weavers spend months crafting a single masterpiece for your legacy.</p>
+<button class="px-8 py-3 bg-secondary text-white font-medium rounded-lg hover:bg-on-secondary-container transition-all flex items-center gap-2 group">
+<span>Explore Our Story</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low mb-5 aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Deep maroon silk saree draped elegantly with traditional temple jewellery on a model in a dimly lit heritage courtyard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdkx0ukCCForU3GCW6PKQoGb-_UJOgVO2ETVdM9acIOkTbJz53gK5csrb44zoN-dS31UkpIAwLbfNUY58LIdRoSMOMpBqeGtUg4jI4V3yxAtVaePy4hUQm906Nm-EOuer5v0Vuw7ki7vcsH_CW5r_kQcZ9h34WPLN_J5TQu4joPbAhNrcx4SfAzF1OKF1v9Fs9sigu4L7fVASgL5dejWo5ed9GxIVDThyimA6eV9tRsCpuVKZAfUobIUsdMfsIBucJLmCzJg-ne3g"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex flex-col items-start px-1">
+<h3 class="font-headline text-xl text-primary group-hover:text-secondary transition-colors">Maroon Heritage Pattu</h3>
+<p class="text-on-surface-variant font-light text-sm mb-2">Classic Temple Design</p>
+<div class="flex items-center gap-3">
+<span class="font-semibold text-primary">₹78,000</span>
+<span class="text-xs text-secondary font-medium tracking-wider uppercase underline underline-offset-4 decoration-secondary/30">Quick Shop</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pagination / Load More -->
+<div class="mt-20 flex flex-col items-center">
+<div class="w-full h-[1px] bg-outline-variant/20 mb-10"></div>
+<p class="text-on-surface-variant font-light text-sm mb-6 uppercase tracking-widest">Showing 6 of 42 Masterpieces</p>
+<button class="px-12 py-4 border border-primary text-primary font-medium rounded-lg hover:bg-primary hover:text-white transition-all duration-300 active:scale-95">
+                Load More Collections
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-[#F9F9F7]/80 dark:bg-stone-900/80 backdrop-blur-md shadow-[0_-4px_24px_rgba(0,0,0,0.04)] border-t border-[#00261B]/10 dark:border-white/10 md:hidden">
+<div class="flex justify-around items-center h-20 px-4 pb-safe">
+<button class="flex flex-col items-center justify-center text-[#00261B]/60 dark:text-stone-500 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">home</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#775A19] dark:text-amber-500 scale-110 transition-transform active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider mt-1">Shop</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#00261B]/60 dark:text-stone-500 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">person</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider mt-1">Account</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#00261B]/60 dark:text-stone-500 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider mt-1">Cart</span>
+</button>
+</div>
+</nav>
+<!-- Sidebar For Desktop (Hidden by default, shown for structure context) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-full w-20 flex-col items-center py-8 bg-[#F9F9F7] border-r border-outline-variant/10 z-40">
+<div class="flex flex-col gap-12 mt-16">
+<a class="text-primary hover:text-secondary transition-colors" href="#" title="Filter"><span class="material-symbols-outlined">tune</span></a>
+<a class="text-primary hover:text-secondary transition-colors" href="#" title="Wishlist"><span class="material-symbols-outlined">favorite</span></a>
+<a class="text-primary hover:text-secondary transition-colors" href="#" title="Recent"><span class="material-symbols-outlined">history</span></a>
+</div>
+</aside>
+</body></html>

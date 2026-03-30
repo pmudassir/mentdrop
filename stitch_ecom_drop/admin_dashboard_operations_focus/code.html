@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Atelier | Operations Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#410003",
+              "on-primary-fixed": "#241a00",
+              "surface-dim": "#dadad8",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-tertiary-fixed-variant": "#93000e",
+              "primary-container": "#d4af37",
+              "surface-container": "#eeeeec",
+              "surface-bright": "#f9f9f7",
+              "primary-fixed": "#ffe088",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1a1c1b",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#90000e",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#f1f1ef",
+              "primary": "#735c00",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb4ac",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e2e3e1",
+              "error": "#ba1a1a",
+              "on-secondary-container": "#656464",
+              "tertiary-container": "#ff968c",
+              "background": "#f9f9f7",
+              "on-primary-fixed-variant": "#574500",
+              "tertiary-fixed": "#ffdad6",
+              "surface-container-highest": "#e2e3e1",
+              "on-primary-container": "#554300",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#4d4635",
+              "inverse-primary": "#e9c349",
+              "surface": "#f9f9f7",
+              "tertiary": "#b91d20",
+              "on-secondary-fixed": "#1b1c1c",
+              "secondary-container": "#e4e2e1",
+              "surface-tint": "#735c00",
+              "surface-container-low": "#f4f4f2",
+              "secondary-fixed": "#e4e2e1",
+              "surface-container-high": "#e8e8e6",
+              "outline": "#7f7663",
+              "primary-fixed-dim": "#e9c349",
+              "inverse-surface": "#2f3130",
+              "secondary": "#5f5e5e",
+              "on-background": "#1a1c1b",
+              "outline-variant": "#d0c5af",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#474746"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.25rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-shadow {
+            box-shadow: 0px 12px 32px -4px rgba(115, 92, 0, 0.06);
+        }
+        .rto-pulse {
+            animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-border {
+            0%, 100% { outline: 2px solid rgba(185, 29, 32, 0); }
+            50% { outline: 2px solid rgba(185, 29, 32, 0.2); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-[#F4F4F2] dark:bg-[#1A1C1B] flex flex-col py-6 px-4 z-50">
+<div class="flex items-center gap-3 mb-10 px-2">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-[#1A1C1B] dark:text-[#F9F9F7]">Digital Atelier</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-semibold">Winter 2026 Admin</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<!-- Dashboard (Active) -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#735C00] dark:text-[#D4AF37] bg-white/80 dark:bg-white/5 rounded-lg shadow-sm font-semibold transition-transform duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:bg-white/50 dark:hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:bg-white/50 dark:hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:bg-white/50 dark:hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:bg-white/50 dark:hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined text-tertiary">assignment_return</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">RTO</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:bg-white/50 dark:hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:bg-white/50 dark:hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Supplier Panel</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 border-t border-[#D0C5AF]/20 pt-6">
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:bg-white/50 dark:hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:bg-white/50 dark:hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Support</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#F9F9F7]/80 backdrop-blur-xl border-b border-[#D0C5AF]/15 flex justify-between items-center px-8">
+<div class="flex-1 max-w-xl">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-[#D4AF37]/30 transition-all placeholder:text-on-surface-variant/40" placeholder="Search orders, suppliers, or RTO status..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Vikram Seth</p>
+<p class="text-[10px] text-on-surface-variant/70">Admin Principal</p>
+</div>
+<img alt="User Profile" class="w-10 h-10 rounded-full border-2 border-primary-container/20 group-hover:border-primary-container transition-all" data-alt="portrait of a professional male administrator in a clean minimalist office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA37oATOy81f3VvWNg0sPqmUv393AhjUbcLbjKzdzB7hKibluGxhSX2tm5pNm4bXILWlu6GaiIwV-svQrtXwzmrD15QFd5-_PUPA7b3NgMb1at6F95V7zGyRx7X0wXlYjekNts-lGN26GbpvCtjI2SGFTk8ip89D-drRDTWXZoBotqNXmlXpiTignhbMeNn7XEReD3HbnzLcK8YqgBujNcMfck1ekP-iopA90ocCVBTgN5OK4wSGFYN4MYosGJmFksFxph8a-Y74qw"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-10 min-h-screen">
+<!-- Header Section -->
+<div class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">Operations Overview</h2>
+<p class="text-on-surface-variant mt-1">Real-time logistics and vendor health metrics.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface-container-lowest text-on-surface border border-outline-variant/20 px-4 py-2 rounded-md text-sm font-medium hover:bg-surface-container-low transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span> Export Report
+                </button>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:opacity-90 transition-all">
+                    View Live Store
+                </button>
+</div>
+</div>
+<!-- Metric Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+<div class="bg-surface-container-lowest p-6 rounded-xl gold-shadow">
+<p class="text-[11px] font-bold text-on-surface-variant/60 uppercase tracking-widest mb-1">Daily Revenue</p>
+<h3 class="text-2xl font-bold text-on-surface">₹4,82,900</h3>
+<div class="flex items-center gap-1 mt-2 text-primary font-bold text-xs">
+<span class="material-symbols-outlined text-xs">trending_up</span> +12.4%
+                </div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl gold-shadow border-l-4 border-tertiary">
+<p class="text-[11px] font-bold text-tertiary uppercase tracking-widest mb-1">RTO Alert Count</p>
+<h3 class="text-2xl font-bold text-on-tertiary-container">24 Orders</h3>
+<div class="flex items-center gap-1 mt-2 text-tertiary font-bold text-xs">
+<span class="material-symbols-outlined text-xs">warning</span> Action Required
+                </div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl gold-shadow">
+<p class="text-[11px] font-bold text-on-surface-variant/60 uppercase tracking-widest mb-1">Marketing ROAS</p>
+<h3 class="text-2xl font-bold text-on-surface">4.2x</h3>
+<div class="flex items-center gap-1 mt-2 text-primary font-bold text-xs">
+<span class="material-symbols-outlined text-xs">ads_click</span> Spend: ₹85k
+                </div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl gold-shadow">
+<p class="text-[11px] font-bold text-on-surface-variant/60 uppercase tracking-widest mb-1">Active Suppliers</p>
+<h3 class="text-2xl font-bold text-on-surface">18 Vendors</h3>
+<div class="flex items-center gap-1 mt-2 text-on-surface-variant font-medium text-xs">
+<span class="material-symbols-outlined text-xs">check_circle</span> 98% Fulfillment
+                </div>
+</div>
+</div>
+<!-- Bento Grid Main -->
+<div class="grid grid-cols-12 gap-10">
+<!-- Fulfillment Pie & Stats -->
+<div class="col-span-12 lg:col-span-5 flex flex-col gap-10">
+<div class="bg-surface-container-lowest p-8 rounded-xl gold-shadow h-full">
+<div class="flex justify-between items-start mb-8">
+<h4 class="text-lg font-bold">Order Fulfillment</h4>
+<span class="material-symbols-outlined text-on-surface-variant/40">more_vert</span>
+</div>
+<div class="flex items-center justify-between">
+<!-- Custom Pie Chart Representation -->
+<div class="relative w-48 h-48 rounded-full flex items-center justify-center" style="background: conic-gradient(#d4af37 0% 65%, #ff968c 65% 85%, #eeeeec 85% 100%);">
+<div class="w-36 h-36 bg-surface-container-lowest rounded-full flex flex-col items-center justify-center">
+<p class="text-3xl font-extrabold text-on-surface">82%</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Healthy</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 pr-4">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+<div>
+<p class="text-xs font-bold">Delivered</p>
+<p class="text-[10px] text-on-surface-variant">420 orders</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-tertiary-container"></div>
+<div>
+<p class="text-xs font-bold text-tertiary">RTO Risk</p>
+<p class="text-[10px] text-on-surface-variant">88 orders</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-surface-container"></div>
+<div>
+<p class="text-xs font-bold">Pending</p>
+<p class="text-[10px] text-on-surface-variant">104 orders</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm font-semibold">Fulfillment Velocity</span>
+<span class="text-xs font-bold text-primary">Fast (+4h)</span>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[72%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ROAS Tracker & Marketing Spend -->
+<div class="col-span-12 lg:col-span-7">
+<div class="bg-surface-container-lowest p-8 rounded-xl gold-shadow h-full">
+<div class="flex justify-between items-center mb-10">
+<h4 class="text-lg font-bold">Marketing Spend vs ROAS</h4>
+<div class="flex bg-surface-container-low rounded-md p-1">
+<button class="px-3 py-1 text-[10px] font-bold bg-white shadow-sm rounded">DAILY</button>
+<button class="px-3 py-1 text-[10px] font-bold text-on-surface-variant/60">WEEKLY</button>
+</div>
+</div>
+<!-- Integrated ROAS visualization - Bar + Line Hybrid mock -->
+<div class="h-64 flex items-end justify-between gap-4 mb-8">
+<div class="flex-1 bg-secondary-container/20 rounded-t-lg relative group h-[40%]">
+<div class="absolute inset-x-0 bottom-0 bg-primary-container/40 rounded-t-lg h-[60%] group-hover:bg-primary-container/60 transition-all"></div>
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">3.2x</span>
+</div>
+<div class="flex-1 bg-secondary-container/20 rounded-t-lg relative group h-[65%]">
+<div class="absolute inset-x-0 bottom-0 bg-primary-container/40 rounded-t-lg h-[75%] group-hover:bg-primary-container/60 transition-all"></div>
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">3.8x</span>
+</div>
+<div class="flex-1 bg-secondary-container/20 rounded-t-lg relative group h-[50%]">
+<div class="absolute inset-x-0 bottom-0 bg-primary-container/40 rounded-t-lg h-[65%] group-hover:bg-primary-container/60 transition-all"></div>
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">3.5x</span>
+</div>
+<div class="flex-1 bg-secondary-container/20 rounded-t-lg relative group h-[85%]">
+<div class="absolute inset-x-0 bottom-0 bg-primary-container/40 rounded-t-lg h-[90%] group-hover:bg-primary-container/60 transition-all"></div>
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">4.9x</span>
+</div>
+<div class="flex-1 bg-secondary-container/20 rounded-t-lg relative group h-[70%]">
+<div class="absolute inset-x-0 bottom-0 bg-primary-container/40 rounded-t-lg h-[80%] group-hover:bg-primary-container/60 transition-all"></div>
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">4.1x</span>
+</div>
+<div class="flex-1 bg-secondary-container/20 rounded-t-lg relative group h-[95%]">
+<div class="absolute inset-x-0 bottom-0 bg-primary-container/40 rounded-t-lg h-[95%] group-hover:bg-primary-container/60 transition-all"></div>
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">5.2x</span>
+</div>
+<div class="flex-1 bg-secondary-container/20 rounded-t-lg relative group h-[60%]">
+<div class="absolute inset-x-0 bottom-0 bg-primary-container/40 rounded-t-lg h-[70%] group-hover:bg-primary-container/60 transition-all"></div>
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">3.9x</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="text-[10px] font-bold text-on-surface-variant/70 mb-1">FB AD SPEND</p>
+<p class="text-sm font-bold">₹42,000</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="text-[10px] font-bold text-on-surface-variant/70 mb-1">GOOGLE ADS</p>
+<p class="text-sm font-bold">₹28,500</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="text-[10px] font-bold text-on-surface-variant/70 mb-1">INFLUENCER</p>
+<p class="text-sm font-bold">₹14,500</p>
+</div>
+</div>
+</div>
+</div>
+<!-- RTO Alerts Section -->
+<div class="col-span-12 lg:col-span-8">
+<div class="flex items-center justify-between mb-6">
+<h4 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">priority_high</span>
+                        RTO Alerts &amp; Critical Actions
+                    </h4>
+<a class="text-xs font-bold text-primary hover:underline" href="#">View All Critical Orders</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- RTO Card 1 -->
+<div class="bg-tertiary-container/30 border border-tertiary/10 p-6 rounded-xl rto-pulse">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">assignment_return</span>
+</div>
+<div>
+<h5 class="text-sm font-bold text-on-tertiary-container">Order #AT-8829</h5>
+<p class="text-[10px] text-on-tertiary-container/70">Failed Attempt: 2 (Incorrect Address)</p>
+</div>
+</div>
+<span class="bg-tertiary text-on-tertiary text-[10px] font-black px-2 py-1 rounded">RTO RISK</span>
+</div>
+<div class="flex justify-between items-center mb-6">
+<div>
+<p class="text-[10px] text-on-tertiary-container font-semibold">Value</p>
+<p class="text-sm font-bold text-on-tertiary-container">₹12,490</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-on-tertiary-container font-semibold">Customer</p>
+<p class="text-sm font-bold text-on-tertiary-container">Arjun M.</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-tertiary text-on-tertiary py-2 rounded-md text-[10px] font-bold uppercase tracking-wider hover:opacity-90 transition-all">Verify Phone</button>
+<button class="flex-1 bg-surface-container-lowest text-tertiary border border-tertiary/20 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider hover:bg-white/50 transition-all">Re-route</button>
+</div>
+</div>
+<!-- RTO Card 2 -->
+<div class="bg-tertiary-container/30 border border-tertiary/10 p-6 rounded-xl">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary/80 text-on-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">block</span>
+</div>
+<div>
+<h5 class="text-sm font-bold text-on-tertiary-container">Order #AT-8841</h5>
+<p class="text-[10px] text-on-tertiary-container/70">Refused at Door: "Change of Mind"</p>
+</div>
+</div>
+<span class="bg-tertiary/80 text-on-tertiary text-[10px] font-black px-2 py-1 rounded">REFUSED</span>
+</div>
+<div class="flex justify-between items-center mb-6">
+<div>
+<p class="text-[10px] text-on-tertiary-container font-semibold">Value</p>
+<p class="text-sm font-bold text-on-tertiary-container">₹8,900</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-on-tertiary-container font-semibold">Customer</p>
+<p class="text-sm font-bold text-on-tertiary-container">Sanya K.</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-tertiary/80 text-on-tertiary py-2 rounded-md text-[10px] font-bold uppercase tracking-wider hover:opacity-90 transition-all">Call Customer</button>
+<button class="flex-1 bg-surface-container-lowest text-tertiary border border-tertiary/20 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider hover:bg-white/50 transition-all">Cancel &amp; Return</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Supplier Panel Snippet -->
+<div class="col-span-12 lg:col-span-4">
+<div class="bg-surface-container-lowest p-8 rounded-xl gold-shadow h-full border border-outline-variant/10">
+<h4 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">inventory</span>
+                        Supplier Panel
+                    </h4>
+<div class="flex flex-col gap-6">
+<div class="flex gap-4 p-4 rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors cursor-pointer">
+<img alt="Supplier" class="w-12 h-12 rounded-md object-cover" data-alt="close up of premium fabric textures in an artisan workshop with golden sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy4z-QTTZ-U9bq7HbAMN8tx9dUcCInRhoKD3LTVUwsYruuHz4ZTZEQ6scpKBEQgcUR9BoHYkU9ZEbSyV7H95m2NUdpQWSd6ulMJGsqV6vjjnS14gSCMtVTvDtmPlLS5yyv6Y79brNkCwp0zgXQpwpCTEwYJcQGoWYbTwbeUeimpQ9vIP0R9vNd6xNRv1Kjs313jsx9CqLRqeKiReYT9-Ns0122L6y8LW82an_-aEb4xTWL75M9AD3wn3IQq05u4oWbSNsc0PYLFxM"/>
+<div>
+<p class="text-xs font-bold">Jaipur Textiles Co.</p>
+<p class="text-[10px] text-on-surface-variant mt-1">"Winter Collection ready for pickup."</p>
+<p class="text-[9px] text-primary font-bold mt-1">2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors cursor-pointer">
+<img alt="Supplier" class="w-12 h-12 rounded-md object-cover" data-alt="industrial warehouse interior with organized shelves and warm artificial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2Oi5c9P9jsGx70ZA0Dhmq5h2hmWDJoxzJ_MAal1SMYDWQWXrKTuW6RQhyCVqp_A6OwiecNm6hg3PxDySO3sxpqrUg9O8RfMbNcrd1Xx15FFclLCRbUeE0ov6llcobyXSaQEKvD-LGx3ttYObE0rg62qUHmK6P1-TE2Kcg2I-dPsf42khXT_cnOSohzHJ2-KRlfPJEJ3g1h_-FrwLGFYmRV0sSIiQlN07L8bZSsl3_q_Nlv4Qlj1kJ6U_9sMsjC02fml9NdZ9-Q_8"/>
+<div>
+<p class="text-xs font-bold">Elite Logistics Ltd.</p>
+<p class="text-[10px] text-on-surface-variant mt-1">"Delay alert: Monsoon in Western Hub."</p>
+<p class="text-[9px] text-tertiary font-bold mt-1">5 hours ago</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-12 h-12 bg-secondary-container rounded-md flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">add</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-xs font-bold">Onboard New Vendor</p>
+<p class="text-[10px] text-on-surface-variant">Access wholesale marketplace</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 border border-primary-container/30 text-primary py-3 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-primary-container/5 transition-all">Open Full Panel</button>
+</div>
+</div>
+</div>
+<!-- Recent Transactions Table -->
+<div class="mt-10 bg-surface-container-lowest rounded-xl gold-shadow overflow-hidden">
+<div class="p-8 flex justify-between items-center border-b border-outline-variant/10">
+<h4 class="text-lg font-bold">Fulfillment Ledger</h4>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 text-xs font-medium text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Shipped
+                    </div>
+<div class="flex items-center gap-2 text-xs font-medium text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span> RTO Warning
+                    </div>
+</div>
+</div>
+<table class="w-full text-left">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Order ID</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Customer</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Status</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Channel</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-right">Amount</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-8 py-5 text-sm font-bold">#AT-9021</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-[10px] font-bold text-on-primary-fixed">RM</div>
+<span class="text-sm font-medium">Rajesh Mishra</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="text-[10px] font-black uppercase tracking-widest bg-primary-container/20 text-on-primary-container px-3 py-1 rounded-full">IN TRANSIT</span>
+</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Direct Store</td>
+<td class="px-8 py-5 text-sm font-bold text-right">₹15,200</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-8 py-5 text-sm font-bold">#AT-9019</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-[10px] font-bold text-on-tertiary-fixed">SL</div>
+<span class="text-sm font-medium">Sunita Lal</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="text-[10px] font-black uppercase tracking-widest bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full">RTO ALERT</span>
+</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Instagram Shop</td>
+<td class="px-8 py-5 text-sm font-bold text-right text-tertiary">₹4,850</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-8 py-5 text-sm font-bold">#AT-9015</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-[10px] font-bold text-on-secondary-container">VK</div>
+<span class="text-sm font-medium">Varun Kapoor</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="text-[10px] font-black uppercase tracking-widest bg-surface-container text-on-surface-variant px-3 py-1 rounded-full">DELIVERED</span>
+</td>
+<td class="px-8 py-5 text-sm text-on-surface-variant">Direct Store</td>
+<td class="px-8 py-5 text-sm font-bold text-right">₹22,100</td>
+</tr>
+</tbody>
+</table>
+<div class="p-4 bg-surface-container-low text-center">
+<button class="text-[10px] font-black uppercase tracking-widest text-primary-container hover:text-primary transition-colors">Load More History</button>
+</div>
+</div>
+</main>
+</body></html>

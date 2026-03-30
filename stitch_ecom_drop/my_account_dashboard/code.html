@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Noto+Sans+Devanagari:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#d4af37",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "outline": "#7f7663",
+              "secondary-fixed-dim": "#dfc29f",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#eaead1",
+              "primary-fixed-dim": "#e9c349",
+              "on-secondary-fixed-variant": "#574329",
+              "surface-container-low": "#f5f5dc",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#755f42",
+              "inverse-surface": "#303221",
+              "surface": "#fbfbe2",
+              "outline-variant": "#d0c5af",
+              "on-error": "#ffffff",
+              "secondary-container": "#f9dbb7",
+              "background": "#fbfbe2",
+              "on-tertiary": "#ffffff",
+              "on-primary-container": "#554300",
+              "primary-fixed": "#ffe088",
+              "on-tertiary-fixed": "#00174b",
+              "tertiary": "#415ba4",
+              "inverse-primary": "#e9c349",
+              "tertiary-fixed": "#dbe1ff",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#241a00",
+              "secondary": "#715b3e",
+              "on-tertiary-fixed-variant": "#27438a",
+              "inverse-on-surface": "#f2f2d9",
+              "surface-container-highest": "#e4e4cc",
+              "on-tertiary-container": "#254188",
+              "error": "#ba1a1a",
+              "tertiary-container": "#97b0ff",
+              "secondary-fixed": "#fcdeba",
+              "surface-container": "#efefd7",
+              "on-primary-fixed-variant": "#574500",
+              "surface-dim": "#dbdcc3",
+              "primary": "#735c00",
+              "on-background": "#1b1d0e",
+              "surface-bright": "#fbfbe2",
+              "on-secondary": "#ffffff",
+              "surface-tint": "#735c00",
+              "on-surface-variant": "#4d4635",
+              "on-secondary-fixed": "#281903",
+              "on-error-container": "#93000a",
+              "on-surface": "#1b1d0e",
+              "surface-variant": "#e4e4cc"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .tonal-shift { transition: background-color 0.3s ease; }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#FBFBE2]/70 backdrop-blur-md shadow-[0px_20px_40px_rgba(115,92,0,0.08)]">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#735C00]">Swadesh Wears</div>
+<div class="hidden md:flex items-center gap-8 font-headline tracking-tight text-sm uppercase font-semibold">
+<a class="text-[#4D4635] hover:text-[#735C00] transition-colors duration-300" href="#">Collections</a>
+<a class="text-[#4D4635] hover:text-[#735C00] transition-colors duration-300" href="#">Heritage</a>
+<a class="text-[#4D4635] hover:text-[#735C00] transition-colors duration-300" href="#">New Arrivals</a>
+<a class="text-[#4D4635] hover:text-[#735C00] transition-colors duration-300" href="#">Sustainability</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#735C00] hover:scale-95 duration-200 transition-transform">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="text-[#735C00] hover:scale-95 duration-200 transition-transform">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</nav>
+<div class="flex min-h-screen pt-20">
+<!-- Side Navigation Shell -->
+<aside class="h-[calc(100vh-5rem)] w-72 sticky top-20 rounded-r-[2rem] bg-[#FBFBE2] flex flex-col py-10 px-4 border-r border-[#D0C5AF]/15">
+<div class="px-6 mb-8">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-primary-container p-0.5">
+<img class="w-full h-full object-cover rounded-full" data-alt="portrait of a young indian woman with elegant features and traditional jewelry in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb_efbzqigXzqyYn6TD9UPvBSfipYxn1NxB1K7Kw5Pw90wBBEVDfxyefX9-JG5o_Uzxc8W9WKdouezsYFA0-b99c_F0-hX44lnQ6t_jetaAclzthbYgUYz-ug3Bb0l6viL3lb14oJCtzg8iW7D9jhqgul_Pl7ESBQT1-Cv1xvD0WUs9OXWkSC_zadDPVw9nNGLi4fdddjtO2lMJ9axM3pGwzegTDZb7WNR3tFv8V1N5t7_cP0Ekv9jAUnIkAiBOj--N6DyAJWx0_o"/>
+</div>
+<h2 class="font-headline font-bold text-xl text-[#735C00]">Namaste, Ananya</h2>
+<p class="text-on-surface-variant text-sm font-medium">Gold Member</p>
+<button class="mt-4 text-xs font-bold uppercase tracking-widest text-[#735C00] border-b border-[#D4AF37] pb-1">View Loyalty Points</button>
+</div>
+<nav class="flex-1 space-y-1 font-headline text-base font-medium">
+<a class="flex items-center gap-3 bg-[#D4AF37] text-white rounded-full px-6 py-3 my-1 transition-all translate-x-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<span>Profile</span>
+</a>
+<a class="flex items-center gap-3 text-[#4D4635] px-6 py-3 my-1 hover:bg-[#EFEFD7] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">package_2</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 text-[#4D4635] px-6 py-3 my-1 hover:bg-[#EFEFD7] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span>Addresses</span>
+</a>
+<a class="flex items-center gap-3 text-[#4D4635] px-6 py-3 my-1 hover:bg-[#EFEFD7] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span>Wishlist</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-[#D0C5AF]/15 space-y-1 font-headline">
+<a class="flex items-center gap-3 text-[#4D4635] px-6 py-3 hover:bg-[#EFEFD7] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 text-error px-6 py-3 hover:bg-error-container/20 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 px-12 py-10 max-w-6xl">
+<!-- Greeting & Trust Badge -->
+<header class="flex justify-between items-end mb-12">
+<div>
+<span class="text-primary font-headline font-semibold tracking-widest uppercase text-xs mb-2 block">Your Private Atelier</span>
+<h1 class="text-4xl font-headline font-extrabold text-on-surface tracking-tight">Namaste, Ananya! <span class="text-[#D4AF37]">You're a Gold Member.</span></h1>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Secure Heritage Account</span>
+</div>
+</header>
+<!-- Bento Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-[0px_20px_40px_rgba(115,92,0,0.06)] group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-primary-container/10 rounded-full">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+</div>
+<span class="text-xs font-bold text-primary">+2 this month</span>
+</div>
+<p class="text-on-surface-variant font-headline text-sm mb-1">Total Orders</p>
+<h3 class="text-4xl font-headline font-bold text-on-surface">8</h3>
+</div>
+<div class="bg-primary-container p-8 rounded-lg shadow-[0px_20px_40px_rgba(115,92,0,0.12)] text-white relative overflow-hidden group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-white/20 rounded-full">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+</div>
+<p class="text-white/80 font-headline text-sm mb-1">Loyalty Points</p>
+<h3 class="text-4xl font-headline font-bold">1,250</h3>
+<p class="mt-4 text-xs font-medium bg-white/20 inline-block px-3 py-1 rounded-full">Next Tier: Platinum at 2,000</p>
+</div>
+<!-- Abstract Motif Background -->
+<div class="absolute -right-8 -bottom-8 opacity-10 rotate-12">
+<span class="material-symbols-outlined text-[120px]">filter_vintage</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-[0px_20px_40px_rgba(115,92,0,0.06)] group hover:translate-y-[-4px] transition-transform duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-tertiary/10 rounded-full">
+<span class="material-symbols-outlined text-tertiary">favorite</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-headline text-sm mb-1">Active Wishlist</p>
+<h3 class="text-4xl font-headline font-bold text-on-surface">14</h3>
+</div>
+</section>
+<!-- Recent Orders Section -->
+<section class="mb-16">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-2xl font-headline font-bold text-on-surface">Recent Orders</h2>
+<a class="text-sm font-bold text-primary flex items-center gap-1" href="#">View All History <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="bg-surface-container rounded-lg p-6 flex items-center gap-8 relative overflow-hidden">
+<div class="w-32 h-40 rounded-lg overflow-hidden flex-shrink-0 shadow-lg">
+<img class="w-full h-full object-cover" data-alt="exquisite ivory and gold silk sherwani with intricate zari embroidery on a minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9_xVfrcajCVZDXR_XpCTZwcMhEv3yfGStAFOMpb0Wc7IrOxFoEvdL8MUH3I44TJYsjWj4o70o8J1rxwtnmH351YV2fm2HUZywziDIaHNryjnGpB1dDpIgzM_HJrVvwFQYdrW14SD_PzbMusPj9mfq9pD2e8hOVsxBlTgHorwP5DzSDnmvOEWvIeQ6MY1YXCoPi0VcCY1b3PD6VznUvkc1bqf-R-TEk-cXPFSyEcUh_p0KxlUUHwdti22FfwYCj6Ey0dG-Ix6J5w0"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">Order #SW-9821</span>
+<span class="flex items-center gap-1 text-xs font-bold text-secondary">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+                                In Transit
+                            </span>
+</div>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-1">Royal Zari Embroidered Sherwani</h4>
+<p class="text-on-surface-variant text-sm mb-6">Arriving by Thursday, 24th Oct</p>
+<div class="flex gap-4">
+<button class="bg-primary text-white px-8 py-3 rounded-full text-sm font-bold hover:shadow-[0px_10px_20px_rgba(115,92,0,0.2)] transition-all">Track Order</button>
+<button class="bg-surface-container-highest text-on-surface px-8 py-3 rounded-full text-sm font-bold hover:bg-surface-container-high transition-all">Order Details</button>
+</div>
+</div>
+<!-- Progress Step Decorative -->
+<div class="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2 text-right">
+<div class="flex flex-col items-end gap-4">
+<div class="flex items-center gap-2">
+<div class="text-right">
+<p class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant">Dispatched</p>
+<p class="text-xs text-on-surface">Delhi Hub</p>
+</div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div class="w-px h-8 bg-outline-variant mr-[3.5px]"></div>
+<div class="flex items-center gap-2">
+<div class="text-right">
+<p class="text-[10px] font-bold uppercase tracking-tighter text-outline">Out for Delivery</p>
+</div>
+<div class="w-2 h-2 rounded-full border-2 border-outline-variant"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recommended For You Section -->
+<section class="mb-12">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-2xl font-headline font-bold text-on-surface">Curated For You</h2>
+<div class="flex gap-2">
+<button class="p-2 rounded-full border border-outline-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-2 rounded-full border border-outline-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto hide-scrollbar pb-8 snap-x">
+<!-- Recommended Card 1 -->
+<div class="flex-shrink-0 w-72 snap-start group">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden mb-4 bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="stunning red silk bridal lehenga with heavy gold borders and emerald detailing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8V62KD-1qorsZ82CAWcT30BTTfWuPXBLIEdSIA11AEd5nglHfRwJEqGH0x8KBY6X6NPQUwmmcOIQjYvYoR_TiBvb4O4ohiSnU2iC_fuzVsmNSzC8e8LYVLTNR5RKUgZPhs8BQreR2kCH7-Nb5h78ewdCIYyn6GAJLoDFv5cE8CzEUYGhwdeBEk4axIv0AULi4AWtDCTkTPEJ5nfchRz5y_ikJXLlcz5LleoCMLWihGi3lSNRIUWR7bRS5vepiicO7Npeqy1n6ODA"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur-md rounded-full text-on-surface hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<h5 class="font-headline font-bold text-on-surface">Crimson Heirloom Lehenga</h5>
+<p class="text-primary font-bold text-sm">₹84,500</p>
+</div>
+<!-- Recommended Card 2 -->
+<div class="flex-shrink-0 w-72 snap-start group">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden mb-4 bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="men's deep indigo blue bandhgala jacket with silver buttons and structured shoulders" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA3IEzuOQORG270ivrxFGLOo64zPRSQ6czGxFq4Q8EHX0NqbjBuvRinALMosc6K0HCmVDMxwgDIbNmj62Ml-qSXS634LKn6vz136XJcEkLr80c7Bqj3E8HE4i7Wg22CI6ESsxfIrgImxIjwczqb3p4RK03fYbFdMcuMPoZ9bm4LEmTJ0ZAZBEOBri3uckfxR9x-3Utc4e9MD-It1c_i-7H2nPOwccgWHyWffyiGCXrwQWXFUF4iYzGE9OaZiZTVv1AEBVb8GMRpws"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur-md rounded-full text-on-surface hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<h5 class="font-headline font-bold text-on-surface">Midnight Indigo Bandhgala</h5>
+<p class="text-primary font-bold text-sm">₹42,000</p>
+</div>
+<!-- Recommended Card 3 -->
+<div class="flex-shrink-0 w-72 snap-start group">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden mb-4 bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="luxurious emerald green pashmina shawl with intricate hand-woven floral patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtA4c1cbnQd6PMWHOEuVHWw5JxAd1DpdCJ-dmIVYGpwsXui5_yATtfKsHGqaVe1vVdqcu4Jw3ib0QvxAtCai4vU9ZZ2LAp0pAN594MzInGdCUrk_3Gl9UTEzPOeMsl8MtQe-2G0nNBB7tR257ZHkzdgATshuM5S7gpL2LJuZYVusiJ_pUjc1Yf8UDVXZfPCEWn8r62PuhaBRa88kzRlve0toLdLUvNJbl3Scy_M2IZjzZbQ3xCAki603CPCAoS7-NeAxcMt7bzhBg"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur-md rounded-full text-on-surface hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<h5 class="font-headline font-bold text-on-surface">Emerald Pashmina Drape</h5>
+<p class="text-primary font-bold text-sm">₹18,900</p>
+</div>
+<!-- Recommended Card 4 -->
+<div class="flex-shrink-0 w-72 snap-start group">
+<div class="relative aspect-[3/4] rounded-lg overflow-hidden mb-4 bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="modern pastel pink floral printed saree in lightweight organza fabric with scalloped edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCRrJRV_geveCYtuJt8w4OaSB1ChH2CIXQm_DqpncNjod5UEZxKv_rceWVvw21sMk-GRavUh65NO3piaNCU6zwMHgBSZqTZiDzMUqp1scfzdVAakAxUd8R0v_01milh-HEMTsajrTp4zxP_upIvN928uQoNKQOk0VOYjC49LRLSLleDCT3aMbujURPWC0uIkIiFaKhVmyPJapRB2Uxwxv1V_Ak4d7U2MuMPJwMdvarjIU2vKES2UXv-P479HnmUO8W_6TIrjIO2SM"/>
+<button class="absolute top-4 right-4 p-2 bg-white/80 backdrop-blur-md rounded-full text-on-surface hover:text-error transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<h5 class="font-headline font-bold text-on-surface">Rose Quartz Organza Saree</h5>
+<p class="text-primary font-bold text-sm">₹31,000</p>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Floating Action Button for Support -->
+<div class="fixed bottom-8 right-8 z-40">
+<button class="bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0px_20px_40px_rgba(115,92,0,0.3)] hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">support_agent</span>
+</button>
+</div>
+</body></html>

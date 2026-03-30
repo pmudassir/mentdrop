@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Swadesh - My Account</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Noto+Sans+Devanagari:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#93000a",
+              "inverse-surface": "#303221",
+              "surface-container": "#efefd7",
+              "surface": "#fbfbe2",
+              "primary-container": "#d4af37",
+              "on-secondary-fixed": "#281903",
+              "surface-tint": "#735c00",
+              "outline-variant": "#d0c5af",
+              "on-surface": "#1b1d0e",
+              "tertiary-fixed": "#dbe1ff",
+              "on-secondary-fixed-variant": "#574329",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "on-primary-container": "#554300",
+              "on-surface-variant": "#4d4635",
+              "inverse-primary": "#e9c349",
+              "on-primary-fixed-variant": "#574500",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#f2f2d9",
+              "on-tertiary-fixed": "#00174b",
+              "surface-bright": "#fbfbe2",
+              "on-tertiary": "#ffffff",
+              "surface-dim": "#dbdcc3",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#dfc29f",
+              "on-primary-fixed": "#241a00",
+              "surface-variant": "#e4e4cc",
+              "primary": "#735c00",
+              "secondary": "#715b3e",
+              "on-primary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e4e4cc",
+              "surface-container-high": "#eaead1",
+              "error": "#ba1a1a",
+              "tertiary": "#415ba4",
+              "background": "#fbfbe2",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#755f42",
+              "tertiary-container": "#97b0ff",
+              "on-tertiary-container": "#254188",
+              "surface-container-low": "#f5f5dc",
+              "primary-fixed-dim": "#e9c349",
+              "primary-fixed": "#ffe088",
+              "outline": "#7f7663",
+              "on-background": "#1b1d0e",
+              "secondary-fixed": "#fcdeba",
+              "secondary-container": "#f9dbb7",
+              "on-tertiary-fixed-variant": "#27438a"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-tap-highlight-color: transparent;
+      }
+      .gold-glow {
+        background: linear-gradient(135deg, #735c00 0%, #d4af37 100%);
+      }
+      .asymmetric-clip {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#FBFBE2]/70 backdrop-blur-md flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#735C00] transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<h1 class="text-2xl font-extrabold tracking-widest text-[#735C00] uppercase font-headline">Swadesh</h1>
+<div class="flex items-center gap-4">
+<button class="text-[#735C00] transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-6 space-y-8">
+<!-- Personalized Greeting -->
+<section class="relative py-4 flex items-center gap-5">
+<div class="relative">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary-container p-0.5">
+<img alt="Profile picture" class="w-full h-full object-cover rounded-full" data-alt="elegant portrait of a young Indian woman with gold jewelry and a traditional silk outfit against a soft neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEAh9xYgF829M--CYDvVR67TvCEFDMkTySZLwzf6BP-ektpownIB32-htmwaAAB5ukpbMv1YbZi39dL-27rrPaTMEFsXHvAznnNtO1nIiaKK0t4woXcDvf_pMdaXh5ragz9z6ZxQ-fScCM5ZXkv2Aa4yd6h-FVk4Hoip8QjKz9UqJ8ReV2BvHCmcAlN7pC1l0-Fs6h7W8vTEyS5EdPB3vhGV34ebATEi_a_CFRoe2uea9yxWK21OIq3NwHbcp1cX43ns51EU2P-Zk"/>
+</div>
+<div class="absolute -bottom-1 -right-1 gold-glow text-white rounded-full p-1.5 shadow-lg">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+</div>
+<div class="space-y-1">
+<h2 class="text-3xl font-headline font-bold text-on-surface tracking-tight">Namaste, Ananya!</h2>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-container/10 text-primary font-headline text-xs font-bold uppercase tracking-wider">
+                    Gold Member
+                </span>
+</div>
+</section>
+<!-- Quick Status Cards - Bento Style -->
+<section class="grid grid-cols-2 gap-4">
+<div class="col-span-1 bg-surface-container-lowest p-5 rounded-lg flex flex-col justify-between h-32 shadow-[0px_10px_30px_rgba(115,92,0,0.04)]">
+<span class="material-symbols-outlined text-primary text-3xl">shopping_cart</span>
+<div>
+<p class="text-3xl font-headline font-extrabold text-on-surface">8</p>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Total Orders</p>
+</div>
+</div>
+<div class="col-span-1 space-y-4">
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">stars</span>
+<div>
+<p class="text-lg font-headline font-bold leading-none">1,250</p>
+<p class="text-[9px] uppercase tracking-tighter text-on-surface-variant font-semibold">Loyalty Points</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-4 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">favorite</span>
+<div>
+<p class="text-lg font-headline font-bold leading-none">14</p>
+<p class="text-[9px] uppercase tracking-tighter text-on-surface-variant font-semibold">Wishlist</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Orders -->
+<section class="space-y-4">
+<div class="flex justify-between items-end px-1">
+<h3 class="text-xl font-headline font-bold tracking-tight">Recent Orders</h3>
+<button class="text-primary text-xs font-bold uppercase tracking-widest">View All</button>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg flex gap-4 shadow-[0px_10px_30px_rgba(115,92,0,0.04)] overflow-hidden relative">
+<div class="w-24 h-24 rounded overflow-hidden flex-shrink-0">
+<img alt="Sherwani" class="w-full h-full object-cover" data-alt="luxurious cream sherwani with intricate gold zari embroidery detail on high-quality fabric displayed elegantly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNSX1ZngBnAIptWtOmVGGuIs0mHE_1TjZs_vP_15VLPajeo_lq4OSKYcQKg2KDS_JN97rDioMeLbc76PJaAdZrS0sEukg9zI7btAb16T5lOSb7zDcTa_hvlPnGCKqTcGn1Fk0GKCVdSaU3ypC9CGDUebrGByl5FRzGUBr3OZqqIROLR-EefTOPhuIbImy9uwFv2yikhxjPUZi1G2eD6QdsjsFR3cv13Az5RIb8eCX2cRVudWg5UyXLLMYgQYxL2u7ZZw0yC9v6L20"/>
+</div>
+<div class="flex flex-col justify-between py-1 flex-grow">
+<div>
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest mb-1">In Transit</p>
+<h4 class="font-headline font-bold text-sm leading-tight">Royal Zari Embroidered Sherwani</h4>
+</div>
+<button class="gold-glow text-white text-[10px] font-bold uppercase tracking-widest py-2 px-4 rounded-full w-max active:scale-95 duration-200">
+                        Track Order
+                    </button>
+</div>
+</div>
+</section>
+<!-- Curated For You - Horizontal Scroll -->
+<section class="space-y-4 overflow-hidden -mx-6 px-6">
+<h3 class="text-xl font-headline font-bold tracking-tight px-1">Curated For You</h3>
+<div class="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
+<!-- Product 1 -->
+<div class="flex-shrink-0 w-56 space-y-3">
+<div class="aspect-[3/4] rounded-lg overflow-hidden relative">
+<img alt="Lehenga" class="w-full h-full object-cover" data-alt="stunning crimson red heirloom lehenga with deep gold embroidery and silk texture in soft editorial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDrBNAFq_2KSyc6I_BcCv5SeRe1QF1QLYQoilXbT3Rpn0p_WUQRp79Sc6_Co_h9Kn0KbETG-NS2PiF4RvZZcQWRKAtUD9lqSlba1IK0DAb7r5pUIyDDPkOrwDKOZI6C8K5wno9Q2BcoNxCxaM8IIPcJs3xxl-HAgwu2hD6DNK_1654f4dHR5t1TAVXppjeHbg9COaBg-TR5vnv1Ml7yUhbMClyzbAy0j0Zb3ALbq9FjrIakn_SbK7PSVFXkFi60_4usooFoFFP7qc"/>
+<div class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-1.5 text-primary">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm">Crimson Heirloom Lehenga</h4>
+<p class="text-primary font-bold text-sm">₹84,900</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex-shrink-0 w-56 space-y-3">
+<div class="aspect-[3/4] rounded-lg overflow-hidden relative">
+<img alt="Bandhgala" class="w-full h-full object-cover" data-alt="midnight indigo velvet bandhgala suit with subtle metallic buttons in a regal moody setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA55z2z2IVyhRO_FCYDClEGf9NBCmxDp2-_Gjf0TBFXHlpf6rlTG0A1cHW-MS5hoPsuhOduskZQijiIpeBVo48bjaUKaXHns7zqQYXE4hvHCfqYMmp68wCZvuHiEWtNmflZe7iWoqhz7MgAA6z55L40ZZXbVskWoaLvZSLehRy7eplJdQWkkJQOxBq3RROhCQKwkOX_ECkQo0zeAQCji3N8tomeFJJIx0-VnA9IBHcSyAApUXie42KXvtv9jU-RP3aa3L3DtwlbnoM"/>
+<div class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-1.5 text-primary">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm">Midnight Indigo Bandhgala</h4>
+<p class="text-primary font-bold text-sm">₹32,500</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Account Navigation -->
+<section class="bg-surface-container-low rounded-lg p-2 mb-10">
+<nav class="flex flex-col">
+<a class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">receipt_long</span>
+<span class="font-headline font-semibold text-sm">Orders</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">location_on</span>
+<span class="font-headline font-semibold text-sm">Addresses</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">favorite</span>
+<span class="font-headline font-semibold text-sm">Wishlist</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">settings</span>
+<span class="font-headline font-semibold text-sm">Settings</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 mt-2 text-error" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-headline font-bold text-sm uppercase tracking-widest">Logout</span>
+</div>
+</a>
+</nav>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-[#FBFBE2]/80 backdrop-blur-xl flex justify-around items-center px-4 pb-safe z-50 shadow-[0px_-10px_30px_rgba(115,92,0,0.06)] border-t border-[#D0C5AF]/15">
+<a class="flex flex-col items-center justify-center text-[#4D4635] px-4 py-2 hover:text-[#735C00] transition-opacity active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-widest font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4D4635] px-4 py-2 hover:text-[#735C00] transition-opacity active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-widest font-semibold">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4D4635] px-4 py-2 hover:text-[#735C00] transition-opacity active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-widest font-semibold">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#D4AF37] text-white rounded-full px-5 py-2 scale-110 -translate-y-1 transition-all active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-widest font-semibold">Profile</span>
+</a>
+</nav>
+<style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+</body></html>

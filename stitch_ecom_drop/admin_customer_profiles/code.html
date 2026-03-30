@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Insights | Atelier Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f3f3f4",
+                        "surface-tint": "#006c50",
+                        "secondary-fixed": "#e2e2e3",
+                        "surface-container-high": "#e8e8e9",
+                        "outline": "#6e7a73",
+                        "primary-fixed-dim": "#75d9b3",
+                        "inverse-surface": "#2f3132",
+                        "secondary": "#5d5e60",
+                        "on-background": "#1a1c1d",
+                        "outline-variant": "#bdc9c2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#454748",
+                        "on-primary-fixed-variant": "#00513c",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-container-highest": "#e2e2e3",
+                        "on-primary-container": "#d6ffeb",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#3e4944",
+                        "surface": "#f9f9fa",
+                        "inverse-primary": "#75d9b3",
+                        "on-secondary-fixed": "#1a1c1d",
+                        "tertiary": "#705d00",
+                        "secondary-container": "#dfdfe0",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e2e2e3",
+                        "on-secondary-container": "#616364",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#c9a900",
+                        "background": "#f9f9fa",
+                        "on-primary-fixed": "#002116",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-dim": "#dadadb",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "primary-container": "#008060",
+                        "surface-container": "#eeeeef",
+                        "surface-bright": "#f9f9fa",
+                        "on-surface": "#1a1c1d",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#92f6cf",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary": "#00654b",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed-dim": "#e9c400"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9fa;
+        }
+    </style>
+</head>
+<body class="antialiased text-on-surface">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-900 flex flex-col p-4 gap-y-2 z-50">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">filter_vintage</span>
+</div>
+<div>
+<h1 class="text-lg font-bold tracking-tighter text-slate-900 dark:text-slate-100">Atelier Admin</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-semibold">Premium Ethnic Wear</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-md text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-md text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span> Orders
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-md text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span> Products
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-md text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span> Analytics
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 bg-white dark:bg-slate-800 text-emerald-900 dark:text-emerald-400 shadow-sm rounded-md text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">group</span> Customers
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-md text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span> Content
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-md text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">campaign</span> Marketing
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-md text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">sell</span> Discounts
+            </a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200/50">
+<div class="flex items-center gap-3 px-2">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="portrait of a professional creative director with glasses in a bright studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm9tzTP3U3X-6LQXjF1j66Wj09xfqNI9MKrCdkSAniiTgFGvvKVl3WcX522Ihqrc5B3Wqy72j_VTf35kIuefOX8b-5_XTP3q1G49s4MEoOYUSc-qnuqxQ47pWbMbKOtEZkekoxPNknauH3rT_m-NOwSICGe_XDiZufSQTgzgG-q2oAl8lHzrQh32iymJuUNmOO3-FUP0JN2ucfKJXNOCjFm9ukHy5USZPO8WhqNh136rNEPJ28mrS7NaKltK124OzlVPW8z9s1Vu4"/>
+<div class="overflow-hidden">
+<p class="text-xs font-bold text-slate-900 truncate">Julian Vane</p>
+<p class="text-[10px] text-slate-500 truncate">Store Owner</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Component -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 flex justify-between items-center px-8">
+<div class="flex items-center flex-1 max-w-md">
+<span class="material-symbols-outlined absolute ml-3 text-slate-400">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-md py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-emerald-500/20" placeholder="Search insights..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-500">
+<button class="hover:text-emerald-700 transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<button class="hover:text-emerald-700 transition-colors"><span class="material-symbols-outlined">settings</span></button>
+<button class="hover:text-emerald-700 transition-colors"><span class="material-symbols-outlined">help</span></button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold tracking-wider text-emerald-900">ATELIER DASHBOARD</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-12 min-h-screen bg-surface">
+<!-- Editorial Header Section -->
+<section class="mb-12">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-4xl font-headline font-bold tracking-tight text-on-surface mb-2">Customer Insights</h2>
+<p class="text-on-secondary-fixed-variant max-w-2xl font-body leading-relaxed">
+                        Curate your high-value relationships. Monitor performance, spend patterns, and engagement metrics across your premium clientele.
+                    </p>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2.5 bg-surface-container-highest text-on-surface font-semibold rounded-md text-sm transition-transform active:scale-95">
+                        Export Report
+                    </button>
+<button class="px-5 py-2.5 bg-gradient-to-r from-primary to-primary-container text-white font-semibold rounded-md text-sm shadow-sm transition-transform active:scale-95">
+                        + Add Customer
+                    </button>
+</div>
+</div>
+</section>
+<!-- Top Customers Bento Grid -->
+<section class="mb-16">
+<div class="grid grid-cols-12 gap-6">
+<!-- Highlight Card 1: Top Spender -->
+<div class="col-span-12 lg:col-span-5 bg-surface-container-lowest p-8 rounded-none border-l-4 border-primary shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">Platinum Tier</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<img class="w-16 h-16 rounded-full object-cover" data-alt="portrait of a sophisticated woman with elegant gold jewelry and silk attire in a soft focus minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCyXU3HxUHhWLKOOra4o0u5I1mcv_0vc2Ia3FauHSECJEvnK2W7cpYDH1KFG4V6m4eyAZS9ej4_3wFUbG-V_b1gv90sT1GZP9QcxIK2FV_ueeQa0B6OgZANM1_DHKbkrB0Xvwpi1R-jaGaECz-FhJ9OpB0LBdkEUbTDBIgT_3h67fZV12gh0w1whvlYaHJBRbXu6yxB9GyQ8ymwW7OkXYf69ooggGIUYD10AdL7GluLg_meNF_nQKpoIsO0oKnB-2kWibgTBD64lI"/>
+<div>
+<h3 class="text-2xl font-bold text-on-surface">Ananya Sharma</h3>
+<p class="text-on-surface-variant text-sm">Delhi, India • Member since 2021</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-6 border-t border-outline-variant/20">
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Total Spend</p>
+<p class="text-xl font-bold text-primary tracking-tight">₹4,82,400</p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1">Loyalty Score</p>
+<p class="text-xl font-bold text-on-surface tracking-tight">98/100</p>
+</div>
+</div>
+</div>
+<!-- Highlight Card 2: Frequent Buyer -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest p-8 rounded-none shadow-sm flex flex-col">
+<span class="text-tertiary font-bold text-[10px] tracking-widest uppercase mb-4 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> High Velocity
+                    </span>
+<h3 class="text-lg font-bold text-on-surface mb-2">Repeat Purchase Alert</h3>
+<p class="text-on-secondary-fixed-variant text-sm mb-8">Arjun Kapoor has completed 4 orders in the last 30 days. Consider a 'VIP Concierge' outreach.</p>
+<div class="mt-auto">
+<div class="flex -space-x-3 mb-4">
+<img class="w-10 h-10 rounded-full border-2 border-white object-cover" data-alt="smiling young businessman in a crisp white shirt against a neutral grey wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABt3TvNv9hiAtjWGdOnLt3E6b-JQs9BMdy6a87My40VrPoSu62r49aT6i-zJlMwKfFk0AactrTmaoPcIwQyMEgIZSPxpZJaWWa6ySEM3R6tt-i0yq1SvcDtrMsEUzJcEJzhh8mCBd2RhbeBDOzKEITGQ2Y-yMxuHPanhGemLg_XqDNgD7Q9oO275pBuEhSB6hCSh7WtEcx6cV4_WIxqlcirU_lYWozYeD9VinMO4PJAyCeZpRv0KCToKOVtGmjX75IsU_kCgBwNYo"/>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-white flex items-center justify-center text-[10px] font-bold">+12</div>
+</div>
+<button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                            View Fast-Track List <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Highlight Card 3: Retention Metric -->
+<div class="col-span-12 lg:col-span-3 bg-primary text-white p-8 rounded-none shadow-sm relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-on-primary-container/80 font-bold text-[10px] tracking-widest uppercase mb-6">Retention Rate</h3>
+<div class="text-5xl font-bold tracking-tighter mb-2">84.2%</div>
+<p class="text-on-primary-container/70 text-sm leading-relaxed">Your repeat customer rate increased by 4% this month.</p>
+</div>
+<!-- Abstract Background Pattern -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 bg-white/5 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+<!-- Main Data Sheet Component -->
+<section class="bg-surface-container-lowest rounded-none shadow-sm overflow-hidden">
+<!-- Sheet Toolbar -->
+<div class="p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-outline-variant/15">
+<div class="flex items-center gap-8">
+<div>
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2">Customer Segment</label>
+<select class="bg-transparent border-none p-0 text-sm font-semibold text-on-surface focus:ring-0 cursor-pointer">
+<option>All Customers</option>
+<option>High Value (VIP)</option>
+<option>Returning</option>
+<option>New Acquisitions</option>
+</select>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div>
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2">Last Purchase</label>
+<select class="bg-transparent border-none p-0 text-sm font-semibold text-on-surface focus:ring-0 cursor-pointer">
+<option>Anytime</option>
+<option>Last 30 Days</option>
+<option>Last 6 Months</option>
+<option>Inactive (&gt; 1 Year)</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs text-on-surface-variant font-medium">Showing 420 active profiles</span>
+</div>
+</div>
+<!-- The List -->
+<div class="w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Customer</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Location</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Segment</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Orders</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Total Spend</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Last Activity</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center font-bold text-primary text-xs">RK</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Rohan Khanna</p>
+<p class="text-[11px] text-on-secondary-fixed-variant">rohan.k@example.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-sm text-on-surface">Mumbai, MH</td>
+<td class="px-8 py-6">
+<span class="bg-emerald-50 text-emerald-800 px-2.5 py-1 text-[10px] font-bold rounded-sm tracking-wide">HIGH VALUE</span>
+</td>
+<td class="px-8 py-6 text-sm text-on-surface font-medium">24</td>
+<td class="px-8 py-6 text-sm text-on-surface font-bold tracking-tight">₹1,42,000</td>
+<td class="px-8 py-6 text-sm text-on-surface-variant">12 Oct 2023</td>
+<td class="px-8 py-6 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="professional headshot of a creative woman with artistic flair in a soft-lit boutique environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB55dHblgfojcose0p8-CeIx97LztVJgN4nwHa_aW6OuqRo9H0CutoAKaUfpxCuIPcbHdj7SkXK3g19WmBBpggnJAkbMYJSzDgxIhQiGhEb3Sp2GZXgr175C1w8_iiuDitXWtOslNDc4BJo48trz1Ycwcmv1URXIUm9M5n5U2u1da0oQFVchJfNynxS30I1ubjRV6tTCjU86PLbMuB8sOVYM5ruOwgCaGBEBPJDKAHs1VhwUUp0S4aGgFoZYY2OCo0MXW6XbAP29tQ"/>
+<div>
+<p class="text-sm font-bold text-on-surface">Meera Iyer</p>
+<p class="text-[11px] text-on-secondary-fixed-variant">meera.iyer@webmail.in</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-sm text-on-surface">Bangalore, KA</td>
+<td class="px-8 py-6">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2.5 py-1 text-[10px] font-bold rounded-sm tracking-wide">RETURNING</span>
+</td>
+<td class="px-8 py-6 text-sm text-on-surface font-medium">8</td>
+<td class="px-8 py-6 text-sm text-on-surface font-bold tracking-tight">₹86,500</td>
+<td class="px-8 py-6 text-sm text-on-surface-variant">28 Oct 2023</td>
+<td class="px-8 py-6 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center font-bold text-primary text-xs">SV</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Siddharth Verma</p>
+<p class="text-[11px] text-on-secondary-fixed-variant">sid.v@outlook.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-sm text-on-surface">Delhi, DL</td>
+<td class="px-8 py-6">
+<span class="bg-blue-50 text-blue-700 px-2.5 py-1 text-[10px] font-bold rounded-sm tracking-wide">NEW</span>
+</td>
+<td class="px-8 py-6 text-sm text-on-surface font-medium">1</td>
+<td class="px-8 py-6 text-sm text-on-surface font-bold tracking-tight">₹12,200</td>
+<td class="px-8 py-6 text-sm text-on-surface-variant">Just Now</td>
+<td class="px-8 py-6 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="portrait of a man in casual premium apparel against a soft grey architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQQRGlEypZR-H2nJQYgr7OnZ57RdI_VQbLP1BpuHqnp6iy1iIjpQHob-TuJEGMQGcQCpYS4gHvTNI8oFFxyAZMa0beHtqmQTkJ_-yeV0752TBKNqgpOiAReuf9ZKWA6WDyFY54WxOeRluua4pd4wRYrsEcNklp3-uD7g3QId_fF6PCFep40mr4WVbvDEe1BaVUWDYN8cZ5m-nUa_apRohfZ5hsq7gX3PF3gbet2xMbdbf8XQlcq-Qbhz078A9YTdwRqa9gtTmgPTg"/>
+<div>
+<p class="text-sm font-bold text-on-surface">Vikram Singh</p>
+<p class="text-[11px] text-on-secondary-fixed-variant">v.singh@corporate.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-sm text-on-surface">Chandigarh, CH</td>
+<td class="px-8 py-6">
+<span class="bg-emerald-50 text-emerald-800 px-2.5 py-1 text-[10px] font-bold rounded-sm tracking-wide">HIGH VALUE</span>
+</td>
+<td class="px-8 py-6 text-sm text-on-surface font-medium">15</td>
+<td class="px-8 py-6 text-sm text-on-surface font-bold tracking-tight">₹2,10,800</td>
+<td class="px-8 py-6 text-sm text-on-surface-variant">15 Oct 2023</td>
+<td class="px-8 py-6 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-8 border-t border-outline-variant/15 flex items-center justify-between">
+<button class="text-sm font-bold text-on-surface-variant flex items-center gap-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span> Previous
+                </button>
+<div class="flex gap-2">
+<span class="w-8 h-8 flex items-center justify-center bg-primary text-white text-xs font-bold rounded-sm">1</span>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant text-xs font-bold hover:bg-surface-container-low cursor-pointer rounded-sm">2</span>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant text-xs font-bold hover:bg-surface-container-low cursor-pointer rounded-sm">3</span>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant text-xs font-bold">...</span>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant text-xs font-bold hover:bg-surface-container-low cursor-pointer rounded-sm">12</span>
+</div>
+<button class="text-sm font-bold text-on-surface-variant flex items-center gap-2 hover:text-primary transition-colors">
+                    Next <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Contextual Help / Info Section -->
+<section class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<h4 class="text-sm font-bold tracking-widest uppercase text-on-surface-variant mb-4">Segment Definitions</h4>
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="w-1 h-12 bg-emerald-500 flex-shrink-0"></div>
+<div>
+<p class="text-xs font-bold text-on-surface">High Value (VIP)</p>
+<p class="text-xs text-on-secondary-fixed-variant leading-relaxed">Customers with &gt;₹1,00,000 lifetime spend or more than 10 completed orders.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-1 h-12 bg-tertiary-fixed-dim flex-shrink-0"></div>
+<div>
+<p class="text-xs font-bold text-on-surface">Returning</p>
+<p class="text-xs text-on-secondary-fixed-variant leading-relaxed">Active customers with at least 2 purchases in the last 6 months.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-none border border-outline-variant/20">
+<h4 class="text-sm font-bold text-on-surface mb-2">Automated Insights</h4>
+<p class="text-xs text-on-secondary-fixed-variant leading-relaxed mb-6">Based on current trends, your 'Dormant' segment is growing. We recommend a festive re-engagement campaign for customers in Mumbai and Delhi.</p>
+<button class="text-xs font-bold text-primary hover:underline">Launch Campaign Wizard</button>
+</div>
+</section>
+</main>
+</body></html>

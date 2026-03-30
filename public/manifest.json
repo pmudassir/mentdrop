@@ -1,0 +1,26 @@
+{
+  "name": "Swadesh",
+  "short_name": "Swadesh",
+  "description": "Premium Indian ethnic wear for the modern woman",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBFBE2",
+  "theme_color": "#735C00",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["shopping", "lifestyle"],
+  "lang": "en-IN",
+  "dir": "ltr"
+}

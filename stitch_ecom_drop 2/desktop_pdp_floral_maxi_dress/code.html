@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .heritage-arch {
+            border-radius: 100rem 100rem 0 0;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F9F9F7;
+        }
+        h1, h2, h3, .serif {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#e6deff",
+              "outline-variant": "#c0c8c3",
+              "outline": "#717974",
+              "secondary": "#775a19",
+              "on-tertiary-fixed-variant": "#4900d6",
+              "surface-tint": "#396756",
+              "on-error-container": "#93000a",
+              "inverse-surface": "#2f3130",
+              "tertiary-fixed-dim": "#cabeff",
+              "on-secondary-container": "#785a1a",
+              "secondary-fixed-dim": "#e9c176",
+              "on-primary-fixed": "#002116",
+              "surface-variant": "#e2e3e1",
+              "primary": "#00261b",
+              "tertiary-container": "#3700a7",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#214f3f",
+              "on-secondary-fixed": "#261900",
+              "surface-container": "#eeeeec",
+              "on-background": "#1a1c1b",
+              "inverse-primary": "#a0d1bc",
+              "surface-container-highest": "#e2e3e1",
+              "inverse-on-surface": "#f1f1ef",
+              "secondary-container": "#fed488",
+              "primary-container": "#0b3d2e",
+              "surface": "#f9f9f7",
+              "surface-bright": "#f9f9f7",
+              "on-surface": "#1a1c1b",
+              "on-primary-container": "#79a894",
+              "error-container": "#ffdad6",
+              "primary-fixed": "#bcedd7",
+              "secondary-fixed": "#ffdea5",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#5d4201",
+              "on-error": "#ffffff",
+              "background": "#f9f9f7",
+              "tertiary": "#21006e",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#a28eff",
+              "surface-container-high": "#e8e8e6",
+              "primary-fixed-dim": "#a0d1bc",
+              "on-tertiary-fixed": "#1c0061",
+              "surface-dim": "#dadad8",
+              "surface-container-low": "#f4f4f2",
+              "on-surface-variant": "#414944"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-[#F9F9F7] dark:bg-stone-950 full-width top-0 sticky z-50 shadow-sm dark:shadow-none">
+<div class="flex flex-col items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
+<div class="flex items-center justify-between w-full mb-6">
+<div class="text-3xl font-serif tracking-tighter text-[#00261B] dark:text-stone-50 uppercase">Swadesh</div>
+<div class="flex items-center gap-8">
+<div class="relative group">
+<span class="material-symbols-outlined text-primary cursor-pointer scale-100 active:scale-95 transition-transform" data-icon="search">search</span>
+</div>
+<span class="material-symbols-outlined text-primary cursor-pointer scale-100 active:scale-95 transition-transform" data-icon="person">person</span>
+<span class="material-symbols-outlined text-primary cursor-pointer scale-100 active:scale-95 transition-transform" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</div>
+<div class="flex items-center gap-10 font-['Noto_Serif'] font-light tracking-wide">
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors" href="#">New Arrivals</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors" href="#">Lehengas</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors" href="#">Sarees</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors" href="#">Menswear</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors" href="#">Collections</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors" href="#">Heritage</a>
+</div>
+</div>
+<div class="bg-stone-200/50 dark:bg-stone-800/50 h-[1px] w-full"></div>
+</nav>
+<main class="max-w-[1920px] mx-auto px-6 lg:px-24 py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Gallery Section -->
+<div class="lg:col-span-7 space-y-8">
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 aspect-[3/4] overflow-hidden rounded-xl">
+<img alt="Floral Maxi Dress Full View" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Elegant woman standing in a sun-drenched garden wearing a flowing floral silk maxi dress with intricate hand-painted motifs and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzz-bJ56_hZXBkonACBbKjeCAjbAN6rR6dlFaVSuw1q44K-FTCFvXLg8rl-F94pUR1n7lkqwoCJj-muYZch90Pj4PknYIpzFuKp1EtMC9MifkR9Av1qNUsjPfjAyRCXOx_fgBHcg_LnCzQ6q9Ta7asNQkouXAO3GwfDE2ySnQGrpEuFS6tJ6Fm2YblAil7-kA_fYicOasNdBTaRS97e7VeVZuSYRGJeNUZBV62W7-JG2aAkOu-xVwdFj0Xjk81HqAagseb1p_c8jw"/>
+</div>
+<div class="aspect-[4/5] overflow-hidden rounded-xl">
+<img alt="Fabric Detail" class="w-full h-full object-cover" data-alt="Close-up detail of delicate floral embroidery on high-quality silk fabric with soft organic textures and golden hour light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1QEqfivpmuAj1NFbGP8W8LYrSeAercgEO-b3qmZbn-LCFoYN8jXgcB3fYOa1eHKdtRLB0e03PLPGOEs8i4Em3DjNX9IUkgcs6OadCJArxkJ1-_u2SUGpF4TkY1GonvkzKaexd0tpUYMB11kkonjwRAvlGFw7Gt_U9n3rRhP7wuleZJre-JdNF_6dSIWkOOalwTqQp_z9IGqHGgR7PtzvfW44egLCRIx7LStIRs6HGt2rP9qm_Di5gGG6kyUTFxTibf-OIjkfThOo"/>
+</div>
+<div class="aspect-[4/5] overflow-hidden rounded-xl">
+<img alt="Lifestyle View" class="w-full h-full object-cover" data-alt="Lifestyle shot of a woman walking through an ancient stone archway in a flowing maxi dress, editorial fashion photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX4w5klXzpJzyblEFNiVjR9y8WbTCOHZGLaFnD0ObJtwZoW1OV3Uy1gda_xoME_lTEpZTIS0jF-HqwcRcyAMV50hxAhKhgYkJqlGVg0n8tzymCi8S6qJ7d_jYSEDZ-xqqCWSVl7R5CzjQLI_efDKMHePgyQHYx2k0-jNtYdoR-DL7zWA2Hvkr4KS2R7uKFSULG5aNoHwVBpT2WIqBNCEllIdJcwnFZx88rYVIVOOmgsk35ygKBHZiO3DVW1bfFN77aXSyI7v8Xc68"/>
+</div>
+</div>
+</div>
+<!-- Product Info Section -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="sticky top-32 space-y-10">
+<div>
+<nav class="flex text-xs uppercase tracking-widest text-secondary mb-6 space-x-2">
+<span>Home</span>
+<span>/</span>
+<span>Collections</span>
+<span>/</span>
+<span class="font-bold">Heritage Floral</span>
+</nav>
+<h1 class="text-5xl font-light mb-4 text-primary leading-tight">The Gul-E-Bahar Maxi</h1>
+<p class="text-2xl font-light text-secondary">₹ 24,500.00</p>
+</div>
+<!-- Description -->
+<div class="prose prose-stone">
+<p class="text-on-surface-variant font-body leading-relaxed text-lg">
+                            Inspired by the Mughal gardens at dusk, this maxi dress is hand-crafted from the finest mulberry silk. Featuring a signature "Arch" silhouette and hand-painted floral motifs that cascade like falling blossoms.
+                        </p>
+</div>
+<!-- Size Selection -->
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold uppercase tracking-wider">Select Size</span>
+<button class="text-xs underline text-secondary hover:text-primary transition-colors">Size Guide</button>
+</div>
+<div class="grid grid-cols-5 gap-3">
+<button class="py-3 border border-outline-variant hover:border-secondary transition-all text-sm rounded-lg">XS</button>
+<button class="py-3 border border-secondary bg-secondary/5 text-secondary font-bold text-sm rounded-lg">S</button>
+<button class="py-3 border border-outline-variant hover:border-secondary transition-all text-sm rounded-lg">M</button>
+<button class="py-3 border border-outline-variant hover:border-secondary transition-all text-sm rounded-lg">L</button>
+<button class="py-3 border border-outline-variant hover:border-secondary transition-all text-sm rounded-lg opacity-50 cursor-not-allowed">XL</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="space-y-4 pt-4">
+<button class="w-full bg-primary-container text-white py-5 rounded-xl font-semibold tracking-wide hover:opacity-90 transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Bag
+                        </button>
+<button class="w-full border-2 border-primary text-primary py-5 rounded-xl font-semibold tracking-wide hover:bg-primary hover:text-white transition-all">
+                            Buy Now
+                        </button>
+</div>
+<!-- Details Accordion (Simulated) -->
+<div class="border-t border-outline-variant pt-8 space-y-6">
+<div class="flex justify-between items-center cursor-pointer group">
+<span class="text-sm font-bold uppercase tracking-widest text-primary">Craftsmanship &amp; Care</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-y-1 transition-transform" data-icon="expand_more">expand_more</span>
+</div>
+<div class="flex justify-between items-center cursor-pointer group">
+<span class="text-sm font-bold uppercase tracking-widest text-primary">Shipping &amp; Returns</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-y-1 transition-transform" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="grid grid-cols-3 gap-4 pt-4">
+<div class="flex flex-col items-center text-center space-y-2">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Hand Embroidered</span>
+</div>
+<div class="flex flex-col items-center text-center space-y-2">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="eco">eco</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Pure Mulberry Silk</span>
+</div>
+<div class="flex flex-col items-center text-center space-y-2">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="local_shipping">local_shipping</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Global Shipping</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Editorial Section -->
+<section class="mt-32 py-24 bg-surface-container-low rounded-[3rem] px-12 lg:px-24">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="heritage-arch aspect-[4/5] overflow-hidden">
+<img alt="The Craftsmanship" class="w-full h-full object-cover" data-alt="Artisanal hands working on intricate gold embroidery thread on dark silk fabric in a traditional workshop setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjpVkIdM9xldfSjzds0WdjGRRh6qvWfHq5gCGWa7sAmd7f5XmThRNMTFSgkozUwFdInBSR_ONujchprbpPY0XnwpJtMQreP6-TapeMYOk3u47-7amL3SwQBRhngfoy_l3eOfJRMTYeRne19ggAwlJv_16I6SyfTdDN2ijbSb_PfP648Rjd2oUhcZGU0aVuKeuEQ9tO6OcUWTQcN3dBNjUsQqtHtEu1R4qG8tx28RoS7-yWYEEWxkAJyFCHtPFa9lEI7pLiaxnKBRY"/>
+</div>
+<div class="space-y-8">
+<h2 class="text-4xl lg:text-6xl font-light leading-tight">The Soul of the Loom</h2>
+<p class="text-lg text-on-surface-variant leading-loose font-body">
+                        Each floral motif is more than just a pattern; it is a story woven by our master artisans in Banaras. Using traditional Zari techniques passed down through seven generations, we ensure that every dress is a unique masterpiece, carrying the weight of history and the lightness of modern elegance.
+                    </p>
+<div class="flex items-center gap-4 text-secondary">
+<span class="h-[1px] w-12 bg-secondary"></span>
+<span class="uppercase tracking-[0.3em] text-xs font-bold">Discover the Process</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Items -->
+<section class="mt-32">
+<h3 class="text-3xl font-light mb-12 text-center">Complete the Ensemble</h3>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="space-y-4 group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container">
+<img alt="Product Accessory" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close-up of elegant handcrafted gold earrings with pearl drops on a minimalist neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS-ykfneFRpSYzYs3ZcGeJgZ7Gl7GYqhn2NDne7QRpmoiv2kNZcTkKYSQ-8QPQWp7mUFo2kcCW0jENHvF-7NW-QtEK3n3-Huzxj6F1s9ReYhmbewon5LVNxU8yRiJ-dsv_Va6hig5pR4YMQCzWx7uuBdcM1XyfPnFGmr6WBIrLHAK0Q8adv9yq2lDhPZ6VU9qU9MZ3irQXzl0mop47U_oRmyG4Z774QWUCrYB8osqkr9KzRj8EdmZugWip3F0ip617v6WmP2Ss_uE"/>
+</div>
+<div class="text-center">
+<p class="text-xs text-secondary uppercase tracking-widest mb-1">Accessories</p>
+<h4 class="font-body font-medium">Gold Pearl Jhumkas</h4>
+<p class="text-sm text-on-surface-variant mt-1">₹ 4,200</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="space-y-4 group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container">
+<img alt="Product Accessory" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Luxury embroidered silk heels in a soft cream color with delicate floral details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXOMCxjqWY_TZmAJqzwUiMxIqdswNuzETcCav_T7uZIUay-S03rKavOIKUEGQKm8fJ2N3aHMB18Hyw9nid0aMdqfzgJcVCm1H1YgL8qNEI33HnUvrqy1QIEHj9MorP8f6a8YyIADp73VFORsr8MPBwvhnwgaKgfySh5m3PPMX0XvF_AB7PhgjSCUWRAxi9p6Wf_p6kZ6Rl25_BE9AHvbvZ5S6BieFYuIcMAxuEEfcoVP0QBRBDhm5Xa6udT3yetTg9JJCsA3L0ch0"/>
+</div>
+<div class="text-center">
+<p class="text-xs text-secondary uppercase tracking-widest mb-1">Footwear</p>
+<h4 class="font-body font-medium">Embroidered Silk Mules</h4>
+<p class="text-sm text-on-surface-variant mt-1">₹ 8,900</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="space-y-4 group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container">
+<img alt="Product Accessory" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Handcrafted silk clutch with intricate gold embroidery and a chain strap" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSGtNPougp0f1_FJoN0CUINnOlXsPFdjEU2FgYePotpVDGqVdI5Q-jY5cUMJyeC2WtrkUBCaXlUCv_6U6tJ67YQmUH_I1R3CHc736MCG6wyBykHImOdp1QpKxMHwBidPHrTEhqJnKhGCxc1OO_wLfVKMf-NKIDa4fo2AbSfUXwKBnRvUMHTBxkWRzmPuA9R7cP1zqrCx2uNLvtQ6z7dNHU7TtNAWS0HMUdRLE8nqY5M-jLEE1BGfObJR9XcRhTvaM5FHceavuSCZw"/>
+</div>
+<div class="text-center">
+<p class="text-xs text-secondary uppercase tracking-widest mb-1">Bags</p>
+<h4 class="font-body font-medium">The Heritage Potli</h4>
+<p class="text-sm text-on-surface-variant mt-1">₹ 5,500</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="space-y-4 group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container">
+<img alt="Product Accessory" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Fine silk dupatta with minimal gold piping and floral accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArSaECPwADZMLwYbbEimq1OTya02MmairRC-DfKjaPa_Vu8pCETrqjLmRWBqcL3G6LgrMQEcCV82NmrHgGxB-cWvlXmLXjMJ3moruIpJqXdi8DfXopyA-XEc0ncjXQOxqdSQwlRmE3bTGRAWqgDTVhKeFNG0VMRB9b9Tr2mSUhfhKE0fFMxRjjlL2WRAbJ_ql_tmV2soBCA14c6u16jGPky2EVsHVipWB2lvyQrJvwDpmUbHVS99hV4fkTo8H5L88phuUmvChDxGc"/>
+</div>
+<div class="text-center">
+<p class="text-xs text-secondary uppercase tracking-widest mb-1">Scarves</p>
+<h4 class="font-body font-medium">Chiffon Silk Scarf</h4>
+<p class="text-sm text-on-surface-variant mt-1">₹ 3,200</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0B3D2E] dark:bg-stone-900 text-[#F9F9F7] full-width border-t-0 mt-32">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 lg:px-24 py-20 w-full max-w-[1920px] mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-serif text-[#F9F9F7]">Swadesh Heritage</div>
+<p class="text-sm opacity-70 leading-relaxed font-['Plus_Jakarta_Sans']">Celebrating the timeless beauty of South Asian craftsmanship with a modern modernist eye.</p>
+<div class="flex space-x-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors" data-icon="facebook">social_leaderboard</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors" data-icon="photo_camera">photo_camera</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors" data-icon="mail">mail</span>
+</div>
+</div>
+<div class="space-y-6">
+<h5 class="text-sm font-bold uppercase tracking-widest">Maison</h5>
+<ul class="space-y-4 text-stone-300 font-['Plus_Jakarta_Sans'] text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Our Story</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Sustainability</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Craftsmanship</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Artisans</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-sm font-bold uppercase tracking-widest">Client Service</h5>
+<ul class="space-y-4 text-stone-300 font-['Plus_Jakarta_Sans'] text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Order Tracking</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-sm font-bold uppercase tracking-widest">Stay Inspired</h5>
+<p class="text-xs opacity-70">Subscribe to receive updates on new collections and editorial stories.</p>
+<div class="relative">
+<input class="w-full bg-transparent border-b border-stone-500 py-2 focus:border-white transition-colors outline-none text-sm placeholder:text-stone-500" placeholder="Email Address" type="email"/>
+<button class="absolute right-0 bottom-2 text-secondary hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-12 lg:px-24 py-8 border-t border-white/10 text-center opacity-50 text-[10px] uppercase tracking-[0.2em]">
+            © 2024 Swadesh Heritage. All rights reserved.
+        </div>
+</footer>
+</body></html>

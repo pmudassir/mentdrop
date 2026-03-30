@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | HERITAGE MODERNIST</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f4f4f2",
+              "surface-container": "#eeeeec",
+              "surface-bright": "#f9f9f7",
+              "tertiary-fixed": "#e6deff",
+              "primary-fixed-dim": "#a0d1bc",
+              "tertiary": "#21006e",
+              "on-primary-fixed-variant": "#214f3f",
+              "secondary": "#775a19",
+              "on-secondary-fixed": "#261900",
+              "on-primary-container": "#79a894",
+              "on-background": "#1a1c1b",
+              "surface-container-high": "#e8e8e6",
+              "surface": "#f9f9f7",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed-variant": "#4900d6",
+              "primary-fixed": "#bcedd7",
+              "tertiary-container": "#3700a7",
+              "secondary-container": "#fed488",
+              "error-container": "#ffdad6",
+              "surface-dim": "#dadad8",
+              "secondary-fixed-dim": "#e9c176",
+              "on-error-container": "#93000a",
+              "primary": "#00261b",
+              "on-surface-variant": "#414944",
+              "surface-container-highest": "#e2e3e1",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f1f1ef",
+              "on-tertiary-container": "#a28eff",
+              "on-error": "#ffffff",
+              "inverse-primary": "#a0d1bc",
+              "surface-tint": "#396756",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1a1c1b",
+              "on-secondary-container": "#785a1a",
+              "surface-variant": "#e2e3e1",
+              "background": "#f9f9f7",
+              "error": "#ba1a1a",
+              "outline-variant": "#c0c8c3",
+              "inverse-surface": "#2f3130",
+              "on-primary-fixed": "#002116",
+              "on-secondary-fixed-variant": "#5d4201",
+              "on-tertiary-fixed": "#1c0061",
+              "tertiary-fixed-dim": "#cabeff",
+              "secondary-fixed": "#ffdea5",
+              "primary-container": "#0b3d2e",
+              "outline": "#717974",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #F9F9F7;
+        color: #1a1c1b;
+      }
+      h1, h2, h3, .serif-font {
+        font-family: 'Noto Serif', serif;
+      }
+    </style>
+</head>
+<body class="bg-surface selection:bg-secondary-container/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#F9F9F7] transition-colors duration-300">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif tracking-tighter text-[#00261B] uppercase">HERITAGE MODERNIST</div>
+<div class="hidden md:flex items-center space-x-8 font-serif italic tracking-wide text-sm">
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors" href="#">Collections</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors" href="#">Heritage</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors" href="#">New Arrivals</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors" href="#">Studio</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors" href="#">Our Story</a>
+</div>
+<div class="flex items-center space-x-6 text-[#00261B]">
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-all">search</span>
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-all">account_circle</span>
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-all relative">shopping_bag</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto min-h-screen">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left Column: Shipping & Steps -->
+<div class="lg:col-span-7">
+<!-- Progress Indicators -->
+<nav class="flex items-center mb-16 space-x-4 text-xs tracking-widest uppercase">
+<span class="text-on-surface-variant flex items-center">
+                        Cart 
+                        <span class="material-symbols-outlined text-[14px] mx-3">chevron_right</span>
+</span>
+<span class="text-secondary font-bold flex items-center">
+                        Shipping
+                        <span class="material-symbols-outlined text-[14px] mx-3 text-on-surface-variant">chevron_right</span>
+</span>
+<span class="text-on-surface-variant/40 flex items-center">
+                        Payment
+                        <span class="material-symbols-outlined text-[14px] mx-3">chevron_right</span>
+</span>
+<span class="text-on-surface-variant/40">Review</span>
+</nav>
+<header class="mb-12">
+<h1 class="text-4xl lg:text-5xl font-serif text-primary mb-4 tracking-tight">Shipping Information</h1>
+<p class="text-on-surface-variant max-w-md font-light leading-relaxed">Please enter your delivery details. We ship our handcrafted pieces with dedicated white-glove couriers to ensure pristine arrival.</p>
+</header>
+<!-- Form Section -->
+<form class="space-y-10">
+<section>
+<h2 class="text-xs uppercase tracking-[0.2em] font-bold text-secondary mb-8 border-b border-outline-variant/20 pb-2">Contact Details</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-[11px] uppercase tracking-wider font-semibold text-on-surface-variant">Email Address</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-secondary/40 transition-all text-sm placeholder:text-on-surface-variant/40" placeholder="atelier@heritage.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] uppercase tracking-wider font-semibold text-on-surface-variant">Phone Number</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-secondary/40 transition-all text-sm placeholder:text-on-surface-variant/40" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-xs uppercase tracking-[0.2em] font-bold text-secondary mb-8 border-b border-outline-variant/20 pb-2">Shipping Address</h2>
+<div class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-[11px] uppercase tracking-wider font-semibold text-on-surface-variant">First Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-secondary/40 transition-all text-sm" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] uppercase tracking-wider font-semibold text-on-surface-variant">Last Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-secondary/40 transition-all text-sm" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] uppercase tracking-wider font-semibold text-on-surface-variant">Address Line 1</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-secondary/40 transition-all text-sm placeholder:text-on-surface-variant/40" placeholder="Street address or P.O. Box" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-2 md:col-span-1">
+<label class="text-[11px] uppercase tracking-wider font-semibold text-on-surface-variant">City</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-secondary/40 transition-all text-sm" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] uppercase tracking-wider font-semibold text-on-surface-variant">State/Province</label>
+<select class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-secondary/40 transition-all text-sm appearance-none">
+<option>Select State</option>
+<option>London</option>
+<option>New York</option>
+<option>Dubai</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-[11px] uppercase tracking-wider font-semibold text-on-surface-variant">Postal Code</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-1 focus:ring-secondary/40 transition-all text-sm" type="text"/>
+</div>
+</div>
+</div>
+</section>
+<div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<a class="text-xs uppercase tracking-widest text-primary font-bold flex items-center group" href="#">
+<span class="material-symbols-outlined text-[18px] mr-2 group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                            Return to Cart
+                        </a>
+<button class="w-full md:w-auto px-12 py-5 bg-primary-container text-on-primary rounded-lg text-sm uppercase tracking-widest font-bold shadow-xl hover:opacity-95 active:scale-95 transition-all">
+                            Continue to Payment
+                        </button>
+</div>
+</form>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<div class="lg:col-span-5">
+<div class="sticky top-32 space-y-8">
+<div class="bg-surface-container-low rounded-2xl p-8 lg:p-10">
+<h2 class="text-xl font-serif text-primary mb-8 pb-4 border-b border-outline-variant/30 flex justify-between items-center">
+                            Order Summary
+                            <span class="text-xs font-sans font-medium bg-surface px-3 py-1 rounded-full uppercase tracking-tighter">2 Items</span>
+</h2>
+<!-- Product List -->
+<div class="space-y-8 mb-10">
+<!-- Item 1 -->
+<div class="flex gap-6 items-center">
+<div class="relative flex-shrink-0">
+<img class="w-24 h-32 object-cover rounded-lg shadow-sm" data-alt="close up of intricate hand-embroidered gold silk fabric on a deep green background luxury textile detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLuxhYXORY_6Hk9YmTA5NXT0NJEr_OxSpkfamhtWHlozoV2l_OU5Irh2AFqgPnWhTTC7XEYouTVpMkg17Rz9EOvT7t8zMd6TdAoM0J8Z1gcnPaXSfmYR0FUqW1wYp9V8BQlu-NnrbVV_ajG9quq1L33MI4tHsgELMrs32eXzx7zE6hTVqKBccxSnUBQfRf8-kgguSXxnXfr7MhjJ6NqOB3QzQywRNmVfEx9OarxaC_26xeAikcBzEgeESPTBj2KSf_1cVQtTbQwFE"/>
+<span class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">1</span>
+</div>
+<div class="flex-grow">
+<h3 class="text-sm font-semibold text-primary uppercase tracking-tight">Noor Mahal Silk Anarkali</h3>
+<p class="text-xs text-on-surface-variant mt-1">Emerald / UK 10</p>
+<p class="text-sm font-serif mt-2 text-secondary">$1,250.00</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-6 items-center">
+<div class="relative flex-shrink-0">
+<img class="w-24 h-32 object-cover rounded-lg shadow-sm" data-alt="elegant traditional gold jewelry with pearls resting on a vintage cream velvet cushion soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfE5EGaUdcEPBWhvbOsa4hVRXHgy9gSJv2B31TCThm581e40r_STvg4MYI91jUC7_7Up8yveSAl-C993-L-r1qwizV8FPAimikF8IEBjaZ1JVM1WPxIs2hCZP5ZRNXLviFIJQlN9RdEdua2LmtBoaqrMNdPm01YyYPr4yPQucMEZkQwFKkiDS02cxDiz4Y_aFKT2XkqoBp2DF5RIb5WGCbvGlPPiK2ozjrNQeaY0-yJmB_i7wS134s9jPeG65A3Ntdu6DGloKPFfg"/>
+<span class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold">1</span>
+</div>
+<div class="flex-grow">
+<h3 class="text-sm font-semibold text-primary uppercase tracking-tight">Kundan Heritage Choker</h3>
+<p class="text-xs text-on-surface-variant mt-1">Antique Gold / One Size</p>
+<p class="text-sm font-serif mt-2 text-secondary">$850.00</p>
+</div>
+</div>
+</div>
+<!-- Calculations -->
+<div class="space-y-4 pt-8 border-t border-outline-variant/30 text-sm">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-light">Subtotal</span>
+<span class="text-primary font-medium">$2,100.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-light">Shipping</span>
+<span class="text-on-surface-variant italic">Calculated at next step</span>
+</div>
+<div class="flex justify-between items-center pt-4 mt-4 border-t border-outline-variant/30">
+<span class="text-lg font-serif text-primary">Total</span>
+<span class="text-2xl font-serif text-primary tracking-tight">$2,100.00</span>
+</div>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="bg-primary-container text-on-primary rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative">
+<!-- Decorative flourish background pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'wght' 100;">lock</span>
+</div>
+<div class="flex items-center gap-4 relative z-10">
+<span class="material-symbols-outlined text-secondary-container text-3xl">verified_user</span>
+<div>
+<p class="text-[11px] uppercase tracking-widest font-bold opacity-60 mb-1">Security Verified</p>
+<p class="text-xs font-light">AES-256 Encrypted Connection</p>
+</div>
+</div>
+<div class="flex gap-4 relative z-10">
+<span class="material-symbols-outlined text-on-primary/40 text-2xl">payments</span>
+<span class="material-symbols-outlined text-on-primary/40 text-2xl">credit_card</span>
+<span class="material-symbols-outlined text-on-primary/40 text-2xl">account_balance_wallet</span>
+</div>
+</div>
+<!-- Service Promise -->
+<div class="px-4 text-center">
+<p class="text-[10px] text-on-surface-variant/60 uppercase tracking-[0.2em] leading-relaxed">
+                            Complimentary shipping on orders over $500 <br/>
+                            Dedicated Concierge Support Available 24/7
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0B3D2E] text-[#F9F9F7] border-t border-stone-800/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-16 py-20 w-full mx-auto">
+<div class="md:col-span-1">
+<div class="text-xl font-serif text-[#F9F9F7] mb-4">HERITAGE MODERNIST</div>
+<p class="font-sans text-xs tracking-widest uppercase opacity-70 leading-relaxed max-w-xs">
+                    Curating the timeless elegance of South Asian craftsmanship for the modern global aesthetic.
+                </p>
+</div>
+<div class="space-y-4">
+<h4 class="font-sans text-xs tracking-widest uppercase font-bold text-[#775A19]">Customer Care</h4>
+<ul class="space-y-3 font-sans text-xs tracking-widest uppercase opacity-70">
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-[#F9F9F7]">Shipping &amp; Returns</li>
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-[#F9F9F7]">Size Guide</li>
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-[#F9F9F7]">Wholesale</li>
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-[#F9F9F7]">Contact Us</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-sans text-xs tracking-widest uppercase font-bold text-[#775A19]">Atelier</h4>
+<ul class="space-y-3 font-sans text-xs tracking-widest uppercase opacity-70">
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-[#F9F9F7]">Sustainability</li>
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-[#F9F9F7]">Our Story</li>
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-[#F9F9F7]">The Craft</li>
+<li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-[#F9F9F7]">Careers</li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-sans text-xs tracking-widest uppercase font-bold text-[#775A19]">Newsletter</h4>
+<p class="font-sans text-[10px] tracking-[0.2em] uppercase opacity-50">Join our digital atelier for exclusive previews.</p>
+<div class="flex border-b border-[#F9F9F7]/30 pb-2">
+<input class="bg-transparent border-none text-xs tracking-widest w-full focus:ring-0 placeholder:text-[#F9F9F7]/30" placeholder="YOUR EMAIL" type="email"/>
+<button class="text-[#775A19] text-xs font-bold">JOIN</button>
+</div>
+</div>
+</div>
+<div class="px-16 py-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-sans text-xs tracking-widest uppercase opacity-40">© 2024 Heritage Modernist Digital Atelier. All Rights Reserved.</span>
+<div class="flex gap-8 opacity-40">
+<span class="material-symbols-outlined text-lg cursor-pointer hover:text-white transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined text-lg cursor-pointer hover:text-white transition-colors">public</span>
+<span class="material-symbols-outlined text-lg cursor-pointer hover:text-white transition-colors">mail</span>
+</div>
+</div>
+</footer>
+</body></html>

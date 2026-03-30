@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f4f4f2",
+              "surface-container": "#eeeeec",
+              "surface-bright": "#f9f9f7",
+              "tertiary-fixed": "#e6deff",
+              "primary-fixed-dim": "#a0d1bc",
+              "tertiary": "#21006e",
+              "on-primary-fixed-variant": "#214f3f",
+              "secondary": "#775a19",
+              "on-secondary-fixed": "#261900",
+              "on-primary-container": "#79a894",
+              "on-background": "#1a1c1b",
+              "surface-container-high": "#e8e8e6",
+              "surface": "#f9f9f7",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed-variant": "#4900d6",
+              "primary-fixed": "#bcedd7",
+              "tertiary-container": "#3700a7",
+              "secondary-container": "#fed488",
+              "error-container": "#ffdad6",
+              "surface-dim": "#dadad8",
+              "secondary-fixed-dim": "#e9c176",
+              "on-error-container": "#93000a",
+              "primary": "#00261b",
+              "on-surface-variant": "#414944",
+              "surface-container-highest": "#e2e3e1",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f1f1ef",
+              "on-tertiary-container": "#a28eff",
+              "on-error": "#ffffff",
+              "inverse-primary": "#a0d1bc",
+              "surface-tint": "#396756",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1a1c1b",
+              "on-secondary-container": "#785a1a",
+              "surface-variant": "#e2e3e1",
+              "background": "#f9f9f7",
+              "error": "#ba1a1a",
+              "outline-variant": "#c0c8c3",
+              "inverse-surface": "#2f3130",
+              "on-primary-fixed": "#002116",
+              "on-secondary-fixed-variant": "#5d4201",
+              "on-tertiary-fixed": "#1c0061",
+              "tertiary-fixed-dim": "#cabeff",
+              "secondary-fixed": "#ffdea5",
+              "primary-container": "#0b3d2e",
+              "outline": "#717974",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(249, 249, 247, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .heritage-arch {
+        border-radius: 12rem 12rem 0 0;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#F9F9F7] transition-colors duration-300 shadow-none border-none">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-headline tracking-tighter text-[#00261B] uppercase">HERITAGE MODERNIST</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-[#775A19] border-b-2 border-[#775A19] pb-1 font-semibold font-serif italic tracking-wide text-sm" href="#">Collections</a>
+<a class="text-[#00261B] hover:text-[#775A19] transition-colors font-serif italic tracking-wide text-sm" href="#">Heritage</a>
+<a class="text-[#00261B] hover:text-[#775A19] transition-colors font-serif italic tracking-wide text-sm" href="#">New Arrivals</a>
+<a class="text-[#00261B] hover:text-[#775A19] transition-colors font-serif italic tracking-wide text-sm" href="#">Studio</a>
+<a class="text-[#00261B] hover:text-[#775A19] transition-colors font-serif italic tracking-wide text-sm" href="#">Our Story</a>
+</div>
+<div class="flex items-center space-x-6 text-[#00261B]">
+<button class="hover:opacity-70 transition-all duration-300 scale-100 active:scale-95">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:opacity-70 transition-all duration-300 scale-100 active:scale-95">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="hover:opacity-70 transition-all duration-300 scale-100 active:scale-95 relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-12 max-w-screen-2xl mx-auto">
+<!-- Collection Header Section -->
+<header class="mb-20 text-center max-w-3xl mx-auto">
+<span class="text-secondary font-label tracking-[0.3em] uppercase text-xs mb-4 block">The Artisanal Archive</span>
+<h1 class="text-5xl md:text-6xl font-headline text-primary mb-6 italic leading-tight">Lustrous Silk Sarees</h1>
+<p class="text-on-surface-variant leading-relaxed font-light text-lg">
+                Discover a curation of hand-woven masterpieces, where centuries of South Asian heritage meet contemporary silhouettes. Each piece is a testament to the timeless elegance of pure mulberry and banarasi silk.
+            </p>
+</header>
+<div class="flex gap-16">
+<!-- Sticky Sidebar Filters -->
+<aside class="w-64 flex-shrink-0">
+<div class="sticky top-32 space-y-10">
+<div>
+<h3 class="font-headline text-lg text-primary mb-6">Refine Selection</h3>
+<!-- Type Filter -->
+<div class="mb-8">
+<span class="block text-xs font-bold tracking-widest uppercase mb-4 text-on-surface-variant">Type</span>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary/20 mr-3" type="checkbox"/>
+<span class="text-sm text-on-surface group-hover:text-secondary transition-colors">Banarasi Silk</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input checked="" class="rounded border-outline-variant text-secondary focus:ring-secondary/20 mr-3" type="checkbox"/>
+<span class="text-sm text-on-surface group-hover:text-secondary transition-colors">Kanjeevaram</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary/20 mr-3" type="checkbox"/>
+<span class="text-sm text-on-surface group-hover:text-secondary transition-colors">Chanderi Silk</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary/20 mr-3" type="checkbox"/>
+<span class="text-sm text-on-surface group-hover:text-secondary transition-colors">Tussar Silk</span>
+</label>
+</div>
+</div>
+<!-- Color Filter -->
+<div class="mb-8">
+<span class="block text-xs font-bold tracking-widest uppercase mb-4 text-on-surface-variant">Color Palette</span>
+<div class="grid grid-cols-5 gap-3">
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 ring-offset-2 ring-1 ring-transparent hover:ring-secondary transition-all bg-[#00261B]"></button>
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 ring-offset-2 ring-1 ring-secondary transition-all bg-[#775A19]"></button>
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 ring-offset-2 ring-1 ring-transparent hover:ring-secondary transition-all bg-[#D4AF37]"></button>
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 ring-offset-2 ring-1 ring-transparent hover:ring-secondary transition-all bg-[#800020]"></button>
+<button class="w-8 h-8 rounded-full border border-outline-variant/30 ring-offset-2 ring-1 ring-transparent hover:ring-secondary transition-all bg-[#F9F9F7]"></button>
+</div>
+</div>
+<!-- Price Range -->
+<div class="mb-8">
+<span class="block text-xs font-bold tracking-widest uppercase mb-4 text-on-surface-variant">Price Range</span>
+<input class="w-full h-1.5 bg-surface-container rounded-lg appearance-none cursor-pointer accent-secondary" max="5000" min="500" type="range"/>
+<div class="flex justify-between mt-3 text-xs text-on-surface-variant font-medium">
+<span>$500</span>
+<span>$5,000+</span>
+</div>
+</div>
+<!-- Size -->
+<div>
+<span class="block text-xs font-bold tracking-widest uppercase mb-4 text-on-surface-variant">Size Guide</span>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-2 border border-outline-variant/30 text-xs font-medium hover:border-secondary hover:text-secondary transition-all">Free Size</button>
+<button class="px-3 py-2 border border-secondary text-xs font-medium text-secondary">Petite</button>
+<button class="px-3 py-2 border border-outline-variant/30 text-xs font-medium hover:border-secondary hover:text-secondary transition-all">Custom</button>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-grow">
+<div class="flex justify-between items-center mb-10 border-b border-surface-container pb-4">
+<span class="text-sm text-on-surface-variant tracking-wide font-medium">Showing 24 of 112 Masterpieces</span>
+<div class="flex items-center space-x-4">
+<span class="text-xs uppercase tracking-widest font-bold">Sort By:</span>
+<select class="bg-transparent border-none text-sm font-headline focus:ring-0 cursor-pointer">
+<option>Curated Selection</option>
+<option>Newest First</option>
+<option>Price: High to Low</option>
+<option>Price: Low to High</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-16">
+<!-- Product Card 1 -->
+<div class="group flex flex-col items-center text-center">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] w-full rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Elegant woman wearing a deep emerald green silk saree with gold embroidery in a traditional palace setting with soft window light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_VBWHNursMkrlN_ZYaJEYeCp2uv-38OXMM9D0Iq0Tf2uIijNsi6NkQQjox5tgTcj3M-4CBabh7U9ehAQ9Xscsm2cpe5mvUSdHF0ykiLOCSLBWH3p-WEd9-s-8Wk0foyrOxYHbQCJya6Va9YF_QRhu64gkBFt1RwD7UnsAK8tDv2jFvlTcWoHpqUl2_bMsLHE75EFhtOYAbsRXiK6NeKn7-4sFPOwcH90X2UAj6Hrqx_A4YJGi7YGSoUl6bwfxDXiP2y1XuHHHNkw"/>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md text-primary text-xs font-bold uppercase tracking-widest py-3 px-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                Quick View
+                            </button>
+<span class="absolute top-4 right-4 bg-secondary text-white text-[10px] px-3 py-1 uppercase tracking-tighter rounded-full">Heritage Pick</span>
+</div>
+<span class="text-secondary text-[10px] tracking-[0.2em] uppercase mb-2">Banarasi Collection</span>
+<h2 class="font-headline text-lg text-primary mb-2 group-hover:italic transition-all">Emerald Empress Silk</h2>
+<p class="text-sm font-medium tracking-wide">$2,850.00</p>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col items-center text-center">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] w-full rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of a luxurious maroon silk fabric with intricate gold thread work on a dark wooden textured background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIF3QTeztCqRqCXmBI9DFkqq9oXHz1brJkBbmrOdvrVMFf8OPvevF1B-VK9A8gjUL1SjM6O-x3U3hjBgWDRraQd8dnoIp4I0ReScLHicNkUqqRDw_MS2jKvFciUrNApRxXRgOlXfqpqgqEOmAoX3wfnWJIM9Y6eZv69dJE9JrzVvC802FeZvAFv_tpeE424CzkXTuGl9jSHde6IhDmJvc24M4V71pSiNSlvTJ_IayhBQz5D57TQWMlEz444y0nkXA2Z_ZU7bcEnlc"/>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md text-primary text-xs font-bold uppercase tracking-widest py-3 px-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                Quick View
+                            </button>
+</div>
+<span class="text-secondary text-[10px] tracking-[0.2em] uppercase mb-2">Heritage Handloom</span>
+<h2 class="font-headline text-lg text-primary mb-2 group-hover:italic transition-all">Crimson Royale Saree</h2>
+<p class="text-sm font-medium tracking-wide">$3,120.00</p>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col items-center text-center">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] w-full rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Portrait of a woman draped in a shimmering gold and cream silk saree against a warm neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLfFGzR4OwW-uQQ2oMzSHuYpXEGHhudCqPPk0mdls-pmkGCdGATBHq5aFIXRcbcK5ySUFQOYoYdQzqxRQtUSE8J-zh_7T5h4ejLNlW47OK6QTyiZP41lYz3o6K6x9v_h8yh06__nTMTMLkIixeCN-fu9q1vMBww5Pltu99OvefBSkdGhHzH6WWsf7qsoG8T3iCTbupKZMzVUwtzrGj7vrQepYOEA0q0GbSES82-g57f6tU6Avrtr7owRo1PQD0YP_taCV-6FiySCw"/>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md text-primary text-xs font-bold uppercase tracking-widest py-3 px-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                Quick View
+                            </button>
+</div>
+<span class="text-secondary text-[10px] tracking-[0.2em] uppercase mb-2">Modernist Silk</span>
+<h2 class="font-headline text-lg text-primary mb-2 group-hover:italic transition-all">Gilded Ivory Drape</h2>
+<p class="text-sm font-medium tracking-wide">$1,950.00</p>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col items-center text-center">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] w-full rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Detailed view of turquoise silk fabric with floral woven patterns in silver zari, cinematic soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyC3THSA6nqf-MqV5OAvDt9Hee3vS5Hewj5a-5TsW_lx4ODrqjHj9X3mzdGeNT9aSbZqHTAkBnwmyRozziIS0-dZmgOe-uog0GgwCV5ZbBCs8Xxyhf1Rxwv3AiMmsy_Df_VLPRDpnqQRrOYG7_IabBr97DUgsp24kPqs7L8gi8KeQgBfSiUWEWAHW_3f3NukJuNvFpsuUXIhEzTEjXUHUab0LlneZ9wB1OJXwchvFeENdxdSp3pfGi0g92jnnWd-em9qw7-unIIgw"/>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md text-primary text-xs font-bold uppercase tracking-widest py-3 px-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                Quick View
+                            </button>
+</div>
+<span class="text-secondary text-[10px] tracking-[0.2em] uppercase mb-2">Signature Zari</span>
+<h2 class="font-headline text-lg text-primary mb-2 group-hover:italic transition-all">Midnight Azure Silk</h2>
+<p class="text-sm font-medium tracking-wide">$2,400.00</p>
+</div>
+<!-- Product Card 5 (Repeated for Grid Visual) -->
+<div class="group flex flex-col items-center text-center">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] w-full rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Vibrant magenta pure silk saree with elaborate gold borders displayed on a mannequin in a high-end boutique" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx62siNlTLSmQhAW-3sIyo-6O7OJErmCEoAa-zBwiZmtJYf03FC2Puz20j71kVxarcwAQqmW4fRCSsK9iA3H7HPr0Dc-x8da1ZEq9yTHjgFvLcMOfpr7Im9jTOB0sh50wOS7BdSBwb18FctbWZUPDtWs2xcbEYadvd80qp2b9IIm_MA2EzgsNSsyC6gT_lY8e9_oOq39sJyrz6u343LJntknuw3W_Vo_94I4LOJj86RANvKfus4XtuMtNFYUNX43iY5UHNELq1mqc"/>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md text-primary text-xs font-bold uppercase tracking-widest py-3 px-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                Quick View
+                            </button>
+</div>
+<span class="text-secondary text-[10px] tracking-[0.2em] uppercase mb-2">Regal Palettes</span>
+<h2 class="font-headline text-lg text-primary mb-2 group-hover:italic transition-all">Maharani Rose Pure Silk</h2>
+<p class="text-sm font-medium tracking-wide">$3,450.00</p>
+</div>
+<!-- Product Card 6 -->
+<div class="group flex flex-col items-center text-center">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] w-full rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of pastel lavender silk fabric with intricate silver hand-embroidery, soft ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2d96xM-GyCS8-CaFFbXR63mkoB0FmZm6DXOeGJgwW5hehJqE2snFajJXhrHZjQiHrStk39k-FnJLDwStzTx12Og5Q1iL40X2kJKolhHO3yTm7pZUPeUJvjNICQlyIVULq-jHINpsAhRRE1HbMydc0WNC_rFzb2Crf_r_yLveyQVvvGEeGql7MFoYM4Mrs3TphDjE10m0ERq7PhbWxvyN47l2mrdZsO5Nby8_3ppIgTWzd4GDoNflXFyvSsrpAHG93TnN7leVf_T4"/>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md text-primary text-xs font-bold uppercase tracking-widest py-3 px-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                Quick View
+                            </button>
+</div>
+<span class="text-secondary text-[10px] tracking-[0.2em] uppercase mb-2">Contemporary Heritage</span>
+<h2 class="font-headline text-lg text-primary mb-2 group-hover:italic transition-all">Lavender Dew Silk</h2>
+<p class="text-sm font-medium tracking-wide">$2,100.00</p>
+</div>
+<!-- Product Card 7 -->
+<div class="group flex flex-col items-center text-center">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] w-full rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Deep mustard yellow silk saree with contrast maroon border elegantly draped over a vintage chair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt3dKSnONpYu-eMNDlWr_xRdO7prbF503cIGHrrLAlelwsGEMPKkQ6Veo0QKuhITUcEnV6YbujFUXQn9-AtF9qE6eDyuHcYAB_q7nErWC6hqLT56Xx1HxyhHGjEe7M0wGoauCNYFFZZIrDloh2YdHYr8574-XHem9i3jEbyIfm8Q__JEZ6SVNY8Yx83kX7mZe-lFEQLekf7fvi_pN6kym2cbfYcm2b1pDimpFE4zSkP6J-RCndJ2y7aLTDaFnERcU294vJcwlxR9U"/>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md text-primary text-xs font-bold uppercase tracking-widest py-3 px-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                Quick View
+                            </button>
+</div>
+<span class="text-secondary text-[10px] tracking-[0.2em] uppercase mb-2">Ethnic Classic</span>
+<h2 class="font-headline text-lg text-primary mb-2 group-hover:italic transition-all">Amber Ochre Banarasi</h2>
+<p class="text-sm font-medium tracking-wide">$2,680.00</p>
+</div>
+<!-- Product Card 8 -->
+<div class="group flex flex-col items-center text-center">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] w-full rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Portrait of a bride in an ornate red and gold silk saree, rich textures and traditional jewelry, high contrast luxury lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChnNePqwZYsa382LbA8CKaOQmorF5tDS-8T8Q3QQgQ0AG5sp8WFkh_QpHtZ6kdWg7WJCtKxNhdc5etGdxBrcTT02aJYwtf1viAhl4SZmzNRoiPLwiJL44YptT9H3yL9Tl5PmY0vJKa3EJ5pdJPWnIjXmM6h41Pbr84P6DQMeR9Qb0473ncX_tZkKJZrljE0c8R34f-_bsMD0zVhz_2h7fOKZ5cdqhosFM27ijGuNB1mKLOvkgJKGgNpYBxerVjVnUOBihhNrD3w1c"/>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md text-primary text-xs font-bold uppercase tracking-widest py-3 px-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                Quick View
+                            </button>
+<span class="absolute top-4 right-4 bg-primary text-white text-[10px] px-3 py-1 uppercase tracking-tighter rounded-full">Limited Edition</span>
+</div>
+<span class="text-secondary text-[10px] tracking-[0.2em] uppercase mb-2">Bridal Heirloom</span>
+<h2 class="font-headline text-lg text-primary mb-2 group-hover:italic transition-all">Eternal Flame Bridal Silk</h2>
+<p class="text-sm font-medium tracking-wide">$4,800.00</p>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-24 flex flex-col items-center">
+<button class="group px-12 py-4 bg-primary text-on-primary rounded-lg font-headline text-lg transition-all hover:bg-primary-container relative overflow-hidden">
+<span class="relative z-10">Load More Creations</span>
+<div class="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-10 transition-opacity"></div>
+</button>
+<p class="mt-6 text-xs text-on-surface-variant uppercase tracking-[0.3em]">Showing 8 of 112</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Subscription Section (Tonal Shift) -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-screen-xl mx-auto px-12 text-center">
+<h2 class="text-3xl font-headline text-primary mb-4 italic">Join the Atelier Circle</h2>
+<p class="text-on-surface-variant mb-10 max-w-xl mx-auto text-sm tracking-wide">Be the first to explore our limited heritage drops and editorial lookbooks.</p>
+<form class="flex max-w-md mx-auto">
+<input class="flex-grow bg-surface border-none px-6 py-4 focus:ring-1 focus:ring-secondary text-sm" placeholder="Your email address" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-secondary transition-colors">Subscribe</button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#0B3D2E] text-[#F9F9F7] w-full border-t border-stone-800/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-16 py-20 w-full mx-auto">
+<div>
+<div class="text-xl font-serif text-[#F9F9F7] mb-4 uppercase tracking-tighter">HERITAGE MODERNIST</div>
+<p class="text-[#F9F9F7]/70 font-sans text-xs leading-loose tracking-widest uppercase mt-6">
+                    Curating the finest hand-woven heritage for the contemporary global soul.
+                </p>
+</div>
+<div>
+<h4 class="font-headline text-sm italic mb-6">Collections</h4>
+<ul class="space-y-4 font-sans text-xs tracking-widest uppercase text-[#F9F9F7]/70">
+<li><a class="hover:text-[#F9F9F7] transition-all" href="#">Silk Masterpieces</a></li>
+<li><a class="hover:text-[#F9F9F7] transition-all" href="#">Bridal Heritage</a></li>
+<li><a class="hover:text-[#F9F9F7] transition-all" href="#">Lawn &amp; Cotton</a></li>
+<li><a class="hover:text-[#F9F9F7] transition-all" href="#">Modern Silhouettes</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline text-sm italic mb-6">Experience</h4>
+<ul class="space-y-4 font-sans text-xs tracking-widest uppercase text-[#F9F9F7]/70">
+<li><a class="hover:text-[#F9F9F7] transition-all" href="#">Our Story</a></li>
+<li><a class="hover:text-[#F9F9F7] transition-all" href="#">Sustainability</a></li>
+<li><a class="hover:text-[#F9F9F7] transition-all" href="#">Size Guide</a></li>
+<li><a class="hover:text-[#F9F9F7] transition-all" href="#">Wholesale</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline text-sm italic mb-6">Concierge</h4>
+<ul class="space-y-4 font-sans text-xs tracking-widest uppercase text-[#F9F9F7]/70">
+<li><a class="hover:text-[#F9F9F7] transition-all" href="#">Contact Us</a></li>
+<li><a class="hover:text-[#F9F9F7] transition-all" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-[#F9F9F7] transition-all" href="#">Privacy Policy</a></li>
+<li class="pt-4 flex space-x-4">
+<span class="material-symbols-outlined text-lg cursor-pointer hover:text-secondary">public</span>
+<span class="material-symbols-outlined text-lg cursor-pointer hover:text-secondary">stylus</span>
+<span class="material-symbols-outlined text-lg cursor-pointer hover:text-secondary">brand_awareness</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="px-16 py-8 border-t border-white/10 text-center">
+<p class="font-sans text-[10px] tracking-[0.4em] uppercase opacity-50">© 2024 Heritage Modernist Digital Atelier. All Rights Reserved.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Atelier | Winter 2026 Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#410003",
+              "on-primary-fixed": "#241a00",
+              "surface-dim": "#dadad8",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-tertiary-fixed-variant": "#93000e",
+              "primary-container": "#d4af37",
+              "surface-container": "#eeeeec",
+              "surface-bright": "#f9f9f7",
+              "primary-fixed": "#ffe088",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1a1c1b",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#90000e",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#f1f1ef",
+              "primary": "#735c00",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#ffb4ac",
+              "on-error-container": "#93000a",
+              "surface-variant": "#e2e3e1",
+              "error": "#ba1a1a",
+              "on-secondary-container": "#656464",
+              "tertiary-container": "#ff968c",
+              "background": "#f9f9f7",
+              "on-primary-fixed-variant": "#574500",
+              "tertiary-fixed": "#ffdad6",
+              "surface-container-highest": "#e2e3e1",
+              "on-primary-container": "#554300",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#4d4635",
+              "inverse-primary": "#e9c349",
+              "surface": "#f9f9f7",
+              "tertiary": "#b91d20",
+              "on-secondary-fixed": "#1b1c1c",
+              "secondary-container": "#e4e2e1",
+              "surface-tint": "#735c00",
+              "surface-container-low": "#f4f4f2",
+              "secondary-fixed": "#e4e2e1",
+              "surface-container-high": "#e8e8e6",
+              "outline": "#7f7663",
+              "primary-fixed-dim": "#e9c349",
+              "inverse-surface": "#2f3130",
+              "secondary": "#5f5e5e",
+              "on-background": "#1a1c1b",
+              "outline-variant": "#d0c5af",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#474746"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Inter', sans-serif; }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-[#F4F4F2] dark:bg-[#1A1C1B] z-50 flex flex-col py-6 px-4">
+<div class="mb-10 px-4">
+<h1 class="text-xl font-bold tracking-tight text-[#1A1C1B] dark:text-[#F9F9F7]">Digital Atelier</h1>
+<p class="text-xs text-on-surface-variant font-medium tracking-wide">Winter 2026 Admin</p>
+</div>
+<nav class="flex-grow space-y-1">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#735C00] dark:text-[#D4AF37] bg-white/80 dark:bg-white/5 rounded-lg shadow-sm font-semibold scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:text-[#1A1C1B] dark:hover:text-[#F9F9F7] hover:bg-[#FFFFFF]/50 dark:hover:bg-[#FFFFFF]/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:text-[#1A1C1B] dark:hover:text-[#F9F9F7] hover:bg-[#FFFFFF]/50 dark:hover:bg-[#FFFFFF]/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:text-[#1A1C1B] dark:hover:text-[#F9F9F7] hover:bg-[#FFFFFF]/50 dark:hover:bg-[#FFFFFF]/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:text-[#1A1C1B] dark:hover:text-[#F9F9F7] hover:bg-[#FFFFFF]/50 dark:hover:bg-[#FFFFFF]/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">assignment_return</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">RTO</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:text-[#1A1C1B] dark:hover:text-[#F9F9F7] hover:bg-[#FFFFFF]/50 dark:hover:bg-[#FFFFFF]/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 hover:text-[#1A1C1B] dark:hover:text-[#F9F9F7] hover:bg-[#FFFFFF]/50 dark:hover:bg-[#FFFFFF]/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">inventory</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Supplier Panel</span>
+</a>
+</nav>
+<div class="mt-auto space-y-4 pt-6">
+<button class="w-full py-2.5 px-4 bg-primary-container text-on-primary-container rounded-md text-xs font-bold uppercase tracking-widest hover:bg-primary-fixed-dim transition-all">
+                View Live Store
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-[#1A1C1B]/70 dark:text-[#F9F9F7]/70 text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-lg">help</span>
+<span>Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-[#F9F9F7]/80 dark:bg-[#1A1C1B]/80 backdrop-blur-xl border-b border-[#D0C5AF]/15 flex justify-between items-center px-8">
+<div class="flex items-center gap-4 w-1/3">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60">search</span>
+<input class="w-full bg-surface-container-lowest border-none ring-1 ring-[#D0C5AF]/20 rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-[#735C00] transition-all outline-none" placeholder="Search analytics, orders, or products..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-tertiary rounded-full border-2 border-surface"></span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant/30">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Elena Varma</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Store Admin</p>
+</div>
+<img alt="User Profile" class="w-9 h-9 rounded-full object-cover" data-alt="close up professional portrait of a woman in minimalist clothing with warm natural lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1mHDYZmYDSrEFpooiiRV3qwbWE-flHxEQozPX2UqMnod90ZSEGTpxbSkBMxlZzU5fumOq6i32H5IiXG88uiszWheZEZrQG-tZ9ponwGaE7TMvjDxCC3_DeehAm0LFJRPzn1gX0QRlL5lNlGM6AAQy4JEQ25RkxJ3IM-Tcnf0TFlWrgAkoX0KI-pOqIbt04rY04bB1ICgbTrHfPWH2fGsiCXIFsRBuf5JeBPBOu1WqaFi-MIITInAmm0ic1Jrv_R-NfzYPIUFslwc"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-10 pb-16 min-h-screen">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">Store Overview</h2>
+<p class="text-on-surface-variant text-sm mt-1">Real-time performance metrics for your Winter 2026 Collection.</p>
+</div>
+<div class="flex gap-3">
+<div class="flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-md ring-1 ring-outline-variant/15 shadow-sm cursor-pointer hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-sm text-primary">calendar_today</span>
+<span class="text-xs font-semibold text-on-surface-variant">Last 30 Days</span>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-5 py-2 rounded-md text-xs font-bold hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Export Data
+                </button>
+</div>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<!-- Revenue Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-primary-fixed rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div class="flex items-center gap-1 text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full text-[10px] font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                        +14.2%
+                    </div>
+</div>
+<p class="text-xs font-medium text-on-surface-variant uppercase tracking-widest mb-1">Total Revenue</p>
+<h3 class="text-2xl font-extrabold text-on-surface">₹2,482,900</h3>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[72%]"></div>
+</div>
+</div>
+<!-- Orders Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 group hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-secondary-container rounded-lg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">local_mall</span>
+</div>
+<div class="flex items-center gap-1 text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full text-[10px] font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                        +8.1%
+                    </div>
+</div>
+<p class="text-xs font-medium text-on-surface-variant uppercase tracking-widest mb-1">Total Orders</p>
+<h3 class="text-2xl font-extrabold text-on-surface">1,248</h3>
+<p class="text-[10px] text-on-surface-variant mt-2 italic">42 orders pending fulfillment</p>
+</div>
+<!-- AOV Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 group hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-[#E0E7FF] rounded-lg flex items-center justify-center text-[#4338CA]">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<div class="flex items-center gap-1 text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full text-[10px] font-bold">
+<span class="material-symbols-outlined text-xs">trending_down</span>
+                        -2.4%
+                    </div>
+</div>
+<p class="text-xs font-medium text-on-surface-variant uppercase tracking-widest mb-1">Average Order Value</p>
+<h3 class="text-2xl font-extrabold text-on-surface">₹1,989</h3>
+<p class="text-[10px] text-on-surface-variant mt-2 italic">Target: ₹2,200</p>
+</div>
+<!-- Conversion Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 group hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-tertiary-fixed rounded-lg flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">ads_click</span>
+</div>
+<div class="flex items-center gap-1 text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full text-[10px] font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                        +1.2%
+                    </div>
+</div>
+<p class="text-xs font-medium text-on-surface-variant uppercase tracking-widest mb-1">Conversion Rate</p>
+<h3 class="text-2xl font-extrabold text-on-surface">3.48%</h3>
+<div class="flex gap-1 mt-4">
+<div class="h-1 flex-1 bg-primary-container/20 rounded-full"></div>
+<div class="h-1 flex-1 bg-primary-container/40 rounded-full"></div>
+<div class="h-1 flex-1 bg-primary-container rounded-full"></div>
+<div class="h-1 flex-1 bg-primary-container/10 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Main Analytics & Sidebar Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+<!-- Primary Revenue Chart Area -->
+<div class="lg:col-span-2 space-y-10">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-center mb-10">
+<h4 class="text-lg font-bold text-on-surface tracking-tight">Revenue Performance</h4>
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">This Month</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline-variant/50"></span>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Last Month</span>
+</div>
+</div>
+</div>
+<!-- Visual representation of a chart (CSS only) -->
+<div class="h-[300px] w-full relative flex items-end gap-1">
+<div class="absolute inset-0 flex flex-col justify-between py-2">
+<div class="border-t border-outline-variant/10 w-full h-px"></div>
+<div class="border-t border-outline-variant/10 w-full h-px"></div>
+<div class="border-t border-outline-variant/10 w-full h-px"></div>
+<div class="border-t border-outline-variant/10 w-full h-px"></div>
+<div class="border-t border-outline-variant/10 w-full h-px"></div>
+</div>
+<!-- Pseudo Bars/Line Logic -->
+<div class="flex-1 flex flex-col justify-end items-center group relative h-full">
+<div class="w-full bg-primary-container/20 h-[30%] rounded-t-sm group-hover:bg-primary-container/40 transition-all"></div>
+<div class="w-full bg-primary-container h-[45%] rounded-t-sm transition-all -mt-4 opacity-80"></div>
+<p class="text-[9px] mt-2 font-medium text-on-surface-variant">01 Jan</p>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group h-full">
+<div class="w-full bg-primary-container h-[55%] rounded-t-sm opacity-80"></div>
+<p class="text-[9px] mt-2 font-medium text-on-surface-variant">05 Jan</p>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group h-full">
+<div class="w-full bg-primary-container h-[40%] rounded-t-sm opacity-80"></div>
+<p class="text-[9px] mt-2 font-medium text-on-surface-variant">10 Jan</p>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group h-full">
+<div class="w-full bg-primary-container h-[75%] rounded-t-sm opacity-80"></div>
+<p class="text-[9px] mt-2 font-medium text-on-surface-variant">15 Jan</p>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group h-full">
+<div class="w-full bg-primary-container h-[60%] rounded-t-sm opacity-80"></div>
+<p class="text-[9px] mt-2 font-medium text-on-surface-variant">20 Jan</p>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group h-full">
+<div class="w-full bg-primary-container h-[85%] rounded-t-sm opacity-80"></div>
+<p class="text-[9px] mt-2 font-medium text-on-surface-variant">25 Jan</p>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group h-full">
+<div class="w-full bg-primary-container h-[92%] rounded-t-sm opacity-80"></div>
+<p class="text-[9px] mt-2 font-medium text-on-surface-variant">30 Jan</p>
+</div>
+</div>
+</div>
+<!-- Secondary Row: RTO Alert & Active Sessions -->
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-tertiary-container/30 p-6 rounded-xl border border-tertiary/10 flex items-center gap-6 group hover:scale-[1.01] transition-transform">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg shadow-tertiary/10 animate-pulse">
+<span class="material-symbols-outlined text-tertiary text-3xl">assignment_return</span>
+</div>
+<div>
+<p class="text-[10px] font-black text-on-tertiary-container tracking-tighter uppercase mb-1">High RTO Risk Detected</p>
+<h4 class="text-xl font-bold text-on-tertiary-container">12 Shipments Flagged</h4>
+<p class="text-xs text-on-tertiary-container/70 mt-1">Orders from NCR region showing abnormal return patterns.</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-on-tertiary-container">chevron_right</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex items-center gap-6">
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">visibility</span>
+</div>
+<div>
+<p class="text-[10px] font-black text-on-surface-variant tracking-tighter uppercase mb-1">Live Customers</p>
+<h4 class="text-xl font-bold text-on-surface">342 Active</h4>
+<p class="text-xs text-on-surface-variant mt-1">Peaked at 480 during last drop.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Sellers Sidebar -->
+<div class="space-y-10">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-center mb-6">
+<h4 class="text-md font-bold text-on-surface tracking-tight">Top Sellers</h4>
+<a class="text-[10px] font-bold text-primary uppercase hover:underline" href="#">View All</a>
+</div>
+<div class="space-y-6">
+<!-- Product Item -->
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden bg-surface-container">
+<img alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="close up of premium handcrafted silk saree with gold embroidery and intricate details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByc-bmDd8neo5d3N3NeajpF8keeXrIpze8BTUsY9eBkYTK9w-6ZU7iCN0JlY4vq_3adm8nqvMdPFlPVPrFWU4lnFI2DbHAJKP_4RsxA2q9CHWdRU01yBjD6alRG63jv0B4H9JoOGKBBsoYV2TPRT8gRtXU52_Iuh5NX7lvRBDaxoQugdM7V5kUlAZpxXcdtTG-7UHMtMnB9kgaIDFwlmkVGv6C9WxtYwzEuZ_z7xXu2JnczcUTcSRUuscwWfsUkbFkP56RAk5mheY"/>
+<div class="absolute inset-0 bg-black/5"></div>
+</div>
+<div class="flex-grow min-w-0">
+<p class="text-xs font-bold text-on-surface truncate">Benarasi Silk Saree - Gold</p>
+<p class="text-[10px] text-on-surface-variant">428 Sold • <span class="text-emerald-600">In Stock</span></p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">₹8.2L</p>
+<p class="text-[9px] text-on-surface-variant uppercase font-medium">Revenue</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden bg-surface-container">
+<img alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="luxurious velvet sherwani with handcrafted metal buttons on a designer mannequin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_BUwCcbw0YCAqCSotgfXsfiQxQRLF_g0uENsO-5qqfb_JcC_kYuKy3V9MTaIl5A5Rt5ydTWBYpsY9l58lxZCnwnqjWm82pqOJ1MHfS5ZiVpasXmlHaXIL3zf5AJ5UN-WLp6NLAn9Vz-mVr_Iu4cATzp7fkhC7dPZDRErubmcwyOu4Q__sGAfoofcIM9prt11KuCT5AlY_KvA7F7eCi07ePTagUZJ7fpsknL8uEqn0AiN7geXpPBHb9RyxIa5HDsv29JY4sRwkcNo"/>
+</div>
+<div class="flex-grow min-w-0">
+<p class="text-xs font-bold text-on-surface truncate">Embroidered Velvet Sherwani</p>
+<p class="text-[10px] text-on-surface-variant">312 Sold • <span class="text-emerald-600">In Stock</span></p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">₹6.4L</p>
+<p class="text-[9px] text-on-surface-variant uppercase font-medium">Revenue</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden bg-surface-container">
+<img alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="traditional ethnic jewelry set with pearls and gold plating arranged on a velvet cushion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl3UffxsSjGm_z-IO5gqOp-Gfo0zZmP6vBZidwhao5R-oHpvFgRdMQbTLsa2wUT0_XZ7K1MMAdw6c1iNyI2DNRU8AcPuyzbyAAcyw49MLID3VkHhDAc8bmw2zZoyW9n2gj0xHowUoox1snW1SgwC4TJT2aqSXIRdIuads7qrnWaS8XNmWTt0VJNYGx9D4q1Ad1lBA0rDwOR2QsdDo2Ep2QQNytwi9BXIXrS6xclm2TSe7I9rseI6uauAX7R-Fw2VLlCTMKVKGvm_g"/>
+</div>
+<div class="flex-grow min-w-0">
+<p class="text-xs font-bold text-on-surface truncate">Choker Set - Pearl Series</p>
+<p class="text-[10px] text-on-surface-variant">189 Sold • <span class="text-tertiary">Low Stock</span></p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">₹4.1L</p>
+<p class="text-[9px] text-on-surface-variant uppercase font-medium">Revenue</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden bg-surface-container">
+<img alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="minimalist linen kurta in soft beige color on a wooden hanger with clean lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4R7-VP4fvOL7Q4j14Rq1oGXc5Ek15jYtHsynhgElIOmYy5FqvRF0S__yQUAKcXTsiB6LWksMRumCzIlXzwHoYbGHXx3xV4j8fkmpUqBtJqvb-WXMbxvaWAAhiyoSS66EOiFC7wkE9ZogaXtCqbOrpt7mqHW5jOGCDnJndV7u9BMP-QTH_VihdC8ua4Fcg9hZKZXu7XeJ7RCpAhKmZU3XgMCG-QRTveu34IatlVVzKRMa_TgA-uXsmBA7zBeNduegpJ1IZ7x07_t8"/>
+</div>
+<div class="flex-grow min-w-0">
+<p class="text-xs font-bold text-on-surface truncate">Linen Blend Kurta - Sand</p>
+<p class="text-[10px] text-on-surface-variant">540 Sold • <span class="text-emerald-600">In Stock</span></p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">₹3.8L</p>
+<p class="text-[9px] text-on-surface-variant uppercase font-medium">Revenue</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-secondary-container text-on-secondary-container rounded-lg text-xs font-bold hover:bg-surface-container-high transition-all">
+                        Download Inventory Report
+                    </button>
+</div>
+<!-- Recent Activities Section -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/5">
+<h4 class="text-sm font-bold text-on-surface mb-6 uppercase tracking-tighter">Recent Activities</h4>
+<div class="space-y-6 relative">
+<div class="absolute left-[11px] top-2 bottom-2 w-px bg-outline-variant/30"></div>
+<div class="flex items-start gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-[10px] text-on-primary z-10 shrink-0">
+<span class="material-symbols-outlined text-xs">local_shipping</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-on-surface leading-tight">Order #10248 shipped via Bluedart</p>
+<p class="text-[10px] text-on-surface-variant mt-1">2 minutes ago</p>
+</div>
+</div>
+<div class="flex items-start gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-[10px] text-white z-10 shrink-0">
+<span class="material-symbols-outlined text-xs">payments</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-on-surface leading-tight">Payment received for Order #10252</p>
+<p class="text-[10px] text-on-surface-variant mt-1">15 minutes ago</p>
+</div>
+</div>
+<div class="flex items-start gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-tertiary flex items-center justify-center text-[10px] text-white z-10 shrink-0">
+<span class="material-symbols-outlined text-xs">priority_high</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-on-surface leading-tight">RTO alert triggered for Order #9842</p>
+<p class="text-[10px] text-on-surface-variant mt-1">1 hour ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button - Only for Dashboard/Home context -->
+<button class="fixed bottom-10 right-10 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center group hover:scale-110 transition-all z-50">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform">add</span>
+<div class="absolute right-full mr-4 bg-on-surface text-surface py-2 px-4 rounded-lg text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Add New Product
+        </div>
+</button>
+</body></html>

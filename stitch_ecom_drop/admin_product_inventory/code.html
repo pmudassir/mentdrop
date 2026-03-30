@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atelier Admin - Product Inventory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+        }
+        /* Custom scrollbar for the Digital Atelier feel */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f9f9fa; }
+        ::-webkit-scrollbar-thumb { background: #e2e2e3; border-radius: 10px; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f3f3f4",
+                        "surface-tint": "#006c50",
+                        "secondary-fixed": "#e2e2e3",
+                        "surface-container-high": "#e8e8e9",
+                        "outline": "#6e7a73",
+                        "primary-fixed-dim": "#75d9b3",
+                        "inverse-surface": "#2f3132",
+                        "secondary": "#5d5e60",
+                        "on-background": "#1a1c1d",
+                        "outline-variant": "#bdc9c2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#454748",
+                        "on-primary-fixed-variant": "#00513c",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-container-highest": "#e2e2e3",
+                        "on-primary-container": "#d6ffeb",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#3e4944",
+                        "surface": "#f9f9fa",
+                        "inverse-primary": "#75d9b3",
+                        "on-secondary-fixed": "#1a1c1d",
+                        "tertiary": "#705d00",
+                        "secondary-container": "#dfdfe0",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e2e2e3",
+                        "on-secondary-container": "#616364",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#c9a900",
+                        "background": "#f9f9fa",
+                        "on-primary-fixed": "#002116",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-dim": "#dadadb",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "primary-container": "#008060",
+                        "surface-container": "#eeeeef",
+                        "surface-bright": "#f9f9fa",
+                        "on-surface": "#1a1c1d",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#92f6cf",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary": "#00654b",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed-dim": "#e9c400"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- SideNavBar Integration -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-900 flex flex-col p-4 gap-y-2 font-['Inter'] antialiased tracking-tight text-sm font-medium z-50">
+<div class="flex items-center gap-3 px-2 mb-8 mt-2">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-white font-bold">A</div>
+<div>
+<h1 class="text-lg font-bold tracking-tighter text-slate-900 dark:text-slate-100 leading-none">Atelier Admin</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Premium Ethnic Wear</p>
+</div>
+</div>
+<nav class="flex flex-col gap-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-slate-900 transition-colors duration-200 rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-slate-900 transition-colors duration-200 rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+                Orders
+            </a>
+<!-- Active State: Products -->
+<a class="flex items-center gap-3 px-3 py-2 bg-white text-emerald-900 shadow-sm rounded-md transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+                Products
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-slate-900 transition-colors duration-200 rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-slate-900 transition-colors duration-200 rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+                Customers
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-slate-900 transition-colors duration-200 rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+                Content
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-slate-900 transition-colors duration-200 rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+                Marketing
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-slate-900 transition-colors duration-200 rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">sell</span>
+                Discounts
+            </a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200/50">
+<div class="flex items-center gap-3 px-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional headshot of a luxury brand manager in a modern minimalist studio setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEM_8lnr-lhQJzalCMbRsnZAVPzBcIGfdaV201R4ai9ZxcCZBmwnEnGNm_HVVu4SoRQKps_r9oYAPUbYz9yjfx947qLDCiReOb9TeUIZywDz68Pc09dwOZaQ2w-uxr7yyrO1v1cNH3SnhbHo7u15_4hJv_E7gRcJCRptft4x6nS8Pq-ac2ZRdO5-f9eTKVqc3C7Ogw7IpgxPrzE4u1wrmqxsame_CzNLVU2rel6JjZ1DP-eHqEQP9NXrTidQZEvo4E4OXkt81O7D4"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-semibold truncate">Ananya Sharma</p>
+<p class="text-[10px] text-on-surface-variant truncate">Store Owner</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Integration -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 backdrop-blur-md flex justify-between items-center px-8 border-b border-slate-200/50">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="Search Atelier Inventory..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-5 ml-8">
+<button class="text-slate-500 hover:text-emerald-700 transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="text-slate-500 hover:text-emerald-700 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="text-slate-500 hover:text-emerald-700 transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-10 pb-20 max-w-[1600px]">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-10">
+<div>
+<nav class="flex items-center gap-2 text-xs font-medium text-on-surface-variant mb-3 tracking-widest uppercase">
+<span>Inventory</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">All Products</span>
+</nav>
+<h2 class="text-3xl font-extrabold tracking-tighter text-on-surface">Product Inventory</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-5 py-2.5 bg-surface-container-highest text-on-surface font-medium text-sm rounded-md hover:bg-surface-container-high transition-colors">
+                    Export
+                </button>
+<button class="px-6 py-2.5 bg-gradient-to-r from-primary to-primary-container text-white font-semibold text-sm rounded-md shadow-sm hover:opacity-90 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Add Product
+                </button>
+</div>
+</div>
+<!-- Data Sheet Filters -->
+<div class="bg-surface-container-lowest rounded-xl p-2 mb-6 border border-outline-variant/15 flex items-center gap-2">
+<div class="flex items-center gap-2 flex-1 px-2">
+<button class="px-4 py-1.5 bg-surface text-on-surface text-sm font-medium rounded-md border border-outline-variant/30 flex items-center gap-2">
+                    Collection: All
+                    <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="px-4 py-1.5 bg-surface text-on-surface text-sm font-medium rounded-md border border-outline-variant/30 flex items-center gap-2">
+                    Product Type
+                    <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="px-4 py-1.5 bg-surface text-on-surface text-sm font-medium rounded-md border border-outline-variant/30 flex items-center gap-2">
+                    Vendor
+                    <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="h-6 w-px bg-outline-variant/30 mx-2"></div>
+<button class="px-4 py-1.5 text-on-surface-variant text-sm font-medium hover:text-on-surface transition-colors">
+                    More Filters
+                </button>
+</div>
+<div class="flex items-center gap-1 pr-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface rounded-md">
+<span class="material-symbols-outlined text-xl">sort</span>
+</button>
+</div>
+</div>
+<!-- Inventory Data Sheet -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(26,28,29,0.04)] border border-outline-variant/10 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 text-on-secondary-fixed-variant text-[11px] uppercase tracking-[0.1em] font-bold">
+<th class="py-4 pl-8 pr-4 w-12">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+</th>
+<th class="py-4 px-4 w-16">Image</th>
+<th class="py-4 px-4">Product Details</th>
+<th class="py-4 px-4">Status</th>
+<th class="py-4 px-4">Inventory</th>
+<th class="py-4 px-4">Price</th>
+<th class="py-4 pr-8 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Product 1 -->
+<tr class="group hover:bg-surface transition-colors cursor-pointer">
+<td class="py-5 pl-8 pr-4">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-5 px-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="luxurious deep red silk lehenga with intricate gold zari embroidery displayed on a clean neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqSvbwUsJmpvbGCxGW1ZYQMcXTboDuNUDVsnZbAVP8YxlVNk2ESeeiosG2RWtzKC4HkpLEHVp5AU9V7Yw-eNxEtqZkOgjD6pgFXxa4XicS272Nu1jyY3b0p9GMuxlD_DRYLmqHXDYs4jDppyqzkSY-aPd5H-0Y5XlOlUuuNV5NVkM8_HoOYCfTjwvIG3E3zA7i7tdw2XplYjdWIPEzvvEXe2yf8lRx0553B8ogh7ciGuo5tpU-n6TLvRjHE4mTNw8Pyx1xvRupy_Y"/>
+</div>
+</td>
+<td class="py-5 px-4">
+<div>
+<h3 class="font-bold text-on-surface text-sm">Crimson Heirloom Lehenga</h3>
+<p class="text-xs text-on-surface-variant mt-0.5 tracking-tight">SKU: AT-L-2024-001 • Banarasi Silk</p>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-primary-fixed-dim/20 text-on-primary-fixed-variant">
+                                Active
+                            </span>
+</td>
+<td class="py-5 px-4">
+<div class="relative inline-block group/edit">
+<div class="flex items-center gap-2 py-1 px-2 rounded hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface">42 in stock</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant opacity-0 group-hover/edit:opacity-100 transition-opacity">edit</span>
+</div>
+<!-- Quick Edit Tooltip Placeholder -->
+<div class="absolute top-full left-0 mt-2 bg-surface-container-lowest shadow-lg border border-outline-variant/30 rounded-lg p-3 w-48 hidden group-hover/edit:block z-20">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase mb-2">Adjust Quantity</p>
+<div class="flex items-center gap-2">
+<input class="w-full px-2 py-1 text-sm border border-outline-variant/50 rounded" type="number" value="42"/>
+<button class="bg-primary text-white p-1 rounded"><span class="material-symbols-outlined text-sm">check</span></button>
+</div>
+</div>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="text-sm font-bold text-on-surface">₹84,500</span>
+</td>
+<td class="py-5 pr-8 text-right">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Product 2 -->
+<tr class="group hover:bg-surface transition-colors cursor-pointer">
+<td class="py-5 pl-8 pr-4">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-5 px-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="elegant pastel mint green organza saree with delicate floral hand-painted motifs and silver border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkL6DkVIkJkW57D3eL1ka4ySIff_OYFDtnpCUz77Eg1vToQvGBZPkDkL3iIg6P3EhHl281nKrGdMgRSPhWRmoDmJXpynX3-_jxesaP3K6j2pYop8diTyDK68DtEg3PRDBd2EOpnk7ZjrUuGqW1IBG2g-YM7S_0pZL9ejy4Rf54YXmS_FxiKWECaWk05adQHUnHl1UHL3Y21i4ELEPXuAaMOlSqKvzmcc1iZdgChKkcI3hNHktGEU5oEnZNAM_llo8kUbQ4Ze9dsGI"/>
+</div>
+</td>
+<td class="py-5 px-4">
+<div>
+<h3 class="font-bold text-on-surface text-sm">Mint Dew Organza Saree</h3>
+<p class="text-xs text-on-surface-variant mt-0.5 tracking-tight">SKU: AT-S-2024-114 • Hand-painted</p>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-primary-fixed-dim/20 text-on-primary-fixed-variant">
+                                Active
+                            </span>
+</td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-2 py-1 px-2 rounded hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface">12 in stock</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant opacity-0">edit</span>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="text-sm font-bold text-on-surface">₹32,000</span>
+</td>
+<td class="py-5 pr-8 text-right">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Product 3 - Low Stock State -->
+<tr class="group hover:bg-surface transition-colors cursor-pointer">
+<td class="py-5 pl-8 pr-4">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-5 px-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="stunning midnight blue velvet sherwani with intricate silver embroidery on the collar and cuffs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsZbUdaD4rFeHjCrzuRmlK8hx-VxyLsR_4HRO4nRl1sYpOfxgc7VwcywuKrsnGxGtuFnT1MOdSTZzUz1hcHMix2E2CJ4cjL62Y76ct0PEjbLlvuE9bgBKpsoGcMW763auVW6J6T5ULpWQkanXrFeB4085CZTq-nCjbFQgiR1N5LXHnVHK9Wg_7v9XhFgBPU-yaxwsGEcTQeQQ9535TE0t4EEjs6O2YID4g2JLz33CALAQXdtJ4DLs7LWrxMGpl2EYYOU3Ixr7VBMI"/>
+</div>
+</td>
+<td class="py-5 px-4">
+<div>
+<h3 class="font-bold text-on-surface text-sm">Midnight Velvet Sherwani</h3>
+<p class="text-xs text-on-surface-variant mt-0.5 tracking-tight">SKU: AT-M-2024-009 • Handcrafted</p>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-primary-fixed-dim/20 text-on-primary-fixed-variant">
+                                Active
+                            </span>
+</td>
+<td class="py-5 px-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 py-1 px-2 rounded hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-error">3 in stock</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant opacity-0">edit</span>
+</div>
+<span class="text-[10px] font-bold text-tertiary px-2 uppercase tracking-wide">Low Stock Alert</span>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="text-sm font-bold text-on-surface">₹1,15,000</span>
+</td>
+<td class="py-5 pr-8 text-right">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Product 4 - Archived State -->
+<tr class="group hover:bg-surface transition-colors cursor-pointer bg-surface/30">
+<td class="py-5 pl-8 pr-4">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-5 px-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container overflow-hidden border border-outline-variant/20 grayscale">
+<img class="w-full h-full object-cover" data-alt="close-up of intricate gold temple jewelry with rubies and pearls on a textured silk fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3M5aWXbGTUgIUerm6Iiucklo5u5tuSt6Uo5u_ES2qyUpyqhGyd62x3kAiEVJWTxJ1M6gG4IeB-4wKxaeYHeblJG3LaYJ8-QqeDM535301x5vYeBo5eibKldQXMBQzmTt9mwuDuOAAXw3gPqiUfq7zgwZc2dJ2UK7Fz8RMo4x40Ow2poVUNeQW1fySSk9ccJaGEKyUw7w7Qv7WyCEwRy6ZQLCuuiQa-vzwwxub6MIJ9f7yq54ks4O46sDIrdrrlHQREextpMhsCVw"/>
+</div>
+</td>
+<td class="py-5 px-4">
+<div>
+<h3 class="font-bold text-on-surface-variant text-sm">Temple Gold Choker Set</h3>
+<p class="text-xs text-on-secondary-fixed-variant mt-0.5 tracking-tight">SKU: AT-J-2023-045 • 22K Gold Plated</p>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-surface-container-highest text-on-surface-variant">
+                                Archived
+                            </span>
+</td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-2 py-1 px-2 rounded">
+<span class="text-sm font-semibold text-on-surface-variant">0 in stock</span>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="text-sm font-bold text-on-surface-variant">₹18,200</span>
+</td>
+<td class="py-5 pr-8 text-right">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Product 5 -->
+<tr class="group hover:bg-surface transition-colors cursor-pointer">
+<td class="py-5 pl-8 pr-4">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-5 px-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="majestic royal blue anarkali suit with heavy zardosi work on the bodice and a sheer net dupatta" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwsHQX1udKaNWxghxm--90LBt3wfC_taqrqGHoTH_B_z1Y4MYGKV1QDXbnDj9y3INyHfemjt9zTvWC0fQvPD7yrAsJV4SZEgg49mR9MPhqUYzq13cE0tPCzeCu4BSuzdI8jjgJKB8WqF2eHQdlCVPdjljJSQXk7cm0tWv1NzLub4i5Tt6EpnK55heFpOFy3LjFMz1dHwzOCGy7NiJ6piLujbCkO2zaM2RQb3UIsZ7UHdnCg0P4dVVnhSZvpb1R-NB9unH86s26Xa4"/>
+</div>
+</td>
+<td class="py-5 px-4">
+<div>
+<h3 class="font-bold text-on-surface text-sm">Azure Bloom Anarkali</h3>
+<p class="text-xs text-on-surface-variant mt-0.5 tracking-tight">SKU: AT-A-2024-022 • Silk Crepe</p>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-primary-fixed-dim/20 text-on-primary-fixed-variant">
+                                Active
+                            </span>
+</td>
+<td class="py-5 px-4">
+<div class="flex items-center gap-2 py-1 px-2 rounded hover:bg-surface-container-high transition-colors">
+<span class="text-sm font-semibold text-on-surface">24 in stock</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant opacity-0">edit</span>
+</div>
+</td>
+<td class="py-5 px-4">
+<span class="text-sm font-bold text-on-surface">₹45,900</span>
+</td>
+<td class="py-5 pr-8 text-right">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Section -->
+<div class="py-4 px-8 bg-surface-container-low/30 border-t border-surface-container flex items-center justify-between">
+<p class="text-xs font-medium text-on-surface-variant">Showing 1 to 5 of 128 products</p>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-md hover:bg-surface text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-md bg-primary text-white text-xs font-bold">1</button>
+<button class="w-8 h-8 rounded-md hover:bg-surface text-xs font-bold text-on-surface-variant">2</button>
+<button class="w-8 h-8 rounded-md hover:bg-surface text-xs font-bold text-on-surface-variant">3</button>
+<button class="p-1.5 rounded-md hover:bg-surface text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Inventory Insights Bento Grid -->
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="col-span-1 p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest leading-none mb-1">Stock Turnover</p>
+<h4 class="text-xl font-bold text-on-surface leading-none">84.2%</h4>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[84%]"></div>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-3">High turnover rate for 'Lehenga' collection this month.</p>
+</div>
+<div class="col-span-1 p-6 bg-surface-container-lowest rounded-xl border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest leading-none mb-1">Restock Needed</p>
+<h4 class="text-xl font-bold text-on-surface leading-none">12 SKUs</h4>
+</div>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="thumbnail of product" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-w2PWh9LYKP1kMSXq8GOqVKwIQ6NS4o4t7D-opHpgaVFrjFvtCxtVuu02N2s_HK6ekslWk0Jy-nEjf1AQuYSHPpQXBCHwW-gzrtOUCLdGCyj96B3K5z-JMeLyMlUS1JJgXGd0mETUF_55WpivEeOyd8X2CaTL2FwDrrn7FtIAZ-Z02jph7cZpURkEt_6Asf552Bi-OpEVvWmCwQVC2DwwWeR8iSFn8LShVqXnAYkOoNqixjGNreUOVYLpAFTe9atkxea7VFf2fh4"/>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="thumbnail of product" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGaVUEUmMIKdbN9qLogVX4VG-XmXHVi0H5oMmu333H9GfpAJOEoQ4-fN934jrH5pCkkNgoQZD6MevRmlUURVDGzIrK2JXpbnr0PomYoiJKxy6_PSVXVHlp29KpfrkuTlH9UpRyRacuX78m25kF9B53W-tQRdWkImNCYTbAyLO7srjPK6eteEBN81yHLhIxIb2G2yRoSx2GL2u6trv6qNr3FCBTm4m2S_JtQP6iSr92lUMQFfTjQ-qnjHGb2NyIZs5eBCo4EbxcM5I"/>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-white bg-surface-container-high flex items-center justify-center text-[8px] font-bold text-on-surface-variant">+10</div>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-3">Saree collection is nearing low-stock thresholds.</p>
+</div>
+<div class="col-span-1 p-6 bg-gradient-to-br from-inverse-surface to-on-surface rounded-xl text-white">
+<p class="text-[10px] font-bold text-outline-variant uppercase tracking-widest mb-1">Atelier Intelligence</p>
+<h4 class="text-lg font-bold mb-4">Optimized Reordering</h4>
+<p class="text-xs text-outline-variant/80 leading-relaxed mb-4">Based on historical data, we suggest reordering 15 units of 'Azure Bloom Anarkali' before March 10th to meet peak wedding season demand.</p>
+<button class="text-xs font-bold text-primary-fixed flex items-center gap-1 group">
+                    Review Auto-Draft Order
+                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

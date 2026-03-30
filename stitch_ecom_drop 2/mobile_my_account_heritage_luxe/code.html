@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#214f3f",
+              "surface-variant": "#e2e3e1",
+              "secondary": "#775a19",
+              "surface-dim": "#dadad8",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#a0d1bc",
+              "outline": "#717974",
+              "on-tertiary-fixed-variant": "#4900d6",
+              "on-surface-variant": "#414944",
+              "tertiary": "#21006e",
+              "secondary-fixed": "#ffdea5",
+              "on-error-container": "#93000a",
+              "on-surface": "#1a1c1b",
+              "surface": "#f9f9f7",
+              "primary": "#00261b",
+              "inverse-on-surface": "#f1f1ef",
+              "on-tertiary-container": "#a28eff",
+              "secondary-fixed-dim": "#e9c176",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e2e3e1",
+              "inverse-surface": "#2f3130",
+              "tertiary-fixed": "#e6deff",
+              "surface-container-low": "#f4f4f2",
+              "on-secondary-fixed": "#261900",
+              "surface-tint": "#396756",
+              "surface-container": "#eeeeec",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#785a1a",
+              "inverse-primary": "#a0d1bc",
+              "secondary-container": "#fed488",
+              "on-error": "#ffffff",
+              "background": "#f9f9f7",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#79a894",
+              "primary-fixed": "#bcedd7",
+              "on-background": "#1a1c1b",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#1c0061",
+              "tertiary-container": "#3700a7",
+              "surface-bright": "#f9f9f7",
+              "on-secondary-fixed-variant": "#5d4201",
+              "on-primary-fixed": "#002116",
+              "tertiary-fixed-dim": "#cabeff",
+              "surface-container-high": "#e8e8e6",
+              "outline-variant": "#c0c8c3",
+              "primary-container": "#0b3d2e"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen pb-32">
+<!-- Top App Bar -->
+<nav class="bg-[#F9F9F7] dark:bg-stone-900 flex justify-between items-center w-full px-6 h-16 fixed top-0 z-50">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#00261B] dark:text-emerald-50 cursor-pointer transition-opacity hover:opacity-80 active:scale-95 duration-150" data-icon="menu">menu</span>
+</div>
+<h1 class="font-['Noto_Serif'] font-bold tracking-[0.2em] text-2xl text-[#00261B] dark:text-emerald-50">SWADESH</h1>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#00261B] dark:text-emerald-50 cursor-pointer transition-opacity hover:opacity-80 active:scale-95 duration-150" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</nav>
+<div class="bg-stone-200/20 dark:bg-stone-800/20 h-[1px] w-full fixed top-16 z-50"></div>
+<main class="pt-24 px-6">
+<!-- Personal Greeting -->
+<section class="mb-10">
+<h2 class="font-headline text-3xl font-bold text-primary mb-1">Namaste, Ananya</h2>
+<p class="text-on-surface-variant font-medium tracking-wide text-sm">Welcome back to your atelier.</p>
+</section>
+<!-- Status Cards Bento Grid -->
+<section class="grid grid-cols-2 gap-4 mb-10">
+<!-- Membership Card -->
+<div class="bg-primary-container p-5 rounded-xl flex flex-col justify-between aspect-square relative overflow-hidden">
+<div class="z-10">
+<span class="material-symbols-outlined text-secondary text-3xl mb-2" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<p class="text-on-primary-container text-xs font-bold uppercase tracking-widest">Status</p>
+<h3 class="text-on-primary font-headline text-xl">Gold Member</h3>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-on-primary text-9xl" data-icon="shield">shield</span>
+</div>
+</div>
+<!-- Loyalty Points Card -->
+<div class="bg-surface-container-low p-5 rounded-xl flex flex-col justify-between aspect-square border border-outline-variant/10">
+<div>
+<span class="material-symbols-outlined text-secondary text-3xl mb-2" data-icon="loyalty">loyalty</span>
+<p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Loyalty Points</p>
+<h3 class="text-primary font-headline text-3xl font-bold mt-1">1,250</h3>
+</div>
+<p class="text-secondary text-[10px] font-bold uppercase tracking-tighter">Redeem for Heritage Rewards</p>
+</div>
+<!-- Recent Order Card - Full Width -->
+<div class="col-span-2 bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_24px_rgba(26,28,27,0.04)] border border-outline-variant/15 flex items-center gap-5">
+<div class="w-16 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Order Item" class="w-full h-full object-cover" data-alt="Close-up of a deep emerald green silk kurta with intricate gold zari embroidery on the collar and chest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYQ9NRNxAR6FQMSdhQM90jLPtGkbe8oNRsOF0i8T1Wujf_HSgZlcCOP7LTQgpC8APOQKZuY847bGSyYVtDr0oFWEqkqlLu_wLaMTWWQPfKiFUqkt5oDe4KnMqljn19F4J_Sfj0FKR58cvM0hsvQCge9rXJZn1pLrfM_bokKeFD2gHMAwRgh9Tmxc6gDCvh299b72DfNw4uKpNRbQKbaE_7V3h5Rhh1kDUIr2-4ieTNKREhntvUQ8nRZcfT0VmhgE8usSxkPaL7wys"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Recent Order #SW-9284</p>
+<span class="bg-secondary-container/30 text-secondary text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">Active</span>
+</div>
+<h4 class="font-headline text-primary font-bold">Out for Delivery</h4>
+<p class="text-xs text-on-surface-variant mt-1">Estimated Arrival: Today, by 8 PM</p>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</section>
+<!-- Navigation Menu -->
+<section class="mb-12 space-y-2">
+<a class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg group active:scale-[0.98] transition-all" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="package_2">package_2</span>
+</div>
+<span class="font-semibold text-primary">Orders</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors" data-icon="arrow_forward_ios" style="font-size: 16px;">arrow_forward_ios</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg group active:scale-[0.98] transition-all" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<span class="font-semibold text-primary">Profile</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors" data-icon="arrow_forward_ios" style="font-size: 16px;">arrow_forward_ios</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg group active:scale-[0.98] transition-all" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<span class="font-semibold text-primary">Addresses</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors" data-icon="arrow_forward_ios" style="font-size: 16px;">arrow_forward_ios</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container-low rounded-lg group active:scale-[0.98] transition-all" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</div>
+<span class="font-semibold text-primary">Wishlist</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors" data-icon="arrow_forward_ios" style="font-size: 16px;">arrow_forward_ios</span>
+</a>
+</section>
+<!-- Heritage Curations (Horizontal Scroll) -->
+<section class="mb-10">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h3 class="font-headline text-2xl font-bold text-primary">Heritage Curations</h3>
+<p class="text-xs text-on-surface-variant font-medium mt-1">Tailored specifically for you</p>
+</div>
+<button class="text-secondary text-xs font-bold uppercase tracking-widest border-b border-secondary/30 pb-1">View All</button>
+</div>
+<div class="flex overflow-x-auto gap-6 pb-4 hide-scrollbar snap-x">
+<!-- Item 1 -->
+<div class="flex-shrink-0 w-64 snap-start">
+<div class="aspect-[4/5] rounded-xl overflow-hidden mb-3">
+<img alt="Collection item" class="w-full h-full object-cover" data-alt="Editorial photograph of a cream-colored handcrafted cotton saree with traditional block prints and golden borders against a minimalist studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPJbrbLpnrm1QQfH3JGUpBBijmYeemvJ3nv77YhrZDnGGhiSXVK2fmO6wWq_79kBPIG0ZDJrAGrzPb3ox59r2Jl4pHINH_l_cDrxmmH0rDWJksv28se5p_dHQlSrBwrASchLZtrVzajel0eUZhEYqWn0fLZHXbf58T4YsoJo8firgtPo-YURfg_IahPZzLvUPqvrTIrE3hHRDdrJ4GSpcg8oWen5CgPKZPSNtmm-yTb40-24c40BLyIj3RWd0SYsKuDzo92CeSvz8"/>
+</div>
+<p class="text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-1">Mughal Garden Series</p>
+<h4 class="font-headline text-lg font-bold text-primary leading-tight">Hand-woven Chanderi Saree</h4>
+<p class="text-sm text-on-surface-variant mt-1">₹14,999</p>
+</div>
+<!-- Item 2 -->
+<div class="flex-shrink-0 w-64 snap-start">
+<div class="aspect-[4/5] rounded-xl overflow-hidden mb-3">
+<img alt="Collection item" class="w-full h-full object-cover" data-alt="Close-up of luxury hand-embroidered velvet sherwani in deep maroon with antique gold buttons and intricate floral motifs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfvDy4aEg8gpX2ILd4BcJog15g472fZ1jsqMRBKesAGVVSiDsrp0Q4SW7H4-Vm76vh18R15U8WdexiY1W0RZLALsZXkifHx7Qk6CHZp43R2FkZaS47REPcB77DBXsq-tmIJvbrpQH8SK610HA0K4RNGLn67lZkSELvC8l-nA8IWIUjaIE6kiAdP5ORM1bW5zTgrtrMZXrWtV4B_48oUADtlxwopqaCvbtB7-uazDiv1tLyYZ8oZN-Grf6ZvERWT3pbnIVlPVrm78A"/>
+</div>
+<p class="text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-1">Royal Evening Wear</p>
+<h4 class="font-headline text-lg font-bold text-primary leading-tight">Velvet Embroidered Sherwani</h4>
+<p class="text-sm text-on-surface-variant mt-1">₹32,500</p>
+</div>
+<!-- Item 3 -->
+<div class="flex-shrink-0 w-64 snap-start">
+<div class="aspect-[4/5] rounded-xl overflow-hidden mb-3">
+<img alt="Collection item" class="w-full h-full object-cover" data-alt="Elegant female model wearing a pastel peach lehenga choli with delicate silver sequins work, standing in a sun-drenched heritage courtyard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd1RrvFkSwW7FzBucvcSRBxVfjKej5VrSnDAlEOKUzGWIe15DhBhtTBl-uaZ4DsnMWFlpwzdfCQvNq9mtz7UL0ujHKyV22CEtnngGiNMDVEFb3vp4agrsbnYZtsY8qKgnwkXwjbvUs0UbrltgA1HIgPvOETKtmMm667n3Dele3_xm-ok-7UXO6_fqKFWFJQe6diYVxCsuO0xykeBcEXTyqNeqieM7XZZYw1C_h2j7bIrCckwbCdCTBjmF2BAm1YBJa0bKSeWCS5rk"/>
+</div>
+<p class="text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-1">The Festive Edit</p>
+<h4 class="font-headline text-lg font-bold text-primary leading-tight">Sequin Work Festive Lehenga</h4>
+<p class="text-sm text-on-surface-variant mt-1">₹24,000</p>
+</div>
+</div>
+</section>
+<!-- Support Section -->
+<section class="mb-12 p-8 bg-primary rounded-2xl text-center relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-headline text-xl text-on-primary mb-2">Need Assistance?</h3>
+<p class="text-on-primary-container text-sm mb-6">Our heritage consultants are available 24/7 for personalized styling.</p>
+<button class="bg-secondary text-on-primary px-8 py-3 rounded-md font-bold text-xs uppercase tracking-widest active:scale-95 transition-transform">Contact Support</button>
+</div>
+<!-- Decorative Arch background element -->
+<div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-48 h-48 border-[1px] border-on-primary/10 rounded-full"></div>
+<div class="absolute -bottom-16 left-1/2 -translate-x-1/2 w-64 h-64 border-[1px] border-on-primary/5 rounded-full"></div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 bg-[#F9F9F7]/90 dark:bg-stone-900/90 backdrop-blur-md z-50 rounded-t-3xl shadow-[0_-4px_24px_rgba(26,28,27,0.06)] border-t border-stone-200/10">
+<div class="flex flex-col items-center justify-center text-[#00261B]/60 dark:text-stone-500 hover:text-[#775A19] dark:hover:text-amber-200 transition-opacity active:scale-90 duration-200 ease-out cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="home_rich">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#00261B]/60 dark:text-stone-500 hover:text-[#775A19] dark:hover:text-amber-200 transition-opacity active:scale-90 duration-200 ease-out cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest">Collections</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#775A19] dark:text-amber-400 font-bold scale-110 transition-transform active:scale-90 duration-200 ease-out cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="person_2" style="font-variation-settings: 'FILL' 1;">person_2</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-widest">Account</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#00261B]/60 dark:text-stone-500 hover:text-[#775A19] dark:hover:text-amber-200 transition-opacity active:scale-90 duration-200 ease-out cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="local_mall">local_mall</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest">Cart</span>
+</div>
+</nav>
+</body></html>

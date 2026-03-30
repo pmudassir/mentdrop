@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Noto+Sans+Devanagari:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e4e4cc",
+              "on-secondary-container": "#755f42",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed-variant": "#27438a",
+              "primary-fixed-dim": "#e9c349",
+              "on-surface-variant": "#4d4635",
+              "surface": "#fbfbe2",
+              "secondary": "#715b3e",
+              "on-primary-container": "#554300",
+              "secondary-container": "#f9dbb7",
+              "on-primary-fixed-variant": "#574500",
+              "secondary-fixed": "#fcdeba",
+              "surface-container-low": "#f5f5dc",
+              "background": "#fbfbe2",
+              "on-error": "#ffffff",
+              "surface-dim": "#dbdcc3",
+              "on-secondary": "#ffffff",
+              "on-error-container": "#93000a",
+              "error": "#ba1a1a",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#241a00",
+              "outline": "#7f7663",
+              "surface-bright": "#fbfbe2",
+              "tertiary-fixed-dim": "#b4c5ff",
+              "on-surface": "#1b1d0e",
+              "surface-container-high": "#eaead1",
+              "primary-fixed": "#ffe088",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e4e4cc",
+              "surface-container": "#efefd7",
+              "primary": "#735c00",
+              "outline-variant": "#d0c5af",
+              "inverse-primary": "#e9c349",
+              "inverse-surface": "#303221",
+              "on-tertiary-fixed": "#00174b",
+              "tertiary-container": "#97b0ff",
+              "surface-tint": "#735c00",
+              "tertiary": "#415ba4",
+              "inverse-on-surface": "#f2f2d9",
+              "primary-container": "#d4af37",
+              "secondary-fixed-dim": "#dfc29f",
+              "on-secondary-fixed": "#281903",
+              "on-tertiary-container": "#254188",
+              "on-secondary-fixed-variant": "#574329",
+              "on-background": "#1b1d0e",
+              "tertiary-fixed": "#dbe1ff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"],
+              "devanagari": ["Noto Sans Devanagari"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .gold-glow { box-shadow: 0px 20px 40px rgba(115, 92, 0, 0.08); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#FBFBE2]/70 dark:bg-[#1B1D0E]/70 backdrop-blur-md flex justify-between items-center px-6 h-16">
+<span class="material-symbols-outlined text-[#735C00] dark:text-[#D4AF37]">menu</span>
+<span class="font-headline uppercase tracking-[0.3em] font-black text-2xl text-[#735C00] dark:text-[#D4AF37]">SWADESH</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#735C00] dark:text-[#D4AF37]">search</span>
+<span class="material-symbols-outlined text-[#735C00] dark:text-[#D4AF37]">shopping_bag</span>
+</div>
+</nav>
+<main class="pt-16 pb-32">
+<!-- Hero Section & Product Gallery -->
+<section class="relative">
+<!-- 15% OFF Banner Overlay -->
+<div class="absolute top-4 left-0 z-10 bg-primary text-on-primary px-6 py-2 rounded-r-full font-headline font-bold text-sm tracking-widest shadow-lg">
+                15% OFF <span class="font-light">| Utsav Code</span>
+</div>
+<!-- Swipeable Gallery -->
+<div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar">
+<div class="snap-center shrink-0 w-full aspect-[3/4] relative">
+<img alt="Heritage Saree" class="w-full h-full object-cover" data-alt="Elegant woman wearing a rich gold and cream silk saree posing in a sun-drenched marble courtyard with soft architectural shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzDG0Mnb_1KTTnKWUGXaFoK7np9rVq8W0s3dAx19p92YkQgc_v5v_gy0l9XHYwj1A3kf0RiMLwtRWugkB_0MWhvLHNfUs5lHH1ptDChNQDVF7VUBSG0G2tV4OCiqZmgAbo1I26FChl6PvhiQQ-GQ9MKygI_t3B_EZsapYESWWJZKwtorQvaB8r5TXo0kmNu2ucQMiT9bgbxdKRs3qLQ4-R_8fiEi2Xp3qqQeeM1XY5HnQGf45a9C_MLLf0DBH248eUDD96uUgeCYY"/>
+</div>
+<div class="snap-center shrink-0 w-full aspect-[3/4] relative">
+<img alt="Saree Detail" class="w-full h-full object-cover" data-alt="Macro close-up of intricate hand-woven gold Zari embroidery on cream silk fabric showing fine threads and texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWMKpG8JMy0XEkOtZy1PDaY1vSi75I_mrlg_oVb22H5l1y1eByi7ngWPozRy_0yMgB3xkuQJ4UrirgAdidSAyWspCz_3AUAPpteRLeLgzjLgoi3Gf_K17XK44TvTlwKxnBUmhFnOsiEJcc4KMhxBZmjHOSz3uYn_Jw47U5La1ZLu0oY6DesrkHrf6OBPjvkpQZcWa3U5ThiEsv7OkMXQM0Sm5jMsmn3qVYg_UBQDk_yJ7yLNqxLNbfXzpLoD-S8zkbf7zYAVxXIgo"/>
+</div>
+</div>
+<!-- Page Indicators -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant/40"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant/40"></div>
+</div>
+</section>
+<!-- Product Details -->
+<section class="px-6 py-8 bg-surface">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="text-primary font-headline text-xs tracking-[0.2em] font-bold uppercase mb-2 block">Premium Heritage</span>
+<h1 class="text-3xl font-headline font-bold text-on-surface leading-tight">Swarnim Silk Saree</h1>
+<p class="font-devanagari text-lg text-on-surface-variant mt-1">स्वर्णिम रेशम साड़ी</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-headline font-bold text-primary">₹12,499</span>
+<span class="text-sm text-on-surface-variant line-through opacity-60 font-medium">₹14,999</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-8">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+<span class="text-xs font-label font-medium text-on-surface-variant">(128 Reviews)</span>
+</div>
+<!-- Size Selection -->
+<div class="mb-10">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline font-bold text-sm tracking-wider uppercase">Select Size</h3>
+<button class="text-primary text-xs font-bold underline underline-offset-4 uppercase tracking-tighter">Size Chart</button>
+</div>
+<div class="flex gap-3">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center font-medium hover:border-primary transition-colors">S</button>
+<button class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">M</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center font-medium hover:border-primary transition-colors">L</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center font-medium hover:border-primary transition-colors">XL</button>
+</div>
+</div>
+<!-- Feature Grid (3 Column) -->
+<div class="grid grid-cols-3 gap-4 mb-12">
+<div class="flex flex-col items-center text-center p-4 bg-surface-container-low rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary mb-2">history_edu</span>
+<span class="text-[10px] font-headline font-bold uppercase tracking-widest text-on-surface-variant">Heritage</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 bg-surface-container-low rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary mb-2">dry_cleaning</span>
+<span class="text-[10px] font-headline font-bold uppercase tracking-widest text-on-surface-variant">Pure Silk</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 bg-surface-container-low rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary mb-2">auto_awesome</span>
+<span class="text-[10px] font-headline font-bold uppercase tracking-widest text-on-surface-variant">Stitched</span>
+</div>
+</div>
+</section>
+<!-- UGC Video reviews -->
+<section class="py-12 bg-surface-container overflow-hidden">
+<h2 class="px-6 mb-8 font-headline text-2xl font-bold tracking-tight">Seen on You <span class="font-devanagari text-primary">#स्वदेशवियर</span></h2>
+<div class="flex gap-4 px-6 overflow-x-auto hide-scrollbar">
+<div class="relative shrink-0 w-44 aspect-[9/16] rounded-lg overflow-hidden group">
+<img alt="UGC Video" class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all" data-alt="Vertical video thumbnail of a woman twirling in a gold saree in a modern living room setting, warm indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnQdMPXTxNtfsKSWfh1NMk4muk-fUngAf6qWuKtXO9ItOANTgxWqHr3C9ZodZRmiksuFANFACrYQzEc7-x1XfbMQjJW8E0IUdhXdR7cm900Cuwh3eJgsrGt4XEl10d6BGO8dH43ERikBJEaqbD7zpwOUpsGpBop-_fdoC0E3piKnIkOMEmrd1Ch2hom78x_7PEm9ny0uT-khWcOb0OEKNRo0HtYBbn_18q-ROHI0FRZsUWROyW0vUMfm76qf1QZXtDchofHhYJKc0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+<div class="relative shrink-0 w-44 aspect-[9/16] rounded-lg overflow-hidden group">
+<img alt="UGC Video" class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all" data-alt="Vertical thumbnail of a fashion influencer showcasing saree drape details in a garden, bright natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrPmGEmALOp4NwfmJ_q2iBVuk6bIS6eMhVnuOIHj5CxMeHLkgyyauDn2soLUROkPHEVEBjdzvi6CpiIcGJkH27Ui3fYSa1Y3g_jI1wK5VhcnCk3mb9TkFFb3OzXN0MGPvhT3HdpPEU_X6VhEdF6jxKCOA46edBBE9_uiMeFeDmKwYcYTLB5QZP_NKhbNjVUfM-gzM1LzoUkeLM9vrFgcRNXJKBDlfDHLXQZDBCdHm_Hm6q90NqSpDv7-RwgNn9PusV3Tdly-1km-Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+<div class="relative shrink-0 w-44 aspect-[9/16] rounded-lg overflow-hidden group">
+<img alt="UGC Video" class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all" data-alt="Vertical thumbnail of a close-up wedding guest outfit reveal, rich embroidery details, festive lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFInDpea8NwvdgDmOovVdiXvuf2w_6Fk61NgEydca-C_vd8QChTt5HYUtpNwqd9fXtly7yoXUqbwXbfM6Yhqp5csrIKSqH-2kah8y4ms0B3hI3ZTaZbwkaYJhXTKZAgn1EgtSwQXuuSu1CTtJce-XhzJVnksxt96zI4DeFYc-LBnIcK3p4b4y8FCXl_C2iU0tkib9uEShahbA0awkxO1jkfC3IWnuiKakkEzfSaq5OwGqcMnpdyrmVPWW1RUvQcREKfppULLH2eOY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="px-6 py-16 bg-surface">
+<div class="text-center mb-12">
+<span class="text-primary-container font-headline text-6xl opacity-30">“</span>
+<p class="text-xl font-headline font-light italic leading-relaxed text-on-surface px-4 -mt-8">
+                    The fabric is pure poetry. Wearing Swadesh feels like carrying a piece of our history with modern grace.
+                </p>
+<div class="mt-6">
+<p class="font-headline font-bold uppercase tracking-[0.2em] text-sm">Ananya Sharma</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Verified Patron</p>
+</div>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="px-6 py-12 bg-surface-container-low">
+<h2 class="font-headline text-2xl font-bold mb-8">Common Inquiries</h2>
+<div class="space-y-4">
+<div class="bg-surface rounded-lg p-5 flex justify-between items-center border border-outline-variant/10">
+<span class="font-medium text-sm">Product Maintenance</span>
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+<div class="bg-surface rounded-lg p-5 flex justify-between items-center border border-outline-variant/10">
+<span class="font-medium text-sm">Global Shipping Details</span>
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+<div class="bg-surface rounded-lg p-5 flex justify-between items-center border border-outline-variant/10">
+<span class="font-medium text-sm">Custom Tailoring Services</span>
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-12 bg-[#F5F5DC] dark:bg-[#1B1D0E] flex flex-col items-center gap-6 px-8 py-12 text-center">
+<div class="text-xl font-bold text-[#735C00] uppercase tracking-widest">SWADESH</div>
+<div class="flex gap-6 flex-wrap justify-center">
+<a class="text-[#4D4635] dark:text-[#E4E4CC] text-sm hover:text-[#D4AF37] transition-colors" href="#">Shipping</a>
+<a class="text-[#4D4635] dark:text-[#E4E4CC] text-sm hover:text-[#D4AF37] transition-colors" href="#">Returns</a>
+<a class="text-[#4D4635] dark:text-[#E4E4CC] text-sm hover:text-[#D4AF37] transition-colors" href="#">Privacy</a>
+<a class="text-[#4D4635] dark:text-[#E4E4CC] text-sm hover:text-[#D4AF37] transition-colors" href="#">Contact</a>
+</div>
+<p class="text-[#4D4635] dark:text-[#E4E4CC] text-xs mt-4">© 2024 Swadesh Wears. Crafted with Heritage.</p>
+</footer>
+<!-- Bottom Navigation (Shared Component) -->
+<div class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 py-4 pb-safe bg-[#FFFFFF] dark:bg-[#1B1D0E] shadow-[0px_-20px_40px_rgba(115,92,0,0.08)] rounded-t-[2rem]">
+<div class="text-[#4D4635] dark:text-[#E4E4CC] p-4 flex flex-col items-center">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div class="text-[#4D4635] dark:text-[#E4E4CC] p-4 flex flex-col items-center">
+<span class="material-symbols-outlined">share</span>
+</div>
+</div>
+<!-- Sticky Checkout CTAs (Product Specific) -->
+<div class="fixed bottom-20 left-0 w-full z-40 px-6 pointer-events-none">
+<div class="flex gap-3 pointer-events-auto">
+<button class="flex-1 bg-surface-container-highest text-primary font-headline font-bold py-4 rounded-full gold-glow uppercase tracking-widest text-xs transition-transform active:scale-95">
+                Add to Cart
+            </button>
+<button class="flex-[1.5] bg-primary-container text-on-primary-container font-headline font-black py-4 rounded-full gold-glow uppercase tracking-widest text-xs shadow-lg shadow-primary/20 transition-transform active:scale-95">
+                Buy Now
+            </button>
+</div>
+</div>
+</body></html>

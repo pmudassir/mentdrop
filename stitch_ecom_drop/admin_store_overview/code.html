@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atelier Admin | Indian Ethnic Wear Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f3f3f4",
+                        "surface-tint": "#006c50",
+                        "secondary-fixed": "#e2e2e3",
+                        "surface-container-high": "#e8e8e9",
+                        "outline": "#6e7a73",
+                        "primary-fixed-dim": "#75d9b3",
+                        "inverse-surface": "#2f3132",
+                        "secondary": "#5d5e60",
+                        "on-background": "#1a1c1d",
+                        "outline-variant": "#bdc9c2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#454748",
+                        "on-primary-fixed-variant": "#00513c",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-container-highest": "#e2e2e3",
+                        "on-primary-container": "#d6ffeb",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#3e4944",
+                        "surface": "#f9f9fa",
+                        "inverse-primary": "#75d9b3",
+                        "on-secondary-fixed": "#1a1c1d",
+                        "tertiary": "#705d00",
+                        "secondary-container": "#dfdfe0",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e2e2e3",
+                        "on-secondary-container": "#616364",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#c9a900",
+                        "background": "#f9f9fa",
+                        "on-primary-fixed": "#002116",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-dim": "#dadadb",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "primary-container": "#008060",
+                        "surface-container": "#eeeeef",
+                        "surface-bright": "#f9f9fa",
+                        "on-surface": "#1a1c1d",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#92f6cf",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary": "#00654b",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed-dim": "#e9c400"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9fa; color: #1a1c1d; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); }
+        .primary-gradient { background: linear-gradient(135deg, #00654b 0%, #008060 100%); }
+    </style>
+</head>
+<body class="antialiased">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200/50 bg-slate-50 flex flex-col p-4 gap-y-2 z-50">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-8 h-8 primary-gradient rounded-md flex items-center justify-center text-white font-bold">A</div>
+<div>
+<h1 class="text-lg font-bold tracking-tighter text-slate-900">Atelier Admin</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Premium Ethnic Wear</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard Active -->
+<a class="bg-white text-emerald-900 shadow-sm rounded-md flex items-center px-3 py-2 text-sm font-medium transition-transform scale-100 active:scale-100 group" href="#">
+<span class="material-symbols-outlined mr-3 text-emerald-900" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-slate-500 hover:text-slate-900 hover:bg-slate-200/50 rounded-md flex items-center px-3 py-2 text-sm font-medium transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">shopping_bag</span>
+                Orders
+            </a>
+<a class="text-slate-500 hover:text-slate-900 hover:bg-slate-200/50 rounded-md flex items-center px-3 py-2 text-sm font-medium transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">inventory_2</span>
+                Products
+            </a>
+<a class="text-slate-500 hover:text-slate-900 hover:bg-slate-200/50 rounded-md flex items-center px-3 py-2 text-sm font-medium transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">analytics</span>
+                Analytics
+            </a>
+<a class="text-slate-500 hover:text-slate-900 hover:bg-slate-200/50 rounded-md flex items-center px-3 py-2 text-sm font-medium transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">group</span>
+                Customers
+            </a>
+<a class="text-slate-500 hover:text-slate-900 hover:bg-slate-200/50 rounded-md flex items-center px-3 py-2 text-sm font-medium transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">description</span>
+                Content
+            </a>
+<a class="text-slate-500 hover:text-slate-900 hover:bg-slate-200/50 rounded-md flex items-center px-3 py-2 text-sm font-medium transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">campaign</span>
+                Marketing
+            </a>
+<a class="text-slate-500 hover:text-slate-900 hover:bg-slate-200/50 rounded-md flex items-center px-3 py-2 text-sm font-medium transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">sell</span>
+                Discounts
+            </a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200/50">
+<div class="flex items-center gap-3 px-2">
+<img alt="User Profile" class="w-8 h-8 rounded-full border border-slate-200" data-alt="close-up portrait of professional male executive in high-end office environment with natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTOdGCoEML5o6fXfIqTE6ThQYosRrh05KIqF7UrgwqDle5fq_h0OlA1_TPEe7Zw1YecBn3i1oBP9_CnbddlhYGEaiPyxAb-PmHspzvSwAR422pzSXRv0sz5-uNDY3ApcL_95VCSkrCbrDwqQ4yxFE0DVwWyq2of6bdwJBUNwlF32yGDXrEFrOwlSdpcvK7ZyU_4jxqD-7DoxKHfCEIjacKOChge5TROT7s6g5nbMAST2_cPxPdwuX9GvZp6sKCvWEXX36KxSDc8gA"/>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-semibold text-slate-900 truncate">Vikram Singh</p>
+<p class="text-[10px] text-slate-500 truncate">Store Manager</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">settings</span>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Component -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 glass-panel border-b border-slate-200/50 z-40 flex justify-between items-center px-8">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-emerald-500/20 rounded-md transition-all">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-md py-2 pl-10 pr-4 text-sm focus:ring-0 placeholder:text-slate-400" placeholder="Search orders, products, or customers..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-500 hover:text-emerald-700 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-500 hover:text-emerald-700 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="text-slate-500 hover:text-emerald-700 transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-24 pb-12 px-8 min-h-screen bg-surface">
+<!-- Store Overview Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface mb-1">Store Overview</h2>
+<p class="text-on-secondary-fixed-variant text-sm">Real-time performance metrics for your atelier.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-lowest border border-outline-variant/15 px-4 py-2 rounded-md flex items-center gap-2 text-sm font-medium text-on-surface-variant cursor-pointer hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                    Last 30 Days
+                    <span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+<button class="primary-gradient text-white px-5 py-2 rounded-md text-sm font-semibold flex items-center gap-2 shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Export Data
+                </button>
+</div>
+</div>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<!-- Revenue Card -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/15 flex flex-col justify-between group hover:border-primary/20 transition-colors">
+<div>
+<p class="text-xs font-bold uppercase tracking-widest text-on-secondary-fixed-variant mb-4">Total Revenue</p>
+<h3 class="text-2xl font-extrabold tracking-tighter text-on-surface">₹14,82,500</h3>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="flex items-center text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded text-xs font-bold">
+<span class="material-symbols-outlined text-xs mr-0.5">trending_up</span>
+                        12.5%
+                    </div>
+<span class="text-[10px] text-on-surface-variant">vs last month</span>
+</div>
+</div>
+<!-- Orders Card -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/15 flex flex-col justify-between group hover:border-primary/20 transition-colors">
+<div>
+<p class="text-xs font-bold uppercase tracking-widest text-on-secondary-fixed-variant mb-4">Total Orders</p>
+<h3 class="text-2xl font-extrabold tracking-tighter text-on-surface">2,148</h3>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="flex items-center text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded text-xs font-bold">
+<span class="material-symbols-outlined text-xs mr-0.5">trending_up</span>
+                        8.2%
+                    </div>
+<span class="text-[10px] text-on-surface-variant">vs last month</span>
+</div>
+</div>
+<!-- AOV Card -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/15 flex flex-col justify-between group hover:border-primary/20 transition-colors">
+<div>
+<p class="text-xs font-bold uppercase tracking-widest text-on-secondary-fixed-variant mb-4">Avg. Order Value</p>
+<h3 class="text-2xl font-extrabold tracking-tighter text-on-surface">₹6,875</h3>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="flex items-center text-rose-600 bg-rose-50 px-2 py-0.5 rounded text-xs font-bold">
+<span class="material-symbols-outlined text-xs mr-0.5">trending_down</span>
+                        2.1%
+                    </div>
+<span class="text-[10px] text-on-surface-variant">vs last month</span>
+</div>
+</div>
+<!-- Conversion Card -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/15 flex flex-col justify-between group hover:border-primary/20 transition-colors">
+<div>
+<p class="text-xs font-bold uppercase tracking-widest text-on-secondary-fixed-variant mb-4">Conversion Rate</p>
+<h3 class="text-2xl font-extrabold tracking-tighter text-on-surface">3.42%</h3>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="flex items-center text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded text-xs font-bold">
+<span class="material-symbols-outlined text-xs mr-0.5">trending_up</span>
+                        0.5%
+                    </div>
+<span class="text-[10px] text-on-surface-variant">vs last month</span>
+</div>
+</div>
+</div>
+<!-- Main Content Area: Bento Style -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Revenue Performance Chart (8 cols) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-lg border border-outline-variant/15 p-8">
+<div class="flex items-center justify-between mb-8">
+<h4 class="text-lg font-bold text-on-surface">Revenue Performance</h4>
+<div class="flex items-center gap-4 text-xs font-semibold">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full primary-gradient"></span>
+                            Current Period
+                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="w-3 h-3 rounded-full bg-slate-200"></span>
+                            Previous Period
+                        </div>
+</div>
+</div>
+<!-- Mock Chart Visualization -->
+<div class="h-64 relative flex items-end justify-between gap-1 mt-12 px-2">
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="w-full border-t border-slate-100"></div>
+<div class="w-full border-t border-slate-100"></div>
+<div class="w-full border-t border-slate-100"></div>
+<div class="w-full border-t border-slate-100"></div>
+</div>
+<!-- Bars/Mock Line visualization -->
+<div class="w-6 h-32 bg-primary/10 rounded-t-sm relative"></div>
+<div class="w-6 h-40 bg-primary/20 rounded-t-sm relative"></div>
+<div class="w-6 h-24 bg-primary/10 rounded-t-sm relative"></div>
+<div class="w-6 h-48 bg-primary/30 rounded-t-sm relative"></div>
+<div class="w-6 h-56 primary-gradient rounded-t-sm relative"></div>
+<div class="w-6 h-44 bg-primary/20 rounded-t-sm relative"></div>
+<div class="w-6 h-52 bg-primary/30 rounded-t-sm relative"></div>
+<div class="w-6 h-36 bg-primary/15 rounded-t-sm relative"></div>
+<div class="w-6 h-60 primary-gradient rounded-t-sm relative"></div>
+<div class="w-6 h-48 bg-primary/25 rounded-t-sm relative"></div>
+<div class="w-6 h-32 bg-primary/10 rounded-t-sm relative"></div>
+<div class="w-6 h-44 bg-primary/20 rounded-t-sm relative"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest px-2">
+<span>Aug 01</span>
+<span>Aug 08</span>
+<span>Aug 15</span>
+<span>Aug 22</span>
+<span>Aug 30</span>
+</div>
+</div>
+<!-- Order Status Donut (4 cols) -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-lg border border-outline-variant/15 p-8 flex flex-col items-center">
+<h4 class="text-lg font-bold text-on-surface self-start mb-12">Order Status</h4>
+<div class="relative w-48 h-48 flex items-center justify-center mb-10">
+<!-- SVG Donut Chart -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Delivered 55% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#00654b" stroke-dasharray="172.7 84" stroke-dashoffset="0" stroke-width="12"></circle>
+<!-- In Transit 25% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#bdc9c2" stroke-dasharray="78.5 178" stroke-dashoffset="-172.7" stroke-width="12"></circle>
+<!-- Pending 15% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#6e7a73" stroke-dasharray="47.1 209" stroke-dashoffset="-251.2" stroke-width="12"></circle>
+<!-- RTO 5% -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#ba1a1a" stroke-dasharray="15.7 241" stroke-dashoffset="-298.3" stroke-width="12"></circle>
+</svg>
+<div class="absolute text-center">
+<p class="text-2xl font-extrabold tracking-tight">2,148</p>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Orders</p>
+</div>
+</div>
+<div class="w-full space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-sm font-medium">Delivered</span>
+</div>
+<span class="text-sm font-bold">55%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="text-sm font-medium">In Transit</span>
+</div>
+<span class="text-sm font-bold">25%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="text-sm font-medium">Pending</span>
+</div>
+<span class="text-sm font-bold">15%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-sm font-medium">RTO</span>
+</div>
+<span class="text-sm font-bold">5%</span>
+</div>
+</div>
+</div>
+<!-- Top Performing Products (Full Width Editorial List) -->
+<div class="col-span-12 bg-surface-container-lowest rounded-lg border border-outline-variant/15 overflow-hidden">
+<div class="px-8 py-6 border-b border-slate-100 flex items-center justify-between">
+<h4 class="text-lg font-bold text-on-surface">Top Performing Products</h4>
+<button class="text-primary font-bold text-xs uppercase tracking-widest hover:underline transition-all">View Catalog</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-8 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Product Details</th>
+<th class="px-8 py-4 text-center text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Sales</th>
+<th class="px-8 py-4 text-right text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Revenue</th>
+<th class="px-8 py-4 text-center text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Stock Status</th>
+<th class="px-8 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<!-- Product Row 1 -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-16 rounded-md overflow-hidden bg-slate-100">
+<img alt="Product" class="w-full h-full object-cover" data-alt="exquisite hand-embroidered silk saree with intricate gold floral patterns draped elegantly over a mannequin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnG-TPlEPmb7BflYy_nUbsWEsNi0Ig_ppi8ZNzmR8_UhoHiTxp8fP5yUl1cxm4EylxlfXfCMCDpQC-k6-J9nvLeVsDZItaHs0bv9esBvcemQT8j2J5CdphqrG4Kflu9SUAbTC777y-O1_fKp-TNPXlYDaaNK589xwla8SqQ7DZYQjqLISakp5zJVcgkDnGxR1l7u1FQBNvqJssLn6LBDAAvUcvWAI5_JGFIToH5p8ADFeR9CcUhUHxRAo13HT3_QP82OV-ApDZ1uA"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Hand-Embroidered Silk Saree</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Midnight Emerald / Silk Collection</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-center text-sm font-bold">482</td>
+<td class="px-8 py-5 text-right text-sm font-bold">₹7,23,000</td>
+<td class="px-8 py-5 text-center">
+<span class="inline-flex items-center px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700">In Stock</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Product Row 2 -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-16 rounded-md overflow-hidden bg-slate-100">
+<img alt="Product" class="w-full h-full object-cover" data-alt="close-up of intricate gold zardosi embroidery on deep burgundy velvet fabric with soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmRj2gU-htx1LT9RS9fwnONefyZ78-DexsHpOopHqvnd0o-PUjxmVZG9izwyVmTWQ8grr0_X87XUV2QpmtreGSkSTvdhTLtyzE-v6vtLXt6VwhW1sBsmzz-B-UF4_WpWkSJDM1lQcIxPBP1iS45DdQo4PN1LO0Pv6WKB_9ftRvQJqD9tQehz7JfqP6WU_lMYPlh3O4HqELsW6zYcAy3wRKP2HDWv12YUAfknGUxLr0nXW2JIkgFhowhRtPIFAra0lb5IZGJKNbeLE"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Zardosi Velvet Lehenga</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Royal Burgundy / Bridal Series</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-center text-sm font-bold">312</td>
+<td class="px-8 py-5 text-right text-sm font-bold">₹10,92,000</td>
+<td class="px-8 py-5 text-center">
+<span class="inline-flex items-center px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed-dim text-on-tertiary-fixed">Low Stock</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Product Row 3 -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-16 rounded-md overflow-hidden bg-slate-100">
+<img alt="Product" class="w-full h-full object-cover" data-alt="stylish designer linen kurta for men in ivory white with subtle pearl buttons and textured weave" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7EW0DKG-cF-AwyVM1RoDdzkN-hhKgtOPaJuwTq5HuuWiD2q1tTqYkyIlaLtqXgymo32OleyR2nyQRsB_OwLJVQXK2CTmNMbKwZBIfdTXs2qtLKpmr-WFwXEDKz6rem_nRg_tu_Y4Iq52K78VWK5XgWJ3-HFUzgBpqlCQkmM6-CJbDeHnWx55Ez0Hpa4eBZAnYs_dK5g0iroetZoCk28ZFFadbzQTWJvjuYJSbVufciTuTppTtsqp8bnZXXeOnybshzr0kzPSuJ3o"/>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Designer Linen Kurta</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Ivory White / Menswear Atelier</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-center text-sm font-bold">256</td>
+<td class="px-8 py-5 text-right text-sm font-bold">₹1,28,000</td>
+<td class="px-8 py-5 text-center">
+<span class="inline-flex items-center px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700">In Stock</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual Floating Action Button -->
+<button class="fixed bottom-8 right-8 w-14 h-14 primary-gradient rounded-full shadow-lg flex items-center justify-center text-white transition-transform hover:scale-105 active:scale-95 group z-50">
+<span class="material-symbols-outlined text-2xl group-hover:rotate-90 transition-transform">add</span>
+</button>
+</body></html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#e6deff",
+              "outline-variant": "#c0c8c3",
+              "outline": "#717974",
+              "secondary": "#775a19",
+              "on-tertiary-fixed-variant": "#4900d6",
+              "surface-tint": "#396756",
+              "on-error-container": "#93000a",
+              "inverse-surface": "#2f3130",
+              "tertiary-fixed-dim": "#cabeff",
+              "on-secondary-container": "#785a1a",
+              "secondary-fixed-dim": "#e9c176",
+              "on-primary-fixed": "#002116",
+              "surface-variant": "#e2e3e1",
+              "primary": "#00261b",
+              "tertiary-container": "#3700a7",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#214f3f",
+              "on-secondary-fixed": "#261900",
+              "surface-container": "#eeeeec",
+              "on-background": "#1a1c1b",
+              "inverse-primary": "#a0d1bc",
+              "surface-container-highest": "#e2e3e1",
+              "inverse-on-surface": "#f1f1ef",
+              "secondary-container": "#fed488",
+              "primary-container": "#0b3d2e",
+              "surface": "#f9f9f7",
+              "surface-bright": "#f9f9f7",
+              "on-surface": "#1a1c1b",
+              "on-primary-container": "#79a894",
+              "error-container": "#ffdad6",
+              "primary-fixed": "#bcedd7",
+              "secondary-fixed": "#ffdea5",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#5d4201",
+              "on-error": "#ffffff",
+              "background": "#f9f9f7",
+              "tertiary": "#21006e",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#a28eff",
+              "surface-container-high": "#e8e8e6",
+              "primary-fixed-dim": "#a0d1bc",
+              "on-tertiary-fixed": "#1c0061",
+              "surface-dim": "#dadad8",
+              "surface-container-low": "#f4f4f2",
+              "on-surface-variant": "#414944"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(249, 249, 247, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary/30">
+<!-- Top Navigation Bar -->
+<header class="bg-[#F9F9F7] dark:bg-stone-950 font-['Noto_Serif'] font-light tracking-wide full-width top-0 sticky z-50 shadow-sm dark:shadow-none">
+<div class="flex flex-col items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
+<div class="flex items-center justify-between w-full mb-6">
+<div class="flex-1"></div>
+<h1 class="text-3xl font-serif tracking-tighter text-[#00261B] dark:text-stone-50 uppercase flex-1 text-center">Swadesh</h1>
+<div class="flex items-center justify-end gap-6 flex-1">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors" data-icon="person">person</span>
+<div class="relative cursor-pointer">
+<span class="material-symbols-outlined text-primary hover:text-secondary transition-colors" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">2</span>
+</div>
+</div>
+</div>
+<nav class="flex items-center justify-center space-x-10">
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors scale-100 active:scale-95 transition-transform" href="#">New Arrivals</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors scale-100 active:scale-95 transition-transform" href="#">Lehengas</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors scale-100 active:scale-95 transition-transform" href="#">Sarees</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors scale-100 active:scale-95 transition-transform" href="#">Menswear</a>
+<a class="text-[#775A19] border-b-2 border-[#775A19] pb-1 font-semibold scale-100 active:scale-95 transition-transform" href="#">Collections</a>
+<a class="text-[#00261B] dark:text-stone-300 hover:text-[#775A19] transition-colors scale-100 active:scale-95 transition-transform" href="#">Heritage</a>
+</nav>
+</div>
+<div class="bg-stone-200/50 dark:bg-stone-800/50 h-[1px] w-full"></div>
+</header>
+<main class="max-w-[1920px] mx-auto px-12 py-12">
+<!-- Hero Title Section -->
+<section class="mb-16">
+<nav class="flex text-sm text-outline mb-4 font-body uppercase tracking-widest">
+<a class="hover:text-secondary" href="#">Home</a>
+<span class="mx-2">/</span>
+<span class="text-primary font-medium">Ethnic Sets</span>
+</nav>
+<div class="flex items-baseline justify-between">
+<h2 class="text-5xl font-headline text-primary">Ethnic Sets</h2>
+<p class="text-outline max-w-md text-right font-light leading-relaxed">
+                    A curation of hand-embroidered silhouettes, merging traditional craftsmanship with modern ease.
+                </p>
+</div>
+</section>
+<div class="flex gap-16">
+<!-- Sidebar Filtering -->
+<aside class="w-64 flex-shrink-0">
+<div class="sticky top-40 space-y-10">
+<div>
+<h4 class="font-headline text-lg text-primary mb-6 flex items-center justify-between">
+                            Filter By
+                            <span class="text-[10px] tracking-widest uppercase text-outline font-body">Clear All</span>
+</h4>
+<!-- Category Filter -->
+<div class="space-y-4 mb-10">
+<button class="w-full flex items-center justify-between text-sm font-semibold text-primary group">
+                                Category
+                                <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</button>
+<div class="space-y-3 pl-1">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 border-outline-variant text-secondary focus:ring-secondary rounded-sm" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Anarkali Sets</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-4 h-4 border-outline-variant text-secondary focus:ring-secondary rounded-sm" type="checkbox"/>
+<span class="text-sm text-primary font-medium">Sharara Ensembles</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 border-outline-variant text-secondary focus:ring-secondary rounded-sm" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Pant Sets</span>
+</label>
+</div>
+</div>
+<!-- Color Filter -->
+<div class="space-y-4 mb-10 border-t border-outline-variant/30 pt-8">
+<button class="w-full flex items-center justify-between text-sm font-semibold text-primary">
+                                Color Palette
+                                <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</button>
+<div class="grid grid-cols-5 gap-2">
+<button class="w-8 h-8 rounded-full bg-primary-container border border-outline-variant/50 ring-offset-2 ring-1 ring-transparent hover:ring-secondary"></button>
+<button class="w-8 h-8 rounded-full bg-[#E5D5C0] border border-outline-variant/50 ring-offset-2 ring-1 ring-transparent hover:ring-secondary"></button>
+<button class="w-8 h-8 rounded-full bg-[#775A19] border border-outline-variant/50 ring-offset-2 ring-1 ring-transparent hover:ring-secondary"></button>
+<button class="w-8 h-8 rounded-full bg-[#F5F5F5] border border-outline-variant/50 ring-offset-2 ring-1 ring-transparent hover:ring-secondary"></button>
+<button class="w-8 h-8 rounded-full bg-[#2D2D2D] border border-outline-variant/50 ring-offset-2 ring-1 ring-transparent hover:ring-secondary"></button>
+</div>
+</div>
+<!-- Fabric Filter -->
+<div class="space-y-4 mb-10 border-t border-outline-variant/30 pt-8">
+<button class="w-full flex items-center justify-between text-sm font-semibold text-primary">
+                                Fabric
+                                <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</button>
+<div class="space-y-3 pl-1">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 border-outline-variant text-secondary focus:ring-secondary rounded-sm" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Chanderi Silk</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 border-outline-variant text-secondary focus:ring-secondary rounded-sm" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Organza</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 border-outline-variant text-secondary focus:ring-secondary rounded-sm" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Raw Silk</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid Content -->
+<div class="flex-1">
+<!-- Sorting Bar -->
+<div class="flex items-center justify-between mb-10 pb-4 border-b border-outline-variant/20">
+<span class="text-sm text-outline">Showing 24 of 118 products</span>
+<div class="flex items-center gap-4">
+<span class="text-sm text-outline font-medium">Sort By:</span>
+<select class="bg-transparent border-none text-sm font-semibold text-primary focus:ring-0 cursor-pointer">
+<option>Newest Arrivals</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Popularity</option>
+</select>
+</div>
+</div>
+<!-- Main Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] rounded-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Stunning woman wearing an emerald green ethnic set with gold embroidery, standing in an elegant marble courtyard with soft sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdkLiX4SY5LBdcho4cs0KgUUl_NXNfDsVvhqHee-1mFHpeCRXbooF_OzGUGKabndrwg6UuGL8yiIl0Wa5bW0FcGDP1wE3qTIbA4AkYaPl45eKpWlJ_t-D0b1xDLX6_oEPAXr49AwFqEpall-3SqX33AiyOegTQfHxsw0F4sd7aGzMxfS5hdWYJiXhIuTRbN4k1_OOBFDCuwUe5ah2gjQc496qJYuN4tlDobAICybCvAzDLmtEYkqyFLLGx3cpclxqKWAEkf1M4b6Q"/>
+<div class="absolute top-4 right-4">
+<span class="bg-surface/90 backdrop-blur-sm px-3 py-1 text-[10px] tracking-widest uppercase font-bold text-primary">New Arrival</span>
+</div>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-8 px-6">
+<button class="w-full bg-white text-primary py-3 rounded-md text-sm font-bold tracking-tight shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Quick Add</button>
+</div>
+</div>
+<div class="text-center">
+<span class="text-[10px] uppercase tracking-widest text-secondary font-semibold mb-1 block">Zari Heritage</span>
+<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">The Emerald Oasis Set</h3>
+<div class="flex items-center justify-center gap-3 mt-2">
+<span class="text-on-surface font-medium">₹24,500</span>
+<span class="text-outline text-xs line-through">₹32,000</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] rounded-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Elegant ivory colored silk sharara set with intricate silver work, studio portrait with warm cinematic lighting and professional finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJUnXNyKjXeu41tz253Zae1EwoA8fULCpoUMwMivCcyHjYvA6TVevKrUOBbwPJmSPewFRf_QlS_N7bTCD3t8_zOYBrB25de8k3XLyDyMj4ngFAccDesF2X26hQe8J_Zi0pD3GMc4A9vr1dfKyrkZ54xC3ejviYo8w0_yKgQdciMS_GL9enknG3m6x0Ccemke5E_P0X5ozxs9fJRyEEWg5sdnPAQ2DIizZiQlW-CHPXC5bnQQAQ4WS4P2IZ14aSltNxbX9zWzGWvKo"/>
+<div class="absolute bottom-4 left-4">
+<span class="bg-secondary text-white px-3 py-1 text-[10px] tracking-widest uppercase font-bold">Sold Out Soon</span>
+</div>
+<button class="absolute top-4 right-4 text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="text-center">
+<span class="text-[10px] uppercase tracking-widest text-secondary font-semibold mb-1 block">Royal Silks</span>
+<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">Ivory Moonlight Sharara</h3>
+<div class="flex items-center justify-center gap-3 mt-2">
+<span class="text-on-surface font-medium">₹18,900</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] rounded-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Deep crimson red anarkali suit with heavy gold border, outdoor fashion shoot in a majestic palace hallway with golden hour lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGyFwbW_FJr97reNUFu9vATeS2-e_ilM4qB3P4BLYWhau20HsYSCPEzWi9ZFNESSX_v3SdI5wBMipYfnuYuxwy7FP69EBT83w1DHNbs2fNMSia2MXxPdQ4cfrRTDCNrag5MeASthvWbl7BL5iX_WsgcVHF_aeaiuOAbByuwbJn_Q5JaOzW6w7xWW2uI6Qm5UX73iH3L1_QWdS00KtEIdYPXPMbhiZgn1w3StIMwEUo2WQ8Kwr-lAiwpIgtUQAIIHFoW4di5oHVcbE"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-8 px-6">
+<button class="w-full bg-white text-primary py-3 rounded-md text-sm font-bold tracking-tight shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Quick Add</button>
+</div>
+</div>
+<div class="text-center">
+<span class="text-[10px] uppercase tracking-widest text-secondary font-semibold mb-1 block">Luxe Edit</span>
+<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">Crimson Sovereign Set</h3>
+<div class="flex items-center justify-center gap-3 mt-2">
+<span class="text-on-surface font-medium">₹29,000</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] rounded-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Pastel blue floral printed ethnic outfit with mirror work, light and airy aesthetic with soft morning sunlight in a garden setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZCRCkWujHIHzuf9C_qIjc10nbe0RCbAciDK0PVmMY414e0pwHH8XYGHMFKQnGKxDYHhQH8SPmLRjrMm_VKiCgr_GHyRJP_yi31pSTp9_iqNU2Yx1CSbUQ3QwYtzdgvleEAfG8mqlEbN6Jh3ID8rlWpvU5pybgjDI3vyx3a3K9SvXxCd6eq1h2cjLrfAhhwmjMGT7PZaiEH66asPFGtyIIIgfmyDOfmKTap6TdCxPNDXqYAs3MU2t-FzigtJk76kSr3tkCCBVQbEg"/>
+</div>
+<div class="text-center">
+<span class="text-[10px] uppercase tracking-widest text-secondary font-semibold mb-1 block">Summer Bloom</span>
+<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">Azure Petal Ensemble</h3>
+<div class="flex items-center justify-center gap-3 mt-2">
+<span class="text-on-surface font-medium">₹14,500</span>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] rounded-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Model in mustard yellow designer ethnic suit with heavy dupatta, posing against an ornate carved wooden door background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAypo-SqYxXHuBKpjOCPFsS7nLlJreyl6-Ozxdx7_rm3shxw-24zKc0qSqUqRwJg9SlEjJWABoodCifYY8J9Ju6tocSv5XGml5kseDxkgURjLnzpBvf04YOwCEZH9vE12SnLmUaQ8j4dqzMXkboPSFkwpjxMG6bi-8jDquWl6q4eKcAnX1C-j0an9yRLeoHgvfFnuZzunVHCswRGrssae36t4bfelbsgjN_9wN8RaY3Il88gc96guRNp46UdgqTgGfk8eHuGgPy-uo"/>
+</div>
+<div class="text-center">
+<span class="text-[10px] uppercase tracking-widest text-secondary font-semibold mb-1 block">Zari Heritage</span>
+<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">Marigold Festive Set</h3>
+<div class="flex items-center justify-center gap-3 mt-2">
+<span class="text-on-surface font-medium">₹21,000</span>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] rounded-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Sleek black velvet ethnic wear with gold thread embroidery, dramatic high fashion pose in a dim lit luxury interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-xfT2_W_aonHwF8SUp5hQ7MVR29WRYo2kwIJH_qlXZkn9Yd4rux2L9b4SiF7B97UZvFvwL5Q_F0NcGxduP1Tk4YhA-AIsfEZJFdtcdz8b4T8xj1u62L6htNuHu7aP1qSsQGJ1i-mb2t4oM27uyEu1OGeRkVFhJ14dfpSO6DOBBjWwJk5YRg1C78NH6tWfLdwoxAn5d_MNXWy8G0QAoet8Thk3u1D0WDxmuGjdbVnR2RHkDM7RqENwhwirPz4t3oSp49n5b1UjGqk"/>
+<div class="absolute top-4 right-4">
+<span class="bg-surface/90 backdrop-blur-sm px-3 py-1 text-[10px] tracking-widest uppercase font-bold text-primary">Best Seller</span>
+</div>
+</div>
+<div class="text-center">
+<span class="text-[10px] uppercase tracking-widest text-secondary font-semibold mb-1 block">Nocturnal Collection</span>
+<h3 class="text-xl font-headline text-primary group-hover:text-secondary transition-colors">Onyx Empress Set</h3>
+<div class="flex items-center justify-center gap-3 mt-2">
+<span class="text-on-surface font-medium">₹34,800</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex flex-col items-center">
+<button class="bg-primary text-white px-12 py-4 rounded-md text-sm font-bold tracking-widest uppercase hover:bg-primary_container transition-all shadow-lg active:scale-95">Load More Products</button>
+<div class="mt-8 flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant hover:border-secondary text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 flex items-center justify-center text-sm font-bold text-secondary border-b-2 border-secondary">1</span>
+<span class="w-8 h-8 flex items-center justify-center text-sm text-outline hover:text-primary cursor-pointer">2</span>
+<span class="w-8 h-8 flex items-center justify-center text-sm text-outline hover:text-primary cursor-pointer">3</span>
+<span class="w-8 h-8 flex items-center justify-center text-sm text-outline">...</span>
+<span class="w-8 h-8 flex items-center justify-center text-sm text-outline hover:text-primary cursor-pointer">10</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant hover:border-secondary text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Heritage Story Section (Asymmetric) -->
+<section class="bg-surface-container-low py-24 px-12 mt-20">
+<div class="max-w-[1920px] mx-auto grid grid-cols-12 gap-12 items-center">
+<div class="col-span-5">
+<h4 class="text-4xl font-headline text-primary mb-8 leading-tight">The Art of the Needle: <br/><span class="text-secondary italic">A Legacy Reimagined</span></h4>
+<p class="text-on-surface-variant leading-relaxed text-lg font-light mb-8">
+                    Every ensemble in our Ethnic Sets collection tells a story of centuries-old craftsmanship. From the intricate Zardosi of Lucknow to the vibrant thread-work of Kutch, we bridge the gap between historic grandeur and the modern woman's wardrobe.
+                </p>
+<div class="h-px w-24 bg-secondary/50 mb-8"></div>
+<a class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary hover:text-secondary transition-colors" href="#">
+                    Explore Our Craftsmanship
+                    <span class="material-symbols-outlined text-lg" data-icon="arrow_right_alt">arrow_right_alt</span>
+</a>
+</div>
+<div class="col-span-7 grid grid-cols-2 gap-6 items-center">
+<div class="rounded-xl overflow-hidden shadow-2xl translate-y-8">
+<img class="w-full h-80 object-cover" data-alt="Extreme close up of intricate gold zardosi embroidery being done by hand on dark green velvet fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLxrlIJSzyZKxwrULen6J-iwciSxAnzfghsCbdhSV_zzdQz5o4ooJbFCP_js00pllVXVqcVN9bSmVLdcYFh4nChZUlMfqk6xYyRTdN4QFebFL8AxyYSSAEiFlUtClUbL2e8pJdkHvLKDWaHaOkQp9OWYxX0eb1ntU3M8iZnSMuPDpbpdHZPQ76kKpENekUcD0DAW7Z_lwe6Rq-8F64m8LM9bHaOjjeGnO8IpRmtmfTtCXSvpezM2n3eq2p5QKnPwaM67Q40y3-smI"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-2xl -translate-y-8">
+<img class="w-full h-[500px] object-cover" data-alt="Selection of premium silk threads in various jewel tones arranged neatly on a wooden workshop table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6h1nSYWpoOz90XyaVREAn4Ar4E2jshXhgOKtKOTnJX33JYwTPE1DNVNPNJpG5o1p9WIPNYML_brNvigLRJdMLx2DmCDArabwZ15oda_vJnVQ585eb8hx2C5nUoj9yOsZttpkbzBJxlgmJL_5wHKZTNDwWNcSknNtYtt8ifOJCP5XfnG18grRhbjBIS4vR5iG9skSMuuV1c0wWWGgdFTiO60odfD6GRFVNU07q5nmrZVizeno6UPYHk1NPK7xkS82jACDuu-KaATk"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#0B3D2E] dark:bg-stone-900 font-['Plus_Jakarta_Sans'] text-sm tracking-normal full-width border-t-0 text-[#F9F9F7] dark:text-stone-200">
+<div class="grid grid-cols-4 gap-12 px-24 py-20 w-full max-w-[1920px] mx-auto">
+<div>
+<h2 class="text-xl font-serif text-[#F9F9F7] mb-8">Swadesh</h2>
+<p class="text-stone-300 leading-relaxed mb-8 pr-12">
+                    Honoring the spirit of artisan craftsmanship through timeless ethnic silhouettes.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-stone-700 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-stone-700 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="camera">camera</span>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-white font-bold uppercase tracking-widest text-xs mb-8">The Maison</h3>
+<ul class="space-y-4">
+<li><a class="text-stone-300 hover:text-white transition-colors" href="#">Our Story</a></li>
+<li><a class="text-stone-300 hover:text-white transition-colors" href="#">Sustainability</a></li>
+<li><a class="text-stone-300 hover:text-white transition-colors" href="#">Craftsmanship</a></li>
+<li><a class="text-stone-300 hover:text-white transition-colors" href="#">Atelier Visits</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-bold uppercase tracking-widest text-xs mb-8">Client Services</h3>
+<ul class="space-y-4">
+<li><a class="text-stone-300 hover:text-white transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-stone-300 hover:text-white transition-colors" href="#">Size Guide</a></li>
+<li><a class="text-stone-300 hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-stone-300 hover:text-white transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-bold uppercase tracking-widest text-xs mb-8">Newsletter</h3>
+<p class="text-stone-300 mb-6">Join our list for exclusive collection previews.</p>
+<div class="relative">
+<input class="w-full bg-stone-800 border-none rounded-md py-3 px-4 text-white focus:ring-1 focus:ring-secondary" placeholder="Email Address" type="email"/>
+<button class="absolute right-2 top-2 text-secondary">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-24 pb-12 w-full max-w-[1920px] mx-auto">
+<div class="border-t border-stone-800 pt-8 flex justify-between items-center text-stone-500 text-[10px] tracking-widest uppercase">
+<p>© 2024 Swadesh Heritage. All rights reserved.</p>
+<div class="flex gap-8">
+<span>Handmade in India</span>
+<span>Global Shipping</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
