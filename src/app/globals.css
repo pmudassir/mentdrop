@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
-/* ─── Heritage Gold Design System ─── */
+/* ─── Heritage Luxe Design System ─── */
 
 @theme inline {
-  /* ── Primary: Woven Gold ── */
-  --color-primary: #735C00;
-  --color-primary-container: #D4AF37;
+  /* ── Primary: Heritage Forest Green ── */
+  --color-primary: #2D5F3F;
+  --color-primary-container: #C8E6C9;
   --color-on-primary: #FFFFFF;
-  --color-on-primary-container: #241A00;
+  --color-on-primary-container: #0A2418;
 
   /* ── Secondary: Warm Neutrals ── */
   --color-secondary: #6B5F4B;
@@ -15,11 +15,17 @@
   --color-on-secondary: #FFFFFF;
   --color-on-secondary-container: #241A04;
 
-  /* ── Tertiary: Regal Indigo ── */
+  /* ── Tertiary: Regal Indigo (trust/security) ── */
   --color-tertiary: #415BA4;
   --color-tertiary-container: #DAE2FF;
   --color-on-tertiary: #FFFFFF;
   --color-on-tertiary-container: #001849;
+
+  /* ── Accent: Heritage Gold (prices + luxury highlights only) ── */
+  --color-accent: #A07040;
+  --color-accent-container: #EDD5A3;
+  --color-on-accent: #FFFFFF;
+  --color-on-accent-container: #3A2000;
 
   /* ── Error ── */
   --color-error: #BA1A1A;
@@ -27,32 +33,33 @@
   --color-on-error: #FFFFFF;
   --color-on-error-container: #410002;
 
-  /* ── Surfaces: Sun-drenched Marble Courtyard ── */
-  --color-surface: #FBFBE2;
-  --color-surface-dim: #DDDDC5;
-  --color-surface-bright: #FBFBE2;
+  /* ── Surfaces: Warm Ivory ── */
+  --color-surface: #FAFAF8;
+  --color-surface-dim: #E8E8E2;
+  --color-surface-bright: #FAFAF8;
   --color-surface-container-lowest: #FFFFFF;
-  --color-surface-container-low: #F5F5DC;
-  --color-surface-container: #EFEFD7;
-  --color-surface-container-high: #E9E9D1;
-  --color-surface-container-highest: #E4E4CC;
-  --color-on-surface: #1B1D0E;
-  --color-on-surface-variant: #4D4635;
-  --color-outline: #7E7760;
-  --color-outline-variant: #D0C5AF;
+  --color-surface-container-low: #F4F4F0;
+  --color-surface-container: #EEEEEA;
+  --color-surface-container-high: #E8E8E4;
+  --color-surface-container-highest: #E2E2DE;
+  --color-on-surface: #1A1A18;
+  --color-on-surface-variant: #4A4845;
+  --color-outline: #7A7870;
+  --color-outline-variant: #C8C6C0;
 
-  /* ── Inverse ── */
-  --color-inverse-surface: #303122;
-  --color-inverse-on-surface: #F2F2DA;
-  --color-inverse-primary: #D4AF37;
+  /* ── Inverse (footer + dark sections) ── */
+  --color-inverse-surface: #1B3A2A;
+  --color-inverse-on-surface: #F0F5F2;
+  --color-inverse-primary: #D4A574;
 
   /* ── Functional ── */
   --color-success: #1B6D2F;
-  --color-success-container: #A5F5A9;
+  --color-success-container: #C8E6C9;
   --color-warning: #7C5800;
   --color-warning-container: #FFDEA6;
 
   /* ── Typography: Font Families ── */
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-body: "Be Vietnam Pro", system-ui, sans-serif;
   --font-hindi: "Noto Sans Devanagari", system-ui, sans-serif;
@@ -65,11 +72,11 @@
   --radius-2xl: 2rem;
   --radius-full: 9999px;
 
-  /* ── Gold Ambient Shadows ── */
-  --shadow-sm: 0px 2px 8px rgba(115, 92, 0, 0.05);
-  --shadow-md: 0px 8px 20px rgba(115, 92, 0, 0.06);
-  --shadow-lg: 0px 20px 40px rgba(115, 92, 0, 0.08);
-  --shadow-xl: 0px 32px 64px rgba(115, 92, 0, 0.1);
+  /* ── Green Ambient Shadows ── */
+  --shadow-sm: 0px 2px 8px rgba(45, 95, 63, 0.05);
+  --shadow-md: 0px 8px 20px rgba(45, 95, 63, 0.06);
+  --shadow-lg: 0px 20px 40px rgba(45, 95, 63, 0.08);
+  --shadow-xl: 0px 32px 64px rgba(45, 95, 63, 0.1);
 }
 
 /* ─── Base Styles ─── */
@@ -198,31 +205,66 @@ body {
   font-family: var(--font-hindi);
 }
 
-/* ─── Gold Glow Gradient (Hero CTAs) ─── */
+/* ─── Heritage Serif Headlines ─── */
+.text-serif {
+  font-family: var(--font-serif);
+  letter-spacing: 0.01em;
+}
+
+.text-display-serif {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.text-headline-serif {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.text-title-serif {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Green Glow Gradient (Hero CTAs) ─── */
 .gold-glow {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-container));
+  background: linear-gradient(135deg, #2D5F3F, #3D7A55);
 }
 
 .gold-glow-hover:hover {
-  background: linear-gradient(135deg, var(--color-primary-container), var(--color-primary));
-  box-shadow: 0px 20px 40px rgba(115, 92, 0, 0.15);
+  background: linear-gradient(135deg, #3D7A55, #2D5F3F);
+  box-shadow: 0px 20px 40px rgba(45, 95, 63, 0.25);
+}
+
+/* ─── Gold Price Text ─── */
+.text-gold {
+  color: var(--color-accent);
 }
 
 /* ─── Glassmorphism (Floating Nav, Quick-View) ─── */
 .glass {
-  background: rgba(251, 251, 226, 0.7);
+  background: rgba(250, 250, 248, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
 /* ─── Ghost Border (Accessibility Fallback) ─── */
 .ghost-border {
-  border: 1px solid rgba(208, 197, 175, 0.15);
+  border: 1px solid rgba(122, 120, 112, 0.15);
 }
 
 /* ─── Selection Color ─── */
 ::selection {
-  background-color: rgba(212, 175, 55, 0.2);
+  background-color: rgba(45, 95, 63, 0.15);
   color: var(--color-on-surface);
 }
 

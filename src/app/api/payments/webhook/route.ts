@@ -13,7 +13,17 @@ export async function POST(request: NextRequest) {
     .update(body)
     .digest("hex")
 
-  if (signature !== expectedSignature) {
+  let signaturesMatch: boolean
+  try {
+    signaturesMatch = crypto.timingSafeEqual(
+      Buffer.from(signature, "hex"),
+      Buffer.from(expectedSignature, "hex")
+    )
+  } catch {
+    signaturesMatch = false
+  }
+
+  if (!signaturesMatch) {
     return NextResponse.json({ error: "Invalid signature" }, { status: 400 })
   }
 

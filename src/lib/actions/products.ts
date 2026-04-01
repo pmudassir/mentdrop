@@ -2,7 +2,7 @@
 
 import { db } from "@/lib/db"
 import { products, productVariants, categories } from "@/lib/db/schema"
-import { eq, and, desc, asc, ilike, sql } from "drizzle-orm"
+import { eq, and, desc, asc, ilike, sql, ne } from "drizzle-orm"
 import { getSession } from "@/lib/auth/session"
 import {
   MOCK_PRODUCTS,
@@ -136,7 +136,7 @@ export async function getRelatedProducts(
       where: and(
         eq(products.isActive, true),
         eq(products.categoryId, categoryId),
-        sql`${products.id} != ${productId}` as ReturnType<typeof eq>
+        ne(products.id, productId)
       ),
       limit,
     })

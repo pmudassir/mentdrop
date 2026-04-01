@@ -1,6 +1,14 @@
 import type { Metadata, Viewport } from "next"
-import { Plus_Jakarta_Sans, Be_Vietnam_Pro, Noto_Sans_Devanagari } from "next/font/google"
+import { Plus_Jakarta_Sans, Be_Vietnam_Pro, Noto_Sans_Devanagari, Cormorant_Garamond } from "next/font/google"
 import "./globals.css"
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+})
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -56,7 +64,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#735C00",
+  themeColor: "#2D5F3F",
 }
 
 export default function RootLayout({
@@ -67,7 +75,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakarta.variable} ${beVietnam.variable} ${notoDevanagari.variable}`}
+      className={`${cormorant.variable} ${plusJakarta.variable} ${beVietnam.variable} ${notoDevanagari.variable}`}
     >
       <body className="min-h-dvh flex flex-col bg-surface text-on-surface antialiased">
         {children}

@@ -1,10 +1,13 @@
 "use server"
 
 import { db } from "@/lib/db"
-import { users } from "@/lib/db/schema"
+import { users, addresses } from "@/lib/db/schema"
 import { sendOtp, verifyOtp } from "@/lib/auth/otp"
-import { createSession, destroySession } from "@/lib/auth/session"
-import { eq } from "drizzle-orm"
+import { createSession, destroySession, getSession } from "@/lib/auth/session"
+import { eq, and } from "drizzle-orm"
+
+export type User = typeof users.$inferSelect
+export type Address = typeof addresses.$inferSelect
 
 type ActionResult<T = void> = { success: true; data?: T } | { success: false; error: string }
 
@@ -88,4 +91,76 @@ export async function verifyOtpAction(
 export async function logoutAction(): Promise<ActionResult> {
   await destroySession()
   return { success: true }
+}
+
+/** Get current user profile */
+export async function getProfileAction(): Promise<User | null> {
+  const session = await getSession()
+  if (!session) return null
+  try {
+    return await db.query.users.findFirst({ where: eq(users.id, session.userId) }) ?? null
+  } catch { return null }
+}
+
+/** Update user name and email */
+export async function updateProfileAction(data: { name?: string; email?: string }): Promise<ActionResult> {
+  const session = await getSession()
+  if (!session) return { success: false, error: "Not authenticated" }
+  try {
+    await db.update(users).set({ ...data, updatedAt: new Date() }).where(eq(users.id, session.userId))
+    return { success: true }
+  } catch {
+    return { success: false, error: "Failed to update profile" }
+  }
+}
+
+/** Get addresses for the current user */
+export async function getAddressesAction(): Promise<Address[]> {
+  const session = await getSession()
+  if (!session) return []
+  try {
+    return await db.query.addresses.findMany({ where: eq(addresses.userId, session.userId) })
+  } catch { return [] }
+}
+
+/** Save a new address */
+export async function saveAddressAction(
+  data: Omit<typeof addresses.$inferInsert, "id" | "userId" | "createdAt">
+): Promise<ActionResult<Address>> {
+  const session = await getSession()
+  if (!session) return { success: false, error: "Not authenticated" }
+  try {
+    if (data.isDefault) {
+      await db.update(addresses).set({ isDefault: false }).where(eq(addresses.userId, session.userId))
+    }
+    const [created] = await db.insert(addresses).values({ ...data, userId: session.userId }).returning()
+    return { success: true, data: created }
+  } catch {
+    return { success: false, error: "Failed to save address" }
+  }
+}
+
+/** Delete an address */
+export async function deleteAddressAction(addressId: string): Promise<ActionResult> {
+  const session = await getSession()
+  if (!session) return { success: false, error: "Not authenticated" }
+  try {
+    await db.delete(addresses).where(and(eq(addresses.id, addressId), eq(addresses.userId, session.userId)))
+    return { success: true }
+  } catch {
+    return { success: false, error: "Failed to delete address" }
+  }
+}
+
+/** Set an address as default */
+export async function setDefaultAddressAction(addressId: string): Promise<ActionResult> {
+  const session = await getSession()
+  if (!session) return { success: false, error: "Not authenticated" }
+  try {
+    await db.update(addresses).set({ isDefault: false }).where(eq(addresses.userId, session.userId))
+    await db.update(addresses).set({ isDefault: true }).where(and(eq(addresses.id, addressId), eq(addresses.userId, session.userId)))
+    return { success: true }
+  } catch {
+    return { success: false, error: "Failed to update default address" }
+  }
 }

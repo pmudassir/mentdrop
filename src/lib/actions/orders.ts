@@ -5,6 +5,9 @@ import { orders, orderItems, productVariants, products } from "@/lib/db/schema"
 import { eq, desc, and, sql } from "drizzle-orm"
 import { getSession } from "@/lib/auth/session"
 import { generateOrderNumber } from "@/lib/utils"
+import { getMockOrders, getMockOrderByNumber, MOCK_ORDERS, MOCK_ORDER_STATS } from "@/lib/mock-data"
+
+const IS_MOCK = !process.env.DATABASE_URL || process.env.DATABASE_URL.includes("placeholder")
 
 export type Order = typeof orders.$inferSelect
 export type OrderItem = typeof orderItems.$inferSelect
@@ -99,14 +102,20 @@ export async function createOrder(data: {
     )
   }
 
-  // Decrement stock for each variant
+  // Validate stock and decrement for each variant
   for (const item of data.items) {
     if (item.variantId) {
+      const variant = await db.query.productVariants.findFirst({
+        where: eq(productVariants.id, item.variantId),
+      })
+      if (!variant || variant.stock < item.quantity) {
+        // Roll back the order by deleting it
+        await db.delete(orders).where(eq(orders.id, order.id))
+        return { success: false, error: `Insufficient stock for one or more items` }
+      }
       await db
         .update(productVariants)
-        .set({
-          stock: sql`${productVariants.stock} - ${item.quantity}`,
-        })
+        .set({ stock: sql`${productVariants.stock} - ${item.quantity}` })
         .where(eq(productVariants.id, item.variantId))
     }
   }

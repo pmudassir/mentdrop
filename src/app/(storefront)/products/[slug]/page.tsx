@@ -1,8 +1,10 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getProductBySlug, getRelatedProducts } from "@/lib/actions/products"
 import { getProductReviews } from "@/lib/actions/reviews"
 import { ProductDetail } from "@/components/storefront/product-detail"
-import { ProductGrid } from "@/components/storefront/product-grid"
+import { MakingOfBlock } from "@/components/storefront/sections/making-of-block"
+import { CompleteTheLook } from "@/components/storefront/sections/complete-the-look"
 
 export const revalidate = 30
 
@@ -32,15 +34,28 @@ export default async function ProductPage({ params }: Props) {
   ])
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+    <div>
+      {/* Breadcrumb */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-5 pb-0">
+        <nav className="flex items-center gap-2 text-label-sm text-on-surface-variant/60">
+          <Link href="/" className="hover:text-on-surface transition-colors">Home</Link>
+          <span>/</span>
+          <Link href="/" className="hover:text-on-surface transition-colors">
+            Collections
+          </Link>
+          <span>/</span>
+          <span className="text-on-surface truncate max-w-[180px]">{product.name}</span>
+        </nav>
+      </div>
+
+      {/* Product detail */}
       <ProductDetail product={product} reviews={reviews} />
 
-      {related.length > 0 && (
-        <section className="mt-16">
-          <h2 className="text-headline-md text-on-surface mb-6">You May Also Like</h2>
-          <ProductGrid products={related} columns={4} />
-        </section>
-      )}
+      {/* The Making Of */}
+      <MakingOfBlock productName={product.name} />
+
+      {/* Complete the Look */}
+      {related.length > 0 && <CompleteTheLook products={related} />}
     </div>
   )
 }
