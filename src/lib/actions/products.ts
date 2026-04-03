@@ -11,6 +11,7 @@ import {
   getMockProductsByCategory,
   getMockProductBySlug,
   getMockSearch,
+  getMockVariants,
 } from "@/lib/mock-data"
 
 export type Product = typeof products.$inferSelect
@@ -48,7 +49,7 @@ export async function getNewArrivals(limit = 12): Promise<Product[]> {
 export async function getProductBySlug(slug: string): Promise<ProductWithVariants | null> {
   if (IS_MOCK) {
     const p = getMockProductBySlug(slug)
-    return p ? { ...p, variants: [] } : null
+    return p ? { ...p, variants: getMockVariants(p.id) } : null
   }
   try {
     const product = await db.query.products.findFirst({
@@ -58,7 +59,7 @@ export async function getProductBySlug(slug: string): Promise<ProductWithVariant
     return product ?? null
   } catch {
     const p = getMockProductBySlug(slug)
-    return p ? { ...p, variants: [] } : null
+    return p ? { ...p, variants: getMockVariants(p.id) } : null
   }
 }
 

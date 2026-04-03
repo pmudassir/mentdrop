@@ -5,6 +5,7 @@ import { users, addresses } from "@/lib/db/schema"
 import { sendOtp, verifyOtp } from "@/lib/auth/otp"
 import { createSession, destroySession, getSession } from "@/lib/auth/session"
 import { eq, and } from "drizzle-orm"
+import { getMockProfile, getMockAddresses } from "@/lib/mock-data"
 
 export type User = typeof users.$inferSelect
 export type Address = typeof addresses.$inferSelect
@@ -97,6 +98,7 @@ export async function logoutAction(): Promise<ActionResult> {
 export async function getProfileAction(): Promise<User | null> {
   const session = await getSession()
   if (!session) return null
+  if (IS_MOCK) return getMockProfile()
   try {
     return await db.query.users.findFirst({ where: eq(users.id, session.userId) }) ?? null
   } catch { return null }
@@ -118,6 +120,7 @@ export async function updateProfileAction(data: { name?: string; email?: string 
 export async function getAddressesAction(): Promise<Address[]> {
   const session = await getSession()
   if (!session) return []
+  if (IS_MOCK) return getMockAddresses()
   try {
     return await db.query.addresses.findMany({ where: eq(addresses.userId, session.userId) })
   } catch { return [] }

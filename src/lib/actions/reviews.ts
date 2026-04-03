@@ -4,15 +4,20 @@ import { db } from "@/lib/db"
 import { reviews, products } from "@/lib/db/schema"
 import { eq, desc, and, sql } from "drizzle-orm"
 import { getSession } from "@/lib/auth/session"
+import { getMockReviews } from "@/lib/mock-data"
 
 export type Review = typeof reviews.$inferSelect
 type ActionResult<T = void> = { success: true; data: T } | { success: false; error: string }
+
+const IS_MOCK = !process.env.DATABASE_URL || process.env.DATABASE_URL.includes("placeholder")
 
 export async function getProductReviews(
   productId: string,
   page = 1,
   limit = 10
 ): Promise<{ reviews: Review[]; total: number }> {
+  if (IS_MOCK) return getMockReviews(productId, page, limit) as { reviews: Review[]; total: number }
+
   const where = eq(reviews.productId, productId)
 
   const [items, countResult] = await Promise.all([

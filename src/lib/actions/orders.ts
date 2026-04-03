@@ -21,6 +21,11 @@ export async function getMyOrders(page = 1, limit = 10): Promise<{ orders: Order
   const session = await getSession()
   if (!session) return { orders: [], total: 0 }
 
+  if (IS_MOCK) {
+    const all = getMockOrders(session.userId)
+    return { orders: all.slice((page - 1) * limit, page * limit) as Order[], total: all.length }
+  }
+
   const where = eq(orders.userId, session.userId)
 
   const [items, countResult] = await Promise.all([
@@ -39,6 +44,8 @@ export async function getMyOrders(page = 1, limit = 10): Promise<{ orders: Order
 export async function getOrderByNumber(orderNumber: string): Promise<OrderWithItems | null> {
   const session = await getSession()
   if (!session) return null
+
+  if (IS_MOCK) return getMockOrderByNumber(orderNumber)
 
   const order = await db.query.orders.findFirst({
     where: and(eq(orders.orderNumber, orderNumber), eq(orders.userId, session.userId)),
@@ -133,6 +140,12 @@ export async function getOrdersAdmin(opts: {
   const session = await getSession()
   if (!session || session.role !== "admin") return { orders: [], total: 0 }
 
+  if (IS_MOCK) {
+    const { page = 1, limit = 20, status } = opts
+    const filtered = status ? MOCK_ORDERS.filter((o) => o.status === status) : MOCK_ORDERS
+    return { orders: filtered.slice((page - 1) * limit, page * limit), total: filtered.length }
+  }
+
   const { page = 1, limit = 20, status } = opts
   const conditions = []
 
@@ -196,6 +209,8 @@ export async function getOrderStats(): Promise<{
   if (!session || session.role !== "admin") {
     return { totalOrders: 0, totalRevenue: 0, pendingOrders: 0, deliveredOrders: 0 }
   }
+
+  if (IS_MOCK) return MOCK_ORDER_STATS
 
   const [stats] = await db
     .select({

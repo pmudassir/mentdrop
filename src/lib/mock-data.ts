@@ -97,7 +97,7 @@ const CAT_COLORS: Record<number, string[]> = {
 
 function buildVariants(p: Product): ProductVariant[] {
   const sizes = p.categoryId === 4 ? FREE_SIZE : p.categoryId === 2 ? MODEST_SIZES : APPAREL_SIZES
-  const colors = CAT_COLORS[p.categoryId] ?? ["Ivory","Sage Green"]
+  const colors = CAT_COLORS[p.categoryId ?? 0] ?? ["Ivory","Sage Green"]
   const rows: ProductVariant[] = []
   let i = 0
   for (const color of colors) {
@@ -177,9 +177,9 @@ export const MOCK_ORDERS: OrderWithItems[] = [
     supplierId: null, notes: null,
     createdAt: daysAgo(30), updatedAt: daysAgo(25),
     items: [
-      { id: "oi01", orderId: "ord01", productId: "p01", variantId: "p01-v1", quantity: 1, unitPrice: 179900, totalPrice: 179900, productSnapshot: { name: "Chanderi Silk Kurta", image: img("kurta1"), size: "M", color: "Ivory", sku: "SWD-CHANDERA-M-IVO" }, createdAt: daysAgo(30) },
-      { id: "oi02", orderId: "ord01", productId: "p05", variantId: "p05-v1", quantity: 1, unitPrice: 159900, totalPrice: 159900, productSnapshot: { name: "Classic Black Abaya", image: img("abaya1"), size: "L", color: "Black", sku: "SWD-CLASSIC-L-BLA" },  createdAt: daysAgo(30) },
-      { id: "oi03", orderId: "ord01", productId: "p04", variantId: "p04-v1", quantity: 1, unitPrice: 69900,  totalPrice: 69900,  productSnapshot: { name: "Rayon Palazzo Kurta Set", image: img("kurta4"), size: "S", color: "Sage Green", sku: "SWD-RAYONPA-S-SAG" }, createdAt: daysAgo(30) },
+      { id: "oi01", orderId: "ord01", productId: "p01", variantId: "p01-v1", quantity: 1, unitPrice: 179900, totalPrice: 179900, productSnapshot: { name: "Chanderi Silk Kurta", image: img("kurta1"), size: "M", color: "Ivory", sku: "SWD-CHANDERA-M-IVO" } },
+      { id: "oi02", orderId: "ord01", productId: "p05", variantId: "p05-v1", quantity: 1, unitPrice: 159900, totalPrice: 159900, productSnapshot: { name: "Classic Black Abaya", image: img("abaya1"), size: "L", color: "Black", sku: "SWD-CLASSIC-L-BLA" } },
+      { id: "oi03", orderId: "ord01", productId: "p04", variantId: "p04-v1", quantity: 1, unitPrice: 69900,  totalPrice: 69900,  productSnapshot: { name: "Rayon Palazzo Kurta Set", image: img("kurta4"), size: "S", color: "Sage Green", sku: "SWD-RAYONPA-S-SAG" } },
     ],
   },
   {
@@ -193,7 +193,7 @@ export const MOCK_ORDERS: OrderWithItems[] = [
     supplierId: null, notes: null,
     createdAt: daysAgo(5), updatedAt: daysAgo(3),
     items: [
-      { id: "oi04", orderId: "ord02", productId: "p09", variantId: "p09-v1", quantity: 1, unitPrice: 319900, totalPrice: 319900, productSnapshot: { name: "Embroidered Lawn Suit 3-Piece", image: img("pak1"), size: "M", color: "Ivory", sku: "SWD-EMBROID-M-IVO" }, createdAt: daysAgo(5) },
+      { id: "oi04", orderId: "ord02", productId: "p09", variantId: "p09-v1", quantity: 1, unitPrice: 319900, totalPrice: 319900, productSnapshot: { name: "Embroidered Lawn Suit 3-Piece", image: img("pak1"), size: "M", color: "Ivory", sku: "SWD-EMBROID-M-IVO" } },
     ],
   },
   {
@@ -207,7 +207,7 @@ export const MOCK_ORDERS: OrderWithItems[] = [
     supplierId: null, notes: null,
     createdAt: daysAgo(1), updatedAt: daysAgo(1),
     items: [
-      { id: "oi05", orderId: "ord03", productId: "p13", variantId: "p13-v1", quantity: 1, unitPrice: 749900, totalPrice: 749900, productSnapshot: { name: "Banarasi Silk Saree — Gold", image: img("saree1"), size: "Free Size", color: "As Shown", sku: "SWD-BANARA-FreeSiz-AS" }, createdAt: daysAgo(1) },
+      { id: "oi05", orderId: "ord03", productId: "p13", variantId: "p13-v1", quantity: 1, unitPrice: 749900, totalPrice: 749900, productSnapshot: { name: "Banarasi Silk Saree — Gold", image: img("saree1"), size: "Free Size", color: "As Shown", sku: "SWD-BANARA-FreeSiz-AS" } },
     ],
   },
   {
@@ -221,7 +221,7 @@ export const MOCK_ORDERS: OrderWithItems[] = [
     supplierId: null, notes: null,
     createdAt: daysAgo(48), updatedAt: daysAgo(42),
     items: [
-      { id: "oi06", orderId: "ord04", productId: "p19", variantId: "p19-v1", quantity: 1, unitPrice: 399900, totalPrice: 399900, productSnapshot: { name: "Mughal Embroidered Suit Set", image: img("suit3"), size: "M", color: "Ivory", sku: "SWD-MUGHALE-M-IVO" }, createdAt: daysAgo(48) },
+      { id: "oi06", orderId: "ord04", productId: "p19", variantId: "p19-v1", quantity: 1, unitPrice: 399900, totalPrice: 399900, productSnapshot: { name: "Mughal Embroidered Suit Set", image: img("suit3"), size: "M", color: "Ivory", sku: "SWD-MUGHALE-M-IVO" } },
     ],
   },
   {
@@ -235,7 +235,7 @@ export const MOCK_ORDERS: OrderWithItems[] = [
     supplierId: null, notes: null,
     createdAt: daysAgo(12), updatedAt: daysAgo(10),
     items: [
-      { id: "oi07", orderId: "ord05", productId: "p21", variantId: "p21-v1", quantity: 1, unitPrice: 289900, totalPrice: 289900, productSnapshot: { name: "Cape Style Anarkali", image: img("trend1"), size: "S", color: "Ivory", sku: "SWD-CAPEANA-S-IVO" }, createdAt: daysAgo(12) },
+      { id: "oi07", orderId: "ord05", productId: "p21", variantId: "p21-v1", quantity: 1, unitPrice: 289900, totalPrice: 289900, productSnapshot: { name: "Cape Style Anarkali", image: img("trend1"), size: "S", color: "Ivory", sku: "SWD-CAPEANA-S-IVO" } },
     ],
   },
   {
@@ -249,7 +249,7 @@ export const MOCK_ORDERS: OrderWithItems[] = [
     supplierId: null, notes: null,
     createdAt: daysAgo(10), updatedAt: daysAgo(9),
     items: [
-      { id: "oi08", orderId: "ord06", productId: "p12", variantId: "p12-v1", quantity: 1, unitPrice: 999900, totalPrice: 999900, productSnapshot: { name: "Bridal Lehenga Suit", image: img("pak4"), size: "M", color: "Ivory", sku: "SWD-BRIDALLEG-M-IVO" }, createdAt: daysAgo(10) },
+      { id: "oi08", orderId: "ord06", productId: "p12", variantId: "p12-v1", quantity: 1, unitPrice: 999900, totalPrice: 999900, productSnapshot: { name: "Bridal Lehenga Suit", image: img("pak4"), size: "M", color: "Ivory", sku: "SWD-BRIDALLEG-M-IVO" } },
     ],
   },
 ]
