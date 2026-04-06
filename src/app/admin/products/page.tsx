@@ -88,11 +88,7 @@ export default async function AdminProductsPage({ searchParams }: PageProps) {
                         <p className="text-body-sm font-medium text-on-surface">
                           {product.name}
                         </p>
-                        {product.nameHi && (
-                          <p className="text-xs text-on-surface-variant text-hindi">
-                            {product.nameHi}
-                          </p>
-                        )}
+
                       </div>
                     </td>
                     <td className="px-6 py-3.5 text-body-sm text-on-surface-variant">

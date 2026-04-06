@@ -2,6 +2,7 @@ import { redirect } from "next/navigation"
 import { getSession } from "@/lib/auth/session"
 import { AdminSidebar } from "./sidebar"
 import { AdminBottomNav } from "./bottom-nav"
+import { AdminCommandPalette } from "@/components/admin/command-palette"
 
 export default async function AdminLayout({
   children,
@@ -28,6 +29,9 @@ export default async function AdminLayout({
 
       {/* Mobile bottom nav */}
       <AdminBottomNav />
+
+      {/* Command palette — ⌘K */}
+      <AdminCommandPalette />
     </div>
   )
 }

@@ -52,6 +52,15 @@
   --color-inverse-on-surface: #F0F5F2;
   --color-inverse-primary: #D4A574;
 
+  /* ── Editorial Burgundy (badges, hover accents, sale) ── */
+  --color-burgundy: #730E2A;
+  --color-burgundy-container: #FFD9DF;
+  --color-on-burgundy: #FFFFFF;
+
+  /* ── Custom Easing ── */
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
   /* ── Functional ── */
   --color-success: #1B6D2F;
   --color-success-container: #C8E6C9;
@@ -60,9 +69,8 @@
 
   /* ── Typography: Font Families ── */
   --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "Be Vietnam Pro", system-ui, sans-serif;
-  --font-hindi: "Noto Sans Devanagari", system-ui, sans-serif;
 
   /* ── Roundedness: Feminine Curve ── */
   --radius-sm: 0.5rem;
@@ -200,10 +208,6 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* ─── Hindi Text ─── */
-.text-hindi {
-  font-family: var(--font-hindi);
-}
 
 /* ─── Heritage Serif Headlines ─── */
 .text-serif {
@@ -285,5 +289,124 @@ body {
 /* ─── Focus Ring ─── */
 :focus-visible {
   outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Buttons and rounded elements get a rounded focus ring */
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Full-round buttons get a pill-shaped ring */
+.rounded-full:focus-visible {
+  border-radius: 9999px;
+}
+
+/* ─── Catalog Text (small-caps product labels) ─── */
+.text-catalog {
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ─── Burgundy utilities ─── */
+.bg-burgundy { background-color: var(--color-burgundy); }
+.text-burgundy { color: var(--color-burgundy); }
+
+/* ─── Scroll indicator ─── */
+@keyframes scroll-line {
+  0%   { top: -40%; opacity: 1; }
+  80%  { top: 100%; opacity: 0.3; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* ─── Marquee animation ─── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Wishlist heart pop ─── */
+@keyframes heart-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.35); }
+  70%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+.heart-pop {
+  animation: heart-pop 0.4s var(--ease-out-cubic) forwards;
+}
+
+/* ─── Scroll-triggered fade-up ─── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.6s var(--ease-out-cubic) both;
+}
+
+/* ─── Sticky bar slide-up ─── */
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.animate-slide-up {
+  animation: slide-up 0.35s var(--ease-out-cubic) forwards;
+}
+
+/* ─── Timeline pulse ─── */
+@keyframes timeline-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(45, 95, 63, 0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(45, 95, 63, 0); }
+}
+.pulse-primary {
+  animation: timeline-pulse 2s ease-in-out infinite;
+}
+
+/* ─── Smooth scroll ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── prefers-reduced-motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-marquee {
+    animation: none;
+  }
+
+  .animate-fade-up,
+  .animate-slide-up,
+  .pulse-primary,
+  .heart-pop {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

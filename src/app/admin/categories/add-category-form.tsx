@@ -26,7 +26,7 @@ export function AddCategoryForm({ categories }: AddCategoryFormProps) {
   const [error, setError] = useState<string | null>(null)
 
   const [name, setName] = useState("")
-  const [nameHi, setNameHi] = useState("")
+
   const [slug, setSlug] = useState("")
   const [slugEdited, setSlugEdited] = useState(false)
   const [parentId, setParentId] = useState("")
@@ -46,7 +46,7 @@ export function AddCategoryForm({ categories }: AddCategoryFormProps) {
     startTransition(async () => {
       const result = await createCategory({
         name: name.trim(),
-        nameHi: nameHi.trim() || null,
+        nameHi: null,
         slug: slug.trim(),
         parentId: parentId ? Number(parentId) : null,
         sortOrder: parseInt(sortOrder, 10) || 0,
@@ -59,7 +59,6 @@ export function AddCategoryForm({ categories }: AddCategoryFormProps) {
       }
 
       setName("")
-      setNameHi("")
       setSlug("")
       setSlugEdited(false)
       setParentId("")
@@ -92,18 +91,6 @@ export function AddCategoryForm({ categories }: AddCategoryFormProps) {
           />
         </div>
 
-        <div className="space-y-1.5">
-          <label className="text-label-md text-on-surface-variant" htmlFor="cat-name-hi">
-            Name (Hindi)
-          </label>
-          <input
-            id="cat-name-hi"
-            value={nameHi}
-            onChange={(e) => setNameHi(e.target.value)}
-            placeholder="e.g. कुर्ता"
-            className="w-full h-11 px-4 rounded-xl bg-surface-container text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-2 focus:outline-primary text-hindi"
-          />
-        </div>
 
         <div className="space-y-1.5">
           <label className="text-label-md text-on-surface-variant" htmlFor="cat-slug">

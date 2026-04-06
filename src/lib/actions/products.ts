@@ -1,5 +1,6 @@
 "use server"
 
+import { cache } from "react"
 import { db } from "@/lib/db"
 import { products, productVariants, categories } from "@/lib/db/schema"
 import { eq, and, desc, asc, ilike, sql, ne } from "drizzle-orm"
@@ -24,7 +25,7 @@ const IS_MOCK = !process.env.DATABASE_URL || process.env.DATABASE_URL.includes("
 
 // ─── Public Queries ───
 
-export async function getFeaturedProducts(limit = 8): Promise<Product[]> {
+export const getFeaturedProducts = cache(async function getFeaturedProducts(limit = 8): Promise<Product[]> {
   if (IS_MOCK) return getMockFeatured(limit)
   try {
     return await db.query.products.findMany({
@@ -33,9 +34,9 @@ export async function getFeaturedProducts(limit = 8): Promise<Product[]> {
       limit,
     })
   } catch { return getMockFeatured(limit) }
-}
+})
 
-export async function getNewArrivals(limit = 12): Promise<Product[]> {
+export const getNewArrivals = cache(async function getNewArrivals(limit = 12): Promise<Product[]> {
   if (IS_MOCK) return getMockNewArrivals(limit)
   try {
     return await db.query.products.findMany({
@@ -44,7 +45,7 @@ export async function getNewArrivals(limit = 12): Promise<Product[]> {
       limit,
     })
   } catch { return getMockNewArrivals(limit) }
-}
+})
 
 export async function getProductBySlug(slug: string): Promise<ProductWithVariants | null> {
   if (IS_MOCK) {

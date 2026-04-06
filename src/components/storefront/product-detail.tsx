@@ -8,9 +8,11 @@ import { formatPrice } from "@/lib/utils"
 import { useCartStore } from "@/store/cart"
 import { useWishlistStore } from "@/store/wishlist"
 import { toast } from "@/components/ui/use-toast"
+import { StickyATCBar } from "@/components/storefront/sticky-atc-bar"
 import type { ProductWithVariants } from "@/lib/actions/products"
 import type { Review } from "@/lib/actions/reviews"
 import { cn } from "@/lib/utils"
+import { useRecentlyViewed } from "@/hooks/use-recently-viewed"
 
 type Props = {
   product: ProductWithVariants
@@ -48,10 +50,23 @@ export function ProductDetail({ product, reviews }: Props) {
   const [quantity, setQuantity] = React.useState(1)
   const [openAccordion, setOpenAccordion] = React.useState<string | null>(null)
   const [pincode, setPincode] = React.useState("")
+  const ctaRef = React.useRef<HTMLDivElement>(null)
 
   const addItem = useCartStore((s) => s.addItem)
   const { addItem: addWishlist, removeItem: removeWishlist, isWishlisted } = useWishlistStore()
   const wishlisted = isWishlisted(product.id)
+  const { addItem: trackViewed } = useRecentlyViewed()
+
+  // Track as recently viewed on mount
+  React.useEffect(() => {
+    trackViewed({
+      slug: product.slug,
+      name: product.name,
+      image: (product.images ?? [])[0] ?? "/placeholder.svg",
+      price: product.salePrice ?? product.basePrice,
+    })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [product.id])
 
   const images = product.images?.length ? product.images : ["/placeholder.svg"]
   const sizes = [...new Set(product.variants.filter((v) => v.size).map((v) => v.size!))]
@@ -170,9 +185,7 @@ export function ProductDetail({ product, reviews }: Props) {
             <h1 className="text-serif font-semibold text-on-surface leading-tight mb-1" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
               {product.name}
             </h1>
-            {product.nameHi && (
-              <p className="text-hindi text-on-surface-variant/60 text-sm mb-3">{product.nameHi}</p>
-            )}
+
 
             {/* Rating */}
             {product.avgRating && product.avgRating > 0 && (
@@ -256,14 +269,14 @@ export function ProductDetail({ product, reviews }: Props) {
               <div className="flex items-center gap-3 bg-surface-container rounded-full px-4 py-2">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="text-on-surface-variant hover:text-on-surface transition-colors"
+                  className="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   <Minus className="w-4 h-4" />
                 </button>
                 <span className="text-title-sm text-on-surface w-6 text-center">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="text-on-surface-variant hover:text-on-surface transition-colors"
+                  className="text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
                 >
                   <Plus className="w-4 h-4" />
                 </button>
@@ -271,7 +284,7 @@ export function ProductDetail({ product, reviews }: Props) {
             </div>
 
             {/* CTAs */}
-            <div className="flex gap-3 mb-6">
+            <div ref={ctaRef} className="flex gap-3 mb-6">
               <Button
                 size="lg"
                 onClick={handleAddToCart}
@@ -322,7 +335,7 @@ export function ProductDetail({ product, reviews }: Props) {
                 <div key={acc.id}>
                   <button
                     onClick={() => setOpenAccordion(openAccordion === acc.id ? null : acc.id)}
-                    className="flex items-center justify-between w-full py-4 text-left"
+                    className="flex items-center justify-between w-full py-4 text-left cursor-pointer"
                   >
                     <span className="text-title-sm text-on-surface">{acc.label}</span>
                     <ChevronDown
@@ -343,6 +356,18 @@ export function ProductDetail({ product, reviews }: Props) {
           </div>
         </div>
       </div>
+
+      {/* Sticky Add-to-Cart bar — appears when main CTA scrolls out of view */}
+      <StickyATCBar
+        productName={product.name}
+        price={effectivePrice}
+        sizes={sizes}
+        selectedSize={selectedSize}
+        onSizeChange={(size) => setSelectedSize(selectedSize === size ? null : size)}
+        onAddToCart={handleAddToCart}
+        inStock={inStock}
+        anchorRef={ctaRef}
+      />
 
       {/* Reviews section */}
       {reviews.length > 0 && (

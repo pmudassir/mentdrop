@@ -78,7 +78,7 @@ export function ProductForm({ categories, product }: ProductFormProps) {
 
   // Core fields
   const [name, setName] = useState(product?.name ?? "")
-  const [nameHi, setNameHi] = useState(product?.nameHi ?? "")
+
   const [slug, setSlug] = useState(product?.slug ?? "")
   const [slugEdited, setSlugEdited] = useState(!!product)
   const [description, setDescription] = useState(product?.description ?? "")
@@ -182,7 +182,7 @@ export function ProductForm({ categories, product }: ProductFormProps) {
 
     const productData = {
       name: name.trim(),
-      nameHi: nameHi.trim() || null,
+      nameHi: null,
       slug: slug.trim(),
       description: description.trim() || null,
       categoryId: categoryId ? Number(categoryId) : null,
@@ -265,19 +265,6 @@ export function ProductForm({ categories, product }: ProductFormProps) {
             />
           </div>
 
-          {/* Hindi Name */}
-          <div className="space-y-1.5">
-            <label className="text-label-md text-on-surface-variant" htmlFor="nameHi">
-              Name (Hindi)
-            </label>
-            <input
-              id="nameHi"
-              value={nameHi}
-              onChange={(e) => setNameHi(e.target.value)}
-              placeholder="e.g. अनारकली कुर्ता सेट"
-              className="w-full h-11 px-4 rounded-xl bg-surface-container text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-2 focus:outline-primary text-hindi"
-            />
-          </div>
 
           {/* Slug */}
           <div className="space-y-1.5">

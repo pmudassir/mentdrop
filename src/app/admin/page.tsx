@@ -1,5 +1,6 @@
 import { getOrderStats, getOrdersAdmin } from "@/lib/actions/orders"
 import { StatCard } from "@/components/admin/stat-card"
+import { RevenueChartDynamic as RevenueChart } from "@/components/admin/revenue-chart-wrapper"
 import { Badge } from "@/components/ui/badge"
 import { formatPrice } from "@/lib/utils"
 import { ShoppingBag, IndianRupee, Clock, CheckCircle2 } from "lucide-react"
@@ -72,6 +73,20 @@ export default async function AdminOverviewPage() {
           subtext="Successfully fulfilled"
         />
       </div>
+
+      {/* Low stock alert */}
+      <div className="rounded-2xl bg-warning-container px-5 py-4 flex items-start gap-3">
+        <span className="text-warning text-lg flex-shrink-0 mt-0.5">⚠</span>
+        <div>
+          <p className="text-body-sm font-semibold text-warning">Inventory Alert</p>
+          <p className="text-body-sm text-warning/80 mt-0.5">
+            Review your product variants regularly to avoid stockouts. Variants with fewer than 5 units need restocking.
+          </p>
+        </div>
+      </div>
+
+      {/* Revenue chart */}
+      <RevenueChart />
 
       {/* Recent orders table */}
       <div className="rounded-2xl bg-surface-container-lowest shadow-md overflow-hidden">

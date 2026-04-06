@@ -107,79 +107,90 @@ export default async function OrderDetailPage({ params }: Props) {
         </Badge>
       </div>
 
-      {/* Order Timeline */}
+      {/* ── Order Timeline ── */}
       {!isCancelled ? (
         <div className="bg-surface-container-low rounded-2xl p-6 mb-6">
-          <h2 className="text-title-lg text-on-surface mb-6">Order Progress</h2>
-          <div className="relative">
-            {/* Connecting line */}
-            <div className="absolute top-4 left-4 right-4 h-px bg-surface-container-highest" />
-
-            <div className="flex justify-between relative">
-              {STATUS_STEPS.map((step, index) => {
-                const isCompleted = index <= currentStepIndex
-                const isCurrent = index === currentStepIndex
-                return (
-                  <div key={step} className="flex flex-col items-center gap-2 flex-1">
-                    <div
-                      className={`w-9 h-9 rounded-full flex items-center justify-center z-10 transition-colors ${
-                        isCompleted
-                          ? "bg-primary text-on-primary"
-                          : "bg-surface-container-highest text-on-surface-variant"
-                      } ${isCurrent ? "ring-2 ring-primary ring-offset-2" : ""}`}
-                    >
-                      {isCompleted ? (
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2.5}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      ) : (
-                        <span className="text-label-sm">{index + 1}</span>
-                      )}
-                    </div>
-                    <span
-                      className={`text-label-sm text-center hidden sm:block ${
-                        isCompleted ? "text-on-surface" : "text-on-surface-variant"
-                      }`}
-                    >
-                      {formatStatus(step)}
-                    </span>
-                  </div>
-                )
-              })}
-            </div>
-
-            {/* Mobile step label */}
-            <p className="text-label-md text-primary mt-4 sm:hidden text-center">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-title-lg text-on-surface">Order Progress</h2>
+            <span className="text-catalog text-primary bg-primary-container px-3 py-1 rounded-full">
               {formatStatus(order.status)}
-            </p>
+            </span>
           </div>
 
-          {order.trackingNumber && (
-            <div className="mt-6 bg-surface-container rounded-xl px-4 py-3">
-              <p className="text-label-sm text-on-surface-variant">Tracking Number</p>
-              <p className="text-body-md text-on-surface mt-0.5">{order.trackingNumber}</p>
-              {order.trackingUrl && (
-                <a
-                  href={order.trackingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-label-sm text-primary hover:underline mt-1 inline-block"
-                >
-                  Track Shipment →
-                </a>
-              )}
-            </div>
-          )}
+          {/* Vertical timeline */}
+          <div className="flex flex-col gap-0">
+            {STATUS_STEPS.map((step, index) => {
+              const isCompleted = index < currentStepIndex
+              const isCurrent = index === currentStepIndex
+              const isPending = index > currentStepIndex
+              const isLast = index === STATUS_STEPS.length - 1
+
+              const stepMeta: Record<string, { desc: string; icon: string }> = {
+                pending:          { icon: "🕐", desc: "Order received, awaiting confirmation" },
+                confirmed:        { icon: "✅", desc: "Order confirmed and being prepared" },
+                processing:       { icon: "📦", desc: "Items being carefully packed" },
+                shipped:          { icon: "🚚", desc: "Your order is on its way" },
+                out_for_delivery: { icon: "🛵", desc: "Out for delivery — arriving today" },
+                delivered:        { icon: "🎉", desc: "Delivered! Enjoy your purchase" },
+              }
+              const meta = stepMeta[step] ?? { icon: "•", desc: "" }
+
+              return (
+                <div key={step} className="flex gap-4">
+                  {/* Spine column */}
+                  <div className="flex flex-col items-center">
+                    {/* Node */}
+                    <div className={`relative w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 z-10 transition-all duration-500 ${
+                      isCompleted ? "bg-primary text-on-primary" :
+                      isCurrent   ? "bg-primary text-on-primary pulse-primary" :
+                                    "bg-surface-container-highest text-on-surface-variant/40"
+                    }`}>
+                      {isCompleted ? (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      ) : (
+                        <span className="text-sm">{meta.icon}</span>
+                      )}
+                    </div>
+                    {/* Connecting line */}
+                    {!isLast && (
+                      <div className={`w-0.5 flex-1 my-1 min-h-[2rem] rounded-full transition-colors duration-500 ${
+                        isCompleted ? "bg-primary/40" : "bg-surface-container-highest"
+                      }`} />
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className={`pb-5 pt-1.5 flex-1 min-w-0 ${isLast ? "" : ""}`}>
+                    <p className={`text-body-sm font-medium leading-tight ${
+                      isPending ? "text-on-surface-variant/40" :
+                      isCurrent  ? "text-on-surface" :
+                                   "text-on-surface"
+                    }`}>
+                      {formatStatus(step)}
+                    </p>
+                    {!isPending && (
+                      <p className="text-label-sm text-on-surface-variant/60 mt-0.5">{meta.desc}</p>
+                    )}
+                    {isCurrent && order.trackingNumber && (
+                      <div className="mt-2 inline-flex items-center gap-2 bg-primary-container rounded-lg px-3 py-1.5">
+                        <span className="text-label-sm text-on-primary-container font-medium">
+                          {order.trackingNumber}
+                        </span>
+                        {order.trackingUrl && (
+                          <a href={order.trackingUrl} target="_blank" rel="noopener noreferrer"
+                            className="text-label-sm text-primary hover:underline">
+                            Track →
+                          </a>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </div>
       ) : (
         <div className="bg-error-container rounded-2xl p-5 mb-6">

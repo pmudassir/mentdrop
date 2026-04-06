@@ -12,6 +12,7 @@ import {
   Truck,
   BarChart3,
   Settings,
+  Search,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -41,6 +42,20 @@ export function AdminSidebar() {
       <div className="px-6 py-5 mb-2">
         <p className="text-label-lg text-primary tracking-widest uppercase">Swadesh</p>
         <p className="text-body-sm text-on-surface-variant">Admin Panel</p>
+      </div>
+
+      {/* ⌘K trigger */}
+      <div className="px-3 mb-3">
+        <button
+          onClick={() => window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: true, bubbles: true }))}
+          className="w-full flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container text-on-surface-variant hover:bg-surface-container-highest text-body-sm transition-colors"
+        >
+          <Search className="w-3.5 h-3.5" />
+          <span className="flex-1 text-left">Search...</span>
+          <kbd className="text-[10px] font-medium bg-surface-container-highest px-1.5 py-0.5 rounded border border-outline-variant">
+            ⌘K
+          </kbd>
+        </button>
       </div>
 
       {/* Nav items */}

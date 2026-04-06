@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Search, ShoppingBag, Heart, User, Menu, X, ChevronDown } from "lucide-react"
 import { useCartStore } from "@/store/cart"
 import { useWishlistStore } from "@/store/wishlist"
+import { useUIStore } from "@/store/ui"
 import * as React from "react"
 import type { Category } from "@/lib/actions/categories"
 
@@ -12,6 +13,7 @@ export function Header({ categories }: { categories: Category[] }) {
   const [collectionsOpen, setCollectionsOpen] = React.useState(false)
   const itemCount = useCartStore((s) => s.getItemCount())
   const wishlistCount = useWishlistStore((s) => s.items.length)
+  const openCart = useUIStore((s) => s.openCart)
 
   const firstCategory = categories[0]
 
@@ -92,8 +94,8 @@ export function Header({ categories }: { categories: Category[] }) {
                 </span>
               )}
             </Link>
-            <Link
-              href="/cart"
+            <button
+              onClick={openCart}
               className="relative p-2.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"
               aria-label="Cart"
             >
@@ -103,7 +105,7 @@ export function Header({ categories }: { categories: Category[] }) {
                   {itemCount}
                 </span>
               )}
-            </Link>
+            </button>
             <Link
               href="/account"
               className="hidden md:flex p-2.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"

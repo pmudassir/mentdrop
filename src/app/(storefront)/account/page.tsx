@@ -26,7 +26,6 @@ export default async function AccountPage() {
 
       {/* Greeting */}
       <div className="mb-8">
-        <p className="text-hindi text-on-surface-variant/50 text-sm mb-1">नमस्ते</p>
         <h1 className="text-serif font-semibold text-on-surface mb-1" style={{ fontSize: "clamp(1.6rem, 4vw, 2rem)" }}>
           Welcome back, {displayName}
         </h1>

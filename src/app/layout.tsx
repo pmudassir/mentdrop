@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next"
-import { Plus_Jakarta_Sans, Be_Vietnam_Pro, Noto_Sans_Devanagari, Cormorant_Garamond } from "next/font/google"
+import { Montserrat, Be_Vietnam_Pro, Cormorant_Garamond } from "next/font/google"
 import "./globals.css"
 
 const cormorant = Cormorant_Garamond({
@@ -10,11 +10,11 @@ const cormorant = Cormorant_Garamond({
   style: ["normal", "italic"],
 })
 
-const plusJakarta = Plus_Jakarta_Sans({
+const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 })
 
 const beVietnam = Be_Vietnam_Pro({
@@ -24,12 +24,6 @@ const beVietnam = Be_Vietnam_Pro({
   weight: ["400", "500", "600"],
 })
 
-const notoDevanagari = Noto_Sans_Devanagari({
-  subsets: ["devanagari"],
-  variable: "--font-hindi",
-  display: "swap",
-  weight: ["400", "500", "600"],
-})
 
 export const metadata: Metadata = {
   title: {
@@ -75,7 +69,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${plusJakarta.variable} ${beVietnam.variable} ${notoDevanagari.variable}`}
+      className={`${cormorant.variable} ${montserrat.variable} ${beVietnam.variable}`}
     >
       <body className="min-h-dvh flex flex-col bg-surface text-on-surface antialiased">
         {children}

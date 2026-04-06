@@ -35,7 +35,7 @@ export default async function AdminCategoriesPage() {
           <table className="w-full text-left">
             <thead>
               <tr className="bg-surface-container">
-                {["Name", "Hindi Name", "Slug", "Parent", "Active", "Actions"].map((h) => (
+                {["Name", "Slug", "Parent", "Active", "Actions"].map((h) => (
                   <th key={h} className="px-6 py-3 text-label-sm text-on-surface-variant font-medium">
                     {h}
                   </th>
@@ -46,7 +46,7 @@ export default async function AdminCategoriesPage() {
               {sorted.length === 0 ? (
                 <tr>
                   <td
-                    colSpan={6}
+                    colSpan={5}
                     className="px-6 py-10 text-center text-on-surface-variant text-body-md"
                   >
                     No categories yet. Add one above.
@@ -64,9 +64,7 @@ export default async function AdminCategoriesPage() {
                       )}
                       {cat.name}
                     </td>
-                    <td className="px-6 py-3.5 text-body-sm text-on-surface-variant text-hindi">
-                      {cat.nameHi ?? "—"}
-                    </td>
+
                     <td className="px-6 py-3.5 text-body-sm text-on-surface-variant font-mono">
                       {cat.slug}
                     </td>

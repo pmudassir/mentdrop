@@ -27,8 +27,6 @@ export default async function CheckoutSuccessPage({ searchParams }: Props) {
             <CheckCircle2 className="w-10 h-10 text-primary" />
           </div>
 
-          {/* Hindi + English thank you */}
-          <p className="text-hindi text-on-surface-variant/50 text-sm mb-1">धन्यवाद</p>
           <h1 className="text-serif font-semibold text-on-surface mb-3" style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)" }}>
             Thank You for Your Order
           </h1>

@@ -1,5 +1,6 @@
 "use server"
 
+import { cache } from "react"
 import { db } from "@/lib/db"
 import { categories } from "@/lib/db/schema"
 import { eq, asc, isNull, and } from "drizzle-orm"
@@ -14,7 +15,7 @@ type ActionResult<T = void> = { success: true; data: T } | { success: false; err
 
 const IS_MOCK = !process.env.DATABASE_URL || process.env.DATABASE_URL.includes("placeholder")
 
-export async function getCategories(): Promise<Category[]> {
+export const getCategories = cache(async function getCategories(): Promise<Category[]> {
   if (IS_MOCK) return MOCK_CATEGORIES
   try {
     return await db.query.categories.findMany({
@@ -22,9 +23,9 @@ export async function getCategories(): Promise<Category[]> {
       orderBy: [asc(categories.sortOrder), asc(categories.name)],
     })
   } catch { return MOCK_CATEGORIES }
-}
+})
 
-export async function getRootCategories(): Promise<Category[]> {
+export const getRootCategories = cache(async function getRootCategories(): Promise<Category[]> {
   if (IS_MOCK) return MOCK_CATEGORIES.filter((c) => !c.parentId)
   try {
     return await db.query.categories.findMany({
@@ -32,7 +33,7 @@ export async function getRootCategories(): Promise<Category[]> {
       orderBy: [asc(categories.sortOrder)],
     })
   } catch { return MOCK_CATEGORIES.filter((c) => !c.parentId) }
-}
+})
 
 export async function getCategoryBySlug(slug: string): Promise<Category | undefined> {
   if (IS_MOCK) return MOCK_CATEGORIES.find((c) => c.slug === slug)

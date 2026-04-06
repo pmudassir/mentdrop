@@ -75,6 +75,13 @@ export default function CheckoutPage() {
     if (fieldErrors[field]) setFieldErrors((prev) => ({ ...prev, [field]: undefined }))
   }
 
+  function handleAddressBlur(field: keyof ShippingAddress) {
+    const errors = validateAddress(address)
+    if (errors[field]) {
+      setFieldErrors((prev) => ({ ...prev, [field]: errors[field] }))
+    }
+  }
+
   function handleContinue() {
     const errors = validateAddress(address)
     if (Object.keys(errors).length > 0) { setFieldErrors(errors); return }
@@ -205,15 +212,15 @@ export default function CheckoutPage() {
                 </h1>
                 <div className="flex flex-col gap-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <Input label="Full Name" placeholder="Ananya Sharma" value={address.name} onChange={(e) => handleAddressChange("name", e.target.value)} error={fieldErrors.name} />
-                    <Input label="Phone Number" placeholder="9876543210" type="tel" maxLength={10} value={address.phone} onChange={(e) => handleAddressChange("phone", e.target.value)} error={fieldErrors.phone} />
+                    <Input label="Full Name" placeholder="Ananya Sharma" value={address.name} onChange={(e) => handleAddressChange("name", e.target.value)} onBlur={() => handleAddressBlur("name")} error={fieldErrors.name} />
+                    <Input label="Phone Number" placeholder="9876543210" type="tel" maxLength={10} value={address.phone} onChange={(e) => handleAddressChange("phone", e.target.value)} onBlur={() => handleAddressBlur("phone")} error={fieldErrors.phone} />
                   </div>
-                  <Input label="Address Line 1" placeholder="House/Flat, Street" value={address.line1} onChange={(e) => handleAddressChange("line1", e.target.value)} error={fieldErrors.line1} />
+                  <Input label="Address Line 1" placeholder="House/Flat, Street" value={address.line1} onChange={(e) => handleAddressChange("line1", e.target.value)} onBlur={() => handleAddressBlur("line1")} error={fieldErrors.line1} />
                   <Input label="Address Line 2 (Optional)" placeholder="Landmark, Area" value={address.line2} onChange={(e) => handleAddressChange("line2", e.target.value)} />
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                    <Input label="City" placeholder="Mumbai" value={address.city} onChange={(e) => handleAddressChange("city", e.target.value)} error={fieldErrors.city} />
-                    <Input label="State" placeholder="Maharashtra" value={address.state} onChange={(e) => handleAddressChange("state", e.target.value)} error={fieldErrors.state} />
-                    <Input label="Pincode" placeholder="400001" maxLength={6} value={address.pincode} onChange={(e) => handleAddressChange("pincode", e.target.value)} error={fieldErrors.pincode} />
+                    <Input label="City" placeholder="Mumbai" value={address.city} onChange={(e) => handleAddressChange("city", e.target.value)} onBlur={() => handleAddressBlur("city")} error={fieldErrors.city} />
+                    <Input label="State" placeholder="Maharashtra" value={address.state} onChange={(e) => handleAddressChange("state", e.target.value)} onBlur={() => handleAddressBlur("state")} error={fieldErrors.state} />
+                    <Input label="Pincode" placeholder="400001" maxLength={6} value={address.pincode} onChange={(e) => handleAddressChange("pincode", e.target.value)} onBlur={() => handleAddressBlur("pincode")} error={fieldErrors.pincode} />
                   </div>
                 </div>
 
@@ -250,7 +257,7 @@ export default function CheckoutPage() {
 
                 {/* Payment methods */}
                 <div className="flex flex-col gap-3 mb-5">
-                  <div className="bg-surface-container-low rounded-2xl p-4 flex items-center gap-4 ring-2 ring-primary cursor-pointer">
+                  <div className="bg-surface-container-low rounded-2xl p-4 flex items-center gap-4 ring-2 ring-primary cursor-pointer focus-visible:outline-2 focus-visible:outline-primary">
                     <div className="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-lg">₹</div>
                     <div className="flex-1">
                       <p className="text-title-sm text-on-surface">UPI / Cards / Netbanking</p>
@@ -336,22 +343,28 @@ export default function CheckoutPage() {
                     </button>
                   </div>
                 ) : (
-                  <div className="flex gap-2">
-                    <input
-                      type="text"
-                      placeholder="Coupon code"
-                      value={couponCode}
-                      onChange={(e) => { setCouponCode(e.target.value.toUpperCase()); setCouponError("") }}
-                      onKeyDown={(e) => e.key === "Enter" && applyCoupon()}
-                      className="flex-1 h-9 px-3 text-body-sm bg-surface-container rounded-xl outline-none focus:ring-2 focus:ring-primary/30 placeholder:text-on-surface-variant/40 uppercase"
-                    />
-                    <button
-                      onClick={applyCoupon}
-                      disabled={couponPending || !couponCode.trim()}
-                      className="px-4 h-9 text-label-sm font-semibold text-primary bg-primary/10 hover:bg-primary/15 rounded-xl transition-colors disabled:opacity-50"
-                    >
-                      Apply
-                    </button>
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="coupon-input" className="text-label-sm text-on-surface-variant">
+                      Coupon Code
+                    </label>
+                    <div className="flex gap-2">
+                      <input
+                        id="coupon-input"
+                        type="text"
+                        placeholder="e.g. SAVE10"
+                        value={couponCode}
+                        onChange={(e) => { setCouponCode(e.target.value.toUpperCase()); setCouponError("") }}
+                        onKeyDown={(e) => e.key === "Enter" && applyCoupon()}
+                        className="flex-1 h-9 px-3 text-body-sm bg-surface-container rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-primary/30 placeholder:text-on-surface-variant/40 uppercase"
+                      />
+                      <button
+                        onClick={applyCoupon}
+                        disabled={couponPending || !couponCode.trim()}
+                        className="px-4 h-9 text-label-sm font-semibold text-primary bg-primary/10 hover:bg-primary/15 rounded-xl transition-colors disabled:opacity-50 cursor-pointer"
+                      >
+                        Apply
+                      </button>
+                    </div>
                   </div>
                 )}
                 {couponError && (

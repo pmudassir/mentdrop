@@ -5,6 +5,7 @@ import { getProductReviews } from "@/lib/actions/reviews"
 import { ProductDetail } from "@/components/storefront/product-detail"
 import { MakingOfBlock } from "@/components/storefront/sections/making-of-block"
 import { CompleteTheLook } from "@/components/storefront/sections/complete-the-look"
+import { RecentlyViewed } from "@/components/storefront/sections/recently-viewed"
 
 export const revalidate = 30
 
@@ -56,6 +57,9 @@ export default async function ProductPage({ params }: Props) {
 
       {/* Complete the Look */}
       {related.length > 0 && <CompleteTheLook products={related} />}
+
+      {/* Recently Viewed */}
+      <RecentlyViewed excludeSlug={slug} />
     </div>
   )
 }
